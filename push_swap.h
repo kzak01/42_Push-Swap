@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 09:30:33 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/02 10:36:14 by kzak             ###   ########.fr       */
+/*   Updated: 2022/05/02 11:23:50 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,8 @@ int	find_max(int a[5]);
 //moves
 void	pb(int a[5], int b[5]);
 void	pa(int a[5], int b[5]);
+int		sort_max(int a[5], int b[5], int d, char **argv);
+int		sort_min(int a[5], int b[5], int d, char **argv);
 
 
 

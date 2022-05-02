@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/30 11:09:49 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/02 10:48:37 by kzak             ###   ########.fr       */
+/*   Updated: 2022/05/02 11:36:05 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,24 @@
 
 void	isnumber(char **av)
 {
-	// int	*a;
 	int	i;
-	// int	j;
+	int	j;
 
-	// j = 1;
+	j = 0;
 	i = 1;
 	while (av[i])
 	{
-		if (ft_isdigit(ft_atoi(*av)) == TRUE)
-			i++;
-		else
-			ft_printf("Error: only number\n");
-			exit (0);
+		while (av[i][j])
+		{
+			if (ft_isdigit((av[i][j])) == FALSE)
+			{
+				ft_printf("Error: only number\n");
+				exit (0);
+			}
+			j++;
+		}
+		i++;
+		j = 0;
 	}
 }
 

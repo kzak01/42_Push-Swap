@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 10:03:35 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/02 10:56:51 by kzak             ###   ########.fr       */
+/*   Updated: 2022/05/02 12:00:47 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,54 +84,15 @@ void	fivecase(char **argv)
 	}
 	c = find_max(h);
 	d = find_min(q);
-	printf("max = %d\n min = %d\n", c, d);
-	sort_min(a);
-	sort_max(a)
-	i = 0;
-	while (i < 2)
-	{
-		if (c == a[0] || d == a[0])
-		{
-			pb(a, b);
-			printf("%d %d %d %d %d\n", b[0], b[1], b[2], b[3], b[4]);
-		}
-		if (c == a[1] || d == a[1])
-		{
-			sa(a);
-			pb(a, b);
-			printf("%d %d %d %d %d\n", b[0], b[1], b[2], b[3], b[4]);
-		}
-		if (c == a[2] || d == a[2])
-		{
-			rra(a);
-			rra(a);
-			rra(a);
-			pb(a, b);
-			printf("%d %d %d %d %d\n", b[0], b[1], b[2], b[3], b[4]);
-		}
-		if (c == a[3] || d == a[3])
-		{
-			rra(a);
-			rra(a);
-			pb(a, b);
-			printf("%d %d %d %d %d\n", b[0], b[1], b[2], b[3], b[4]);
-		}
-		if (c == a[4] || d == a[4])
-		{00
-		.
-			rra(a);
-			pb(a, b);
-			printf("%d %d %d %d %d\n", b[0], b[1], b[2], b[3], b[4]);
-		}
-		i++;
-	}
+	printf("max = %d\nmin = %d\n", c, d);
+	sort_min(a, b, d, argv);
+	sort_max(a, b, c, argv);
 	sort(a);
-	printf("%d %d %d %d %d\n", a[0], a[1], a[2], a[3], a[4]);
+	printf("%d %d %d\n", a[0], a[1], a[2]);
 	pa(a, b);
-	if (a[0] == c)
-		ra(a);
+	printf("%d %d %d %d\n", a[0], a[1], a[2], a[3]);
+	ra(a);
+	printf("%d %d %d %d\n", a[0], a[1], a[2], a[3]);
 	pa(a, b);
-	if (a[0] == c)
-		ra(a);
-	printf("%d %d %d %d %d\n", a[0], a[1], a[2], a[3], a[4]);
+	printf("%d %d %d %d\n", a[0], a[1], a[2], a[3]);
 }
