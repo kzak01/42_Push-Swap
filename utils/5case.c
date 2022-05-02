@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 10:03:35 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/02 10:44:10 by kzak             ###   ########.fr       */
+/*   Updated: 2022/05/02 10:56:51 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,10 @@ void	fivecase(char **argv)
 	c = find_max(h);
 	d = find_min(q);
 	printf("max = %d\n min = %d\n", c, d);
-	while (i == 2)
+	sort_min(a);
+	sort_max(a)
+	i = 0;
+	while (i < 2)
 	{
 		if (c == a[0] || d == a[0])
 		{
@@ -114,12 +117,14 @@ void	fivecase(char **argv)
 			printf("%d %d %d %d %d\n", b[0], b[1], b[2], b[3], b[4]);
 		}
 		if (c == a[4] || d == a[4])
-		{
+		{00
+		.
 			rra(a);
 			pb(a, b);
 			printf("%d %d %d %d %d\n", b[0], b[1], b[2], b[3], b[4]);
 		}
-	printf("%d %d %d %d %d\n", b[0], b[1], b[2], b[3], b[4]);
+		i++;
+	}
 	sort(a);
 	printf("%d %d %d %d %d\n", a[0], a[1], a[2], a[3], a[4]);
 	pa(a, b);
