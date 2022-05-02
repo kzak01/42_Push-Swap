@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: vbellucc <vbellucc@student.42.fr>          +#+  +:+       +#+         #
+#    By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/13 09:13:08 by kzak              #+#    #+#              #
-#    Updated: 2022/04/21 11:35:52 by vbellucc         ###   ########.fr        #
+#    Updated: 2022/05/02 10:24:51 by kzak             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,6 +31,8 @@ FT_PRINTF = $(addprefix $(PRINTF_DIR), $(PRINTF_A))
 
 UTILS = 3case.c \
 			5case.c \
+			errors.c \
+			moves.c \
 
 SRC_UTILS = $(addprefix utils/, $(UTILS))
 

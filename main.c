@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 09:12:56 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/02 10:11:21 by kzak             ###   ########.fr       */
+/*   Updated: 2022/05/02 10:40:43 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	main(int argc, char **argv)
 {
-	ft_errors(**argv);
+	// ft_errors(argv);
 	if (argc == 4)
 	{
 		threecase(argv);
