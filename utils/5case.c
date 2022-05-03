@@ -6,7 +6,7 @@
 /*   By: mvolpi <mvolpi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 10:03:35 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/03 10:38:09 by mvolpi           ###   ########.fr       */
+/*   Updated: 2022/05/03 11:19:20 by mvolpi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,12 +87,31 @@ void	fivecase(char **argv)
 	printf("max = %d\nmin = %d\n", c, d);
 	sort_min(a, b, d);
 	sort_max(a, b, c);
+	i = 0;
+	while (i < 5)
+	{
+		if (a[0] == 0)
+		{
+			ra_2(a);
+			printf("sposto lo zero\n");
+			printf("%d %d %d %d %d\n", a[0], a[1], a[2], a[3], a[4]);
+		}
+		else if (a[1] == 0)
+		{
+			sa_2(a);
+			printf("sposto lo zero");
+			printf("%d %d %d %d %d\n", a[0], a[1], a[2], a[3], a[4]);
+		}
+		else if (a[2] == 0)
+			exit(0);
+		i++;
+	}
 	sort(a);
-	printf("%d %d %d\n", a[0], a[1], a[2]);
+	printf("%d %d %d %d %d\n", a[0], a[1], a[2], a[3], a[4]);
 	pa(a, b);
-	printf("%d %d %d %d\n", a[0], a[1], a[2], a[3]);
-	ra(a);
-	printf("%d %d %d %d\n", a[0], a[1], a[2], a[3]);
+	printf("%d %d %d %d %d\n", a[0], a[1], a[2], a[3], a[4]);
+	ra_2(a);
+	printf("%d %d %d %d %d\n", a[0], a[1], a[2], a[3], a[4]);
 	pa(a, b);
-	printf("%d %d %d %d\n", a[0], a[1], a[2], a[3]);
+	printf("%d %d %d %d %d\n", a[0], a[1], a[2], a[3], a[4]);
 }

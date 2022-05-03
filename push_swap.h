@@ -6,18 +6,12 @@
 /*   By: mvolpi <mvolpi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 09:30:33 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/03 10:37:05 by mvolpi           ###   ########.fr       */
+/*   Updated: 2022/05/03 10:59:34 by mvolpi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
-
-typedef enum e_bool
-{
-	TRUE = 1,
-	FALSE = 0
-}	t_bool;
 
 # include <unistd.h>
 # include <stdlib.h>
@@ -26,6 +20,18 @@ typedef enum e_bool
 # include <errno.h>
 # include "libft/libft.h"
 # include "printf/ft_printf.h"
+
+typedef enum e_bool
+{
+	TRUE = 1,
+	FALSE = 0
+}	t_bool;
+
+typedef enum e_int
+{
+	INT_MAX = 2147483647,
+	INT_MIN = -2147483648
+}	t_int;
 
 //main
 int		main(int argc, char **argv);
@@ -51,7 +57,7 @@ int		sort_min(int a[5], int b[5], int d);
 //ft_errors
 void	ft_errors(char **av);
 void	isnumber(char **av);
-// void	intmaxmin(char **av);
+void	intmaxmin(char **av);
 
 //moves_2
 void	sa_2(int *a);

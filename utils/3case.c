@@ -6,7 +6,7 @@
 /*   By: mvolpi <mvolpi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 08:55:58 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/03 10:37:41 by mvolpi           ###   ########.fr       */
+/*   Updated: 2022/05/03 10:43:17 by mvolpi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	sa(int *a)
 {
-	int t;
+	int	t;
 
 	t = a[0];
 	a[0] = a[1];
@@ -24,7 +24,7 @@ void	sa(int *a)
 
 void	rra(int *a)
 {
-	int t;
+	int	t;
 
 	t = a[0];
 	a[0] = a[2];
@@ -60,7 +60,7 @@ int	sort(int *a)
 		sa(a);
 		ra(a);
 	}
-	if (a[0] >a[1] && a[1] < a[2] && a[2] > a[0])
+	if (a[0] > a[1] && a[1] < a[2] && a[2] > a[0])
 		sa(a);
 	return (a[3]);
 }
@@ -68,8 +68,8 @@ int	sort(int *a)
 void	threecase(char **argv)
 {
 	int	a[3];
-	int i;
-	int g;
+	int	i;
+	int	g;
 
 	g = 1;
 	i = 0;

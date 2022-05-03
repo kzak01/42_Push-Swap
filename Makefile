@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+         #
+#    By: mvolpi <mvolpi@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/13 09:13:08 by kzak              #+#    #+#              #
-#    Updated: 2022/05/02 10:24:51 by kzak             ###   ########.fr        #
+#    Updated: 2022/05/03 11:28:59 by mvolpi           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,6 +33,7 @@ UTILS = 3case.c \
 			5case.c \
 			errors.c \
 			moves.c \
+			moves_2.c \
 
 SRC_UTILS = $(addprefix utils/, $(UTILS))
 
