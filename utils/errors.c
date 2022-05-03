@@ -6,7 +6,7 @@
 /*   By: mvolpi <mvolpi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/30 11:09:49 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/03 11:43:52 by mvolpi           ###   ########.fr       */
+/*   Updated: 2022/05/03 12:15:37 by mvolpi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,9 +51,11 @@ void	isnumber(char **av)
 	{
 		while (av[i][j])
 		{
-			if ((ft_isdigit(av[i][j]) == FALSE && av[i][j] != '-') || (av[i][j] == '-' && ft_isdigit(av[i][j++]) == TRUE))
+			if (av[i][j] == '-')
+				j++;
+			if (ft_isdigit(av[i][j]) == FALSE)
 			{
-				ft_printf("Error: only number\n");
+				printf("Error: only number\n");
 				exit (0);
 			}
 			j++;
