@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   3case.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mvolpi <mvolpi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 08:55:58 by kzak              #+#    #+#             */
-/*   Updated: 2022/04/20 10:08:06 by kzak             ###   ########.fr       */
+/*   Updated: 2022/05/03 10:37:41 by mvolpi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	ra(int *a)
 	printf("ra\n");
 }
 
-void	sort(int *a)
+int	sort(int *a)
 {
 	if (a[0] > a[1] && a[1] < a[2] && a[2] < a[0])
 		ra(a);
@@ -62,6 +62,7 @@ void	sort(int *a)
 	}
 	if (a[0] >a[1] && a[1] < a[2] && a[2] > a[0])
 		sa(a);
+	return (a[3]);
 }
 
 void	threecase(char **argv)
@@ -80,9 +81,9 @@ void	threecase(char **argv)
 		g++;
 	}
 	printf("\n");
-	printf("%d%d%d\n", a[0], a[1], a[2]);
+	printf("%d %d %d\n", a[0], a[1], a[2]);
 	printf("\n");
 	sort(a);
 	printf("\n");
-	printf("%d%d%d\n", a[0], a[1], a[2]);
+	printf("%d %d %d\n", a[0], a[1], a[2]);
 }

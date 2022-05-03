@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   5case.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mvolpi <mvolpi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 10:03:35 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/02 12:00:47 by kzak             ###   ########.fr       */
+/*   Updated: 2022/05/03 10:38:09 by mvolpi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,8 +85,8 @@ void	fivecase(char **argv)
 	c = find_max(h);
 	d = find_min(q);
 	printf("max = %d\nmin = %d\n", c, d);
-	sort_min(a, b, d, argv);
-	sort_max(a, b, c, argv);
+	sort_min(a, b, d);
+	sort_max(a, b, c);
 	sort(a);
 	printf("%d %d %d\n", a[0], a[1], a[2]);
 	pa(a, b);

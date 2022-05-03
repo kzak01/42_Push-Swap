@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mvolpi <mvolpi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 09:30:33 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/02 11:23:50 by kzak             ###   ########.fr       */
+/*   Updated: 2022/05/03 10:37:05 by mvolpi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,30 +28,34 @@ typedef enum e_bool
 # include "printf/ft_printf.h"
 
 //main
-int	main(int argc, char **argv);
+int		main(int argc, char **argv);
 
 //3case
 void	threecase(char **argv);
-void	sort(int *a);
+int		sort(int *a);
 void	ra(int *a);
 void	rra(int *a);
 void	sa(int *a);
 
 //5case
-void fivecase(char **argv);
-int	find_min(int a[5]);
-int	find_max(int a[5]);
+void	fivecase(char **argv);
+int		find_min(int a[5]);
+int		find_max(int a[5]);
 
 //moves
 void	pb(int a[5], int b[5]);
 void	pa(int a[5], int b[5]);
-int		sort_max(int a[5], int b[5], int d, char **argv);
-int		sort_min(int a[5], int b[5], int d, char **argv);
-
-
+int		sort_max(int a[5], int b[5], int d);
+int		sort_min(int a[5], int b[5], int d);
 
 //ft_errors
 void	ft_errors(char **av);
 void	isnumber(char **av);
+// void	intmaxmin(char **av);
+
+//moves_2
+void	sa_2(int *a);
+void	rra_2(int *a);
+void	ra_2(int *a);
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   errors.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mvolpi <mvolpi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/30 11:09:49 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/02 11:36:05 by kzak             ###   ########.fr       */
+/*   Updated: 2022/05/03 10:38:31 by mvolpi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,11 @@ void	isnumber(char **av)
 	}
 }
 
+// void	intmaxmin(void)
+// {
+	
+// }
+
 void	ft_errors(char **av)
 {
 	// if (av == 2)
@@ -42,4 +47,5 @@ void	ft_errors(char **av)
 
 	// }
 	isnumber(av);
+	// intmaxmin(av);
 }
