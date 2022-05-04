@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   errors.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvolpi <mvolpi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/30 11:09:49 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/04 12:25:22 by mvolpi           ###   ########.fr       */
+/*   Updated: 2022/05/04 13:32:32 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ static void	isnumber(char **av)
 				j++;
 			if (ft_isdigit(av[i][j]) == FALSE)
 			{
-				printf("Error: only number\n");
+				ft_printf("Error: only number\n");
 				exit (0);
 			}
 			j++;
@@ -106,8 +106,9 @@ static void	intmaxmin(char **av)
 	}
 }
 
-void	ft_errors(char **av)
+void	ft_errors(int ac, char **av)
 {
+	(void)ac;
 	int	i;
 
 	i = 0;

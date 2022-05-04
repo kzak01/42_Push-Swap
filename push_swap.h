@@ -50,7 +50,7 @@ int		sort_max(int a[5], int b[5], int d);
 int		sort_min(int a[5], int b[5], int d);
 
 //ft_errors
-void	ft_errors(char **av);
+void	ft_errors(int ac, char **av);
 
 //swap
 void	sa(int *a, size_t l);

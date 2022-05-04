@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvolpi <mvolpi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 09:12:56 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/04 12:22:06 by mvolpi           ###   ########.fr       */
+/*   Updated: 2022/05/04 13:29:56 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,9 @@ int	main(int argc, char **argv)
 
 	la = argc - 1;
 	lb = 0;
-	if (argc <= 2)
+	if (argc < 2)
 		exit(1);
-	ft_errors(argv);
+	ft_errors(argc, argv);
 	a = (int *) malloc(la * sizeof(int));
 	b = (int *) malloc(lb * sizeof(int));
 	insert_into_a(argv, a, la);
