@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/30 11:09:49 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/04 13:34:57 by kzak             ###   ########.fr       */
+/*   Updated: 2022/05/04 13:41:26 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ static void	nocopy(char **av)
 	int	i;
 	int	j;
 
-	i = 1;
-	j = 2;
+	i = 0;
+	j = 1;
 	while (av[i])
 	{
 		while (av[j])
@@ -108,7 +108,6 @@ static void	intmaxmin(char **av)
 
 void	ft_errors(int ac, char **av)
 {
-	(void)ac;
 	int	i;
 
 	i = 0;
@@ -122,5 +121,15 @@ void	ft_errors(int ac, char **av)
 		intmaxmin(ft_split(av[i], ' '));
 		i++;
 	}
-	nocopy(av);
+	i = 0;
+	if (ac == 2)
+	{
+		while (av[i])
+		{
+			nocopy(ft_split(av[i], ' '));
+			i++;
+		}
+	}
+	if (ac > 2)
+		nocopy(av);
 }
