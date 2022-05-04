@@ -6,7 +6,7 @@
 /*   By: mvolpi <mvolpi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 09:30:33 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/03 10:59:34 by mvolpi           ###   ########.fr       */
+/*   Updated: 2022/05/04 12:15:50 by mvolpi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,29 +39,39 @@ int		main(int argc, char **argv);
 //3case
 void	threecase(char **argv);
 int		sort(int *a);
-void	ra(int *a);
-void	rra(int *a);
-void	sa(int *a);
 
 //5case
-void	fivecase(char **argv);
-int		find_min(int a[5]);
-int		find_max(int a[5]);
+void	fivecase(int *a, int *b, char **argv);
+int		find_min(char **argv);
+int		find_max(char **argv);
 
 //moves
-void	pb(int a[5], int b[5]);
-void	pa(int a[5], int b[5]);
 int		sort_max(int a[5], int b[5], int d);
 int		sort_min(int a[5], int b[5], int d);
 
 //ft_errors
 void	ft_errors(char **av);
-void	isnumber(char **av);
-void	intmaxmin(char **av);
 
-//moves_2
-void	sa_2(int *a);
-void	rra_2(int *a);
-void	ra_2(int *a);
+//swap
+void	sa(int *a, size_t l);
+void	sb(int *b, size_t l);
+void	ss(int *a, int *b, size_t la, size_t lb);
+
+//rotate
+void	ra(int *a, size_t l);
+void	rb(int *b, size_t l);
+void	rr(int *a, int *b, size_t la, size_t lb);
+
+//reverse_rotate
+void	rra(int *a, size_t l);
+void	rrb(int *b, size_t l);
+void	rrr(int *a, int *b, size_t la, size_t lb);
+
+//push
+void	pa(int *a, int *b, size_t la, size_t lb);
+void	pb(int *b, int *a, size_t la, size_t lb);
+
+//main
+void	insert_into_a(char **argv, int *a, size_t len);
 
 #endif

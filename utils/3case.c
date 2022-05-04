@@ -6,62 +6,30 @@
 /*   By: mvolpi <mvolpi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 08:55:58 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/03 10:43:17 by mvolpi           ###   ########.fr       */
+/*   Updated: 2022/05/04 11:26:28 by mvolpi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	sa(int *a)
-{
-	int	t;
-
-	t = a[0];
-	a[0] = a[1];
-	a[1] = t;
-	printf("sa\n");
-}
-
-void	rra(int *a)
-{
-	int	t;
-
-	t = a[0];
-	a[0] = a[2];
-	a[2] = a[1];
-	a[1] = t;
-	printf("rra\n");
-}
-
-void	ra(int *a)
-{
-	int	temp;
-
-	temp = a[0];
-	a[0] = a[1];
-	a[1] = a[2];
-	a[2] = temp;
-	printf("ra\n");
-}
-
 int	sort(int *a)
 {
 	if (a[0] > a[1] && a[1] < a[2] && a[2] < a[0])
-		ra(a);
+		ra(a, 3);
 	if (a[0] < a[1] && a[1] > a[2] && a[2] < a[0])
-		rra(a);
+		rra(a, 3);
 	if (a[0] > a[1] && a[1] > a[2] && a[2] < a[0])
 	{
-		sa(a);
-		rra(a);
+		sa(a, 3);
+		rra(a, 3);
 	}
 	if (a[0] < a[1] && a[1] > a[2] && a[2] > a[0])
 	{
-		sa(a);
-		ra(a);
+		sa(a, 3);
+		ra(a, 3);
 	}
 	if (a[0] > a[1] && a[1] < a[2] && a[2] > a[0])
-		sa(a);
+		sa(a, 3);
 	return (a[3]);
 }
 

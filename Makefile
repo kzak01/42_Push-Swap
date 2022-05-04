@@ -6,7 +6,7 @@
 #    By: mvolpi <mvolpi@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/13 09:13:08 by kzak              #+#    #+#              #
-#    Updated: 2022/05/03 11:28:59 by mvolpi           ###   ########.fr        #
+#    Updated: 2022/05/04 11:34:48 by mvolpi           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,10 @@ UTILS = 3case.c \
 			5case.c \
 			errors.c \
 			moves.c \
-			moves_2.c \
+			swap.c \
+			rotate.c \
+			reverse_rotate.c \
+			push.c \
 
 SRC_UTILS = $(addprefix utils/, $(UTILS))
 

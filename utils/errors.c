@@ -6,11 +6,34 @@
 /*   By: mvolpi <mvolpi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/30 11:09:49 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/03 12:15:37 by mvolpi           ###   ########.fr       */
+/*   Updated: 2022/05/04 12:25:22 by mvolpi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+
+static void	nocopy(char **av)
+{
+	int	i;
+	int	j;
+
+	i = 1;
+	j = 2;
+	while (av[i])
+	{
+		while (av[j])
+		{
+			if (ft_atoi(av[i]) == ft_atoi(av[j]))
+			{
+				ft_printf("Error: duplicate number\n");
+				exit (0);
+			}
+			j++;
+		}
+		i++;
+		j = i + 1;
+	}
+}
 
 static long	atoilong(const char *str)
 {
@@ -33,14 +56,12 @@ static long	atoilong(const char *str)
 	while (str[i] >= '0' && str[i] <= '9')
 	{
 		res = res * 10 + str[i] - '0';
-		// if (res * sign < -2147483648 || res * sign > 2147483648)
-		// 	return ((res * sign < -2147483648) - 1);
 		i++;
 	}
 	return ((res * sign));
 }
 
-void	isnumber(char **av)
+static void	isnumber(char **av)
 {
 	int	i;
 	int	j;
@@ -51,7 +72,11 @@ void	isnumber(char **av)
 	{
 		while (av[i][j])
 		{
+			if (av[i][j] == '"')
+				j++;
 			if (av[i][j] == '-')
+				j++;
+			if (av[i][j] == ' ')
 				j++;
 			if (ft_isdigit(av[i][j]) == FALSE)
 			{
@@ -65,7 +90,7 @@ void	isnumber(char **av)
 	}
 }
 
-void	intmaxmin(char **av)
+static void	intmaxmin(char **av)
 {
 	long	j;
 
@@ -83,10 +108,18 @@ void	intmaxmin(char **av)
 
 void	ft_errors(char **av)
 {
-	// if (av == 2)
-	// {
+	int	i;
 
-	// }
+	i = 0;
 	isnumber(av);
-	intmaxmin(av);
+	while (av[i])
+	{
+		if (i == 0)
+		{
+			intmaxmin(&av[i]);
+		}
+		intmaxmin(ft_split(av[i], ' '));
+		i++;
+	}
+	nocopy(av);
 }
