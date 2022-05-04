@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/30 11:09:49 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/04 13:41:26 by kzak             ###   ########.fr       */
+/*   Updated: 2022/05/04 13:46:59 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,13 +74,13 @@ static void	isnumber(char **av)
 		{
 			if (av[i][j] == '"')
 				j++;
-			if (av[i][j] == '-')
+			else if (av[i][j] == '-')
 				j++;
-			if (av[i][j] == ' ')
+			else if (av[i][j] == ' ')
 				j++;
-			if (ft_isdigit(av[i][j]) == FALSE)
+			else if (ft_isdigit(av[i][j]) == FALSE)
 			{
-				ft_printf("Error: only number\n");
+				printf("Error: only number\n");
 				exit (0);
 			}
 			j++;
