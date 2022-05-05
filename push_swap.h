@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 09:30:33 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/05 11:06:49 by kzak             ###   ########.fr       */
+/*   Updated: 2022/05/05 12:13:12 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,14 @@
 # include <errno.h>
 # include "libft/libft.h"
 # include "printf/ft_printf.h"
+
+typedef struct s_stack
+{
+	int		*a;
+	int		*b;
+	size_t	la;
+	size_t	lb;
+}	t_stack;
 
 typedef enum e_bool
 {
@@ -73,6 +81,5 @@ void	pb(int *b, int *a, size_t la, size_t lb);
 
 //main
 int	main(int argc, char **argv);
-// void	insert_into_a(char **argv, int *a, size_t len);
 
 #endif

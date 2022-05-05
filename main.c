@@ -6,29 +6,29 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 09:12:56 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/05 11:49:46 by kzak             ###   ########.fr       */
+/*   Updated: 2022/05/05 12:12:51 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// void	insert_into_a(char **argv, int *a, size_t len)
-// {
-// 	size_t		i;
-// 	size_t		j;
-// 	long int	n;
+static void	insert_into_a(char **argv, int *a, size_t len)
+{
+	size_t		i;
+	size_t		j;
+	long int	n;
 
-// 	i = 0;
-// 	j = 1;
-// 	n = 0;
-// 	while (i < len)
-// 	{
-// 		n = (long int)ft_atoi(argv[j]);
-// 		a[i] = n;
-// 		i++;
-// 		j++;
-// 	}
-// }
+	i = 0;
+	j = 1;
+	n = 0;
+	while (i < len)
+	{
+		n = (long int)ft_atoi(argv[j]);
+		a[i] = n;
+		i++;
+		j++;
+	}
+}
 
 // void	sort(int *a, int *b, size_t *la, size_t *lb)
 // {
@@ -71,29 +71,26 @@ static int	arrayleng(int ac, char **av)
 
 int	main(int argc, char **argv)
 {
-	int		*a;
-	int		*b;
-	size_t	la;
-	size_t	lb;
+	t_stack	stack;
 	
 	if (argc < 2)
 		exit(1);
 	ft_errors(argc, argv);
-	la = arrayleng(argc, argv);
-	printf("ciao %zu\n", la);
-	lb = 0;
-	a = (int *) malloc(la * sizeof(int));
-	b = (int *) malloc(lb * sizeof(int));
-	// insert_into_a(argv, a, la);
+	stack.la = arrayleng(argc, argv);
+	printf("ciao %zu\n", stack.la);
+	stack.lb = 0;
+	stack.a = (int *) malloc(stack.la * sizeof(int));
+	stack.b = (int *) malloc(stack.lb * sizeof(int));
+	insert_into_a(argv, stack.a, stack.la);
 	// sort(a, b, &la, &lb);
 	if (argc == 4)
 	{
 		threecase(argv);
 	}
 	// else if (argc == 6)
-	// 	fivecase(a, b, argv);
+	// 	fivecase(stack.a, stack.b, argv);
 	else
 		printf("AO calma\n");
-	free(a);
-	free(b);
+	free(stack.a);
+	free(stack.b);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   5case.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvolpi <mvolpi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 10:03:35 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/04 12:16:46 by mvolpi           ###   ########.fr       */
+/*   Updated: 2022/05/05 12:12:04 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ int	find_min(char **argv)
 	return (h[i]);
 }
 
-void	fivecase(int *a, int *b, char **argv)
+void	fivecase(size_t s, char **argv)
 {
 	int	c;
 	int	d;
