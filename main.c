@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 09:12:56 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/05 10:40:31 by kzak             ###   ########.fr       */
+/*   Updated: 2022/05/05 10:44:15 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,19 +38,21 @@ ciao
 
 int	main(int argc, char **argv)
 {
-	int		*a;
-	int		*b;
-	size_t	la;
-	size_t	lb;
+	// int		*a;
+	// int		*b;
+	// size_t	la;
+	// size_t	lb;
 
-	la = argc - 1;
-	lb = 0;
+	// la = argc - 1;
+	// lb = 0;
 	if (argc < 2)
 		exit(1);
 	ft_errors(argc, argv);
-	a = (int *) malloc(la * sizeof(int));
-	b = (int *) malloc(lb * sizeof(int));
-	insert_into_a(argv, a, la);
+	if (argc == 2)
+		check
+	// a = (int *) malloc(la * sizeof(int));
+	// b = (int *) malloc(lb * sizeof(int));
+	// insert_into_a(argv, a, la);
 	// sort(a, b, &la, &lb);
 	if (argc == 4)
 	{
@@ -60,6 +62,6 @@ int	main(int argc, char **argv)
 		fivecase(a, b, argv);
 	else
 		printf("AO calma\n");
-	free(a);
-	free(b);
+	// free(a);
+	// free(b);
 }
