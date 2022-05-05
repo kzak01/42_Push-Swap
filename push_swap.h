@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvolpi <mvolpi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 09:30:33 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/04 12:15:50 by mvolpi           ###   ########.fr       */
+/*   Updated: 2022/05/05 11:06:49 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,9 @@ void	threecase(char **argv);
 int		sort(int *a);
 
 //5case
-void	fivecase(int *a, int *b, char **argv);
-int		find_min(char **argv);
-int		find_max(char **argv);
+// void	fivecase(int *a, int *b, char **argv);
+// int		find_min(char **argv);
+// int		find_max(char **argv);
 
 //moves
 int		sort_max(int a[5], int b[5], int d);
@@ -72,6 +72,7 @@ void	pa(int *a, int *b, size_t la, size_t lb);
 void	pb(int *b, int *a, size_t la, size_t lb);
 
 //main
-void	insert_into_a(char **argv, int *a, size_t len);
+int	main(int argc, char **argv);
+// void	insert_into_a(char **argv, int *a, size_t len);
 
 #endif
