@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 09:12:56 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/05 10:37:47 by kzak             ###   ########.fr       */
+/*   Updated: 2022/05/05 10:40:31 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	insert_into_a(char **argv, int *a, size_t len)
 		j++;
 	}
 }
-
+ciao
 // void	sort(int *a, int *b, size_t *la, size_t *lb)
 // {
 // 	if (*la == 2)
