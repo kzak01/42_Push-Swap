@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 09:30:33 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/06 10:33:56 by kzak             ###   ########.fr       */
+/*   Updated: 2022/05/06 11:19:50 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,43 +43,41 @@ typedef enum e_int
 
 //main
 int		main(int argc, char **argv);
+void	insert_into_a(char **argv, t_stack stack);
 
 //3case
 void	threecase(t_stack stack);
 int		sort(t_stack stack);
 
 //5case
-// void	fivecase(int *a, int *b, char **argv);
-// int		find_min(char **argv);
-// int		find_max(char **argv);
+void	fivecase(t_stack stack, char **av);
+int		find_min(t_stack stack,char **av);
+int		find_max(t_stack stack, char **av);
 
 //moves
-int		sort_max(int a[5], int b[5], int d);
-int		sort_min(int a[5], int b[5], int d);
+int	sort_max(t_stack stack, int max);
+int	sort_min(t_stack stack, int min);
 
 //ft_errors
 void	ft_errors(int ac, char **av);
 
 //swap
 void	sa(t_stack stack);
-void	sb(int *b, size_t l);
-void	ss(int *a, int *b, size_t la, size_t lb);
+void	sb(t_stack stack);
+void	ss(t_stack stack);
 
 //rotate
 void	ra(t_stack stack);
-void	rb(int *b, size_t l);
-void	rr(int *a, int *b, size_t la, size_t lb);
+void	rb(t_stack stack);
+void	rr(t_stack stack);
 
 //reverse_rotate
 void	rra(t_stack stack);
-void	rrb(int *b, size_t l);
-void	rrr(int *a, int *b, size_t la, size_t lb);
+void	rrb(t_stack stack);
+void	rrr(t_stack stack);
 
 //push
-void	pa(int *a, int *b, size_t la, size_t lb);
-void	pb(int *b, int *a, size_t la, size_t lb);
-
-//main
-int	main(int argc, char **argv);
+void	pa(t_stack stack);
+void	pb(t_stack stack);
 
 #endif

@@ -6,58 +6,58 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 11:06:59 by mvolpi            #+#    #+#             */
-/*   Updated: 2022/05/05 10:36:14 by kzak             ###   ########.fr       */
+/*   Updated: 2022/05/06 11:22:27 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	pa(int *a, int *b, size_t la, size_t lb)
+void	pa(t_stack stack)
 {
 	size_t	i;
 
-	i = la + 1;
-	if (lb > 0)
+	i = stack.la + 1;
+	if (stack.lb > 0)
 	{
 		while (i > 0)
 		{
-			a[i] = a[i - 1];
+			stack.a[i] = stack.a[i - 1];
 			i--;
 		}
 	}
-	a[i] = b[0];
+	stack.a[i] = stack.b[0];
 	i = 0;
-	while (i < lb - 1)
+	while (i < stack.lb - 1)
 	{
-		b[i] = b[i + 1];
+		stack.b[i] = stack.b[i + 1];
 		i++;
 	}
-	lb = lb - 1;
-	la = la + 1;
+	stack.lb = stack.lb - 1;
+	stack.la = stack.la + 1;
 	ft_printf("pa\n");
 }
 
-void	pb(int *b, int *a, size_t la, size_t lb)
+void	pb(t_stack stack)
 {
 	size_t	i;
 
-	i = lb + 1;
-	if (la > 0)
+	i = stack.lb + 1;
+	if (stack.la > 0)
 	{
 		while (i > 0)
 		{
-			b[i] = b[i - 1];
+			stack.b[i] = stack.b[i - 1];
 			i--;
 		}
-		b[i] = a[0];
+		stack.b[i] = stack.a[0];
 	}
 	i = 0;
-	while (i < la - 1)
+	while (i < stack.la - 1)
 	{
-		a[i] = a[i + 1];
+		stack.a[i] = stack.a[i + 1];
 		i++;
 	}
-	la = la - 1;
-	lb = lb + 1;
+	stack.la = stack.la - 1;
+	stack.lb = stack.lb + 1;
 	ft_printf("pb\n");
 }

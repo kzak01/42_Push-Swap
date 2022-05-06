@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 10:55:24 by mvolpi            #+#    #+#             */
-/*   Updated: 2022/05/06 10:36:14 by kzak             ###   ########.fr       */
+/*   Updated: 2022/05/06 11:17:22 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,31 +31,31 @@ void	ra(t_stack stack)
 	ft_printf("ra\n");
 }
 
-void	rb(int *b, size_t l)
+void	rb(t_stack stack)
 {
 	size_t	i;
 	int		end;
 
 	i = 0;
-	if (l > 0)
+	if (stack.lb > 0)
 	{
-		end = b[0];
-		while (i < (l - 1))
+		end = stack.b[0];
+		while (i < (stack.lb - 1))
 		{
-			b[i] = b[i + 1];
+			stack.b[i] = stack.b[i + 1];
 			i++;
 		}
-		b[i] = end;
+		stack.b[i] = end;
 	}
 	ft_printf("rb\n");
 }
 
-// void	rr(int *a, int *b, size_t la, size_t lb)
-// {
-// 	if (la > 0 || lb > 0)
-// 	{
-// 		ra(a, la);
-// 		rb(b, lb);
-// 		ft_printf("rr\n");
-// 	}
-// }
+void	rr(t_stack stack)
+{
+	if (stack.la > 0 || stack.lb > 0)
+	{
+		ra(stack);
+		rb(stack);
+		ft_printf("rr\n");
+	}
+}

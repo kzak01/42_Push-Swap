@@ -6,7 +6,7 @@
 #    By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/13 09:13:08 by kzak              #+#    #+#              #
-#    Updated: 2022/05/06 10:35:37 by kzak             ###   ########.fr        #
+#    Updated: 2022/05/06 11:21:13 by kzak             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,8 +35,8 @@ UTILS = 3case.c \
 			rotate.c \
 			reverse_rotate.c \
 			push.c \
-			# 5case.c \
-			# moves.c \
+			5case.c \
+			moves.c \
 
 SRC_UTILS = $(addprefix utils/, $(UTILS))
 

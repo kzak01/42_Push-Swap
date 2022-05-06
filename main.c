@@ -6,13 +6,13 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 09:12:56 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/06 10:31:11 by kzak             ###   ########.fr       */
+/*   Updated: 2022/05/06 10:59:49 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	insert_into_a(char **argv, int *a, size_t len)
+void	insert_into_a(char **argv, t_stack stack)
 {
 	size_t		i;
 	size_t		j;
@@ -21,10 +21,10 @@ static void	insert_into_a(char **argv, int *a, size_t len)
 	i = 0;
 	j = 1;
 	n = 0;
-	while (i < len)
+	while (i < stack.la)
 	{
 		n = (long int)ft_atoi(argv[j]);
-		a[i] = n;
+		stack.a[i] = n;
 		i++;
 		j++;
 	}
@@ -81,14 +81,14 @@ int	main(int argc, char **argv)
 	stack.lb = 0;
 	stack.a = (int *) malloc(stack.la * sizeof(int));
 	stack.b = (int *) malloc(stack.lb * sizeof(int));
-	insert_into_a(argv, stack.a, stack.la);
+	insert_into_a(argv, stack);
 	// sort(a, b, &la, &lb);
 	if (stack.la == 3)
 	{
 		threecase(stack);
 	}
-	// else if (argc == 6)
-	// 	fivecase(stack.a, stack.b, argv);
+	else if (stack.la == 5)
+		fivecase(stack, argv);
 	else
 		printf("AO calma\n");
 	free(stack.a);
