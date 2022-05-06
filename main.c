@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 09:12:56 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/05 12:16:24 by kzak             ###   ########.fr       */
+/*   Updated: 2022/05/06 10:31:11 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,9 +83,9 @@ int	main(int argc, char **argv)
 	stack.b = (int *) malloc(stack.lb * sizeof(int));
 	insert_into_a(argv, stack.a, stack.la);
 	// sort(a, b, &la, &lb);
-	if (argc == 4)
+	if (stack.la == 3)
 	{
-		threecase(argv);
+		threecase(stack);
 	}
 	// else if (argc == 6)
 	// 	fivecase(stack.a, stack.b, argv);

@@ -3,30 +3,30 @@
 /*                                                        :::      ::::::::   */
 /*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvolpi <mvolpi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 10:55:24 by mvolpi            #+#    #+#             */
-/*   Updated: 2022/05/04 11:38:14 by mvolpi           ###   ########.fr       */
+/*   Updated: 2022/05/06 10:36:14 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ra(int *a, size_t l)
+void	ra(t_stack stack)
 {
 	size_t	i;
 	int		end;
 
 	i = 0;
-	if (l > 0)
+	if (stack.la > 0)
 	{
-		end = a[0];
-		while (i < (l - 1))
+		end = stack.a[0];
+		while (i < (stack.la - 1))
 		{
-			a[i] = a[i + 1];
+			stack.a[i] = stack.a[i + 1];
 			i++;
 		}
-		a[i] = end;
+		stack.a[i] = end;
 	}
 	ft_printf("ra\n");
 }
@@ -50,12 +50,12 @@ void	rb(int *b, size_t l)
 	ft_printf("rb\n");
 }
 
-void	rr(int *a, int *b, size_t la, size_t lb)
-{
-	if (la > 0 || lb > 0)
-	{
-		ra(a, la);
-		rb(b, lb);
-		ft_printf("rr\n");
-	}
-}
+// void	rr(int *a, int *b, size_t la, size_t lb)
+// {
+// 	if (la > 0 || lb > 0)
+// 	{
+// 		ra(a, la);
+// 		rb(b, lb);
+// 		ft_printf("rr\n");
+// 	}
+// }
