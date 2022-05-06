@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 09:30:33 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/06 11:19:50 by kzak             ###   ########.fr       */
+/*   Updated: 2022/05/06 12:46:07 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,9 +50,9 @@ void	threecase(t_stack stack);
 int		sort(t_stack stack);
 
 //5case
-void	fivecase(t_stack stack, char **av);
-int		find_min(t_stack stack,char **av);
-int		find_max(t_stack stack, char **av);
+void	fivecase(t_stack stack);
+int		find_min(t_stack stack);
+int		find_max(t_stack stack);
 
 //moves
 int	sort_max(t_stack stack, int max);

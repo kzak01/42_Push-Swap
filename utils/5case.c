@@ -6,64 +6,53 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 10:03:35 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/06 12:02:33 by kzak             ###   ########.fr       */
+/*   Updated: 2022/05/06 12:45:42 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	find_max(t_stack stack, char **av)
+int	find_max(t_stack stack)
 {
-	int	i;
-	int	g;
+	size_t	i;
 	int	t;
 
-	insert_into_a(av, stack);
-	g = 1;
-	i = 0;
-	while (g < 5)
+	i = 1;
+	t = stack.a[0];
+	while (i < stack.la)
 	{
-		if (stack.a[i] < stack.a[g])
-		{
+		if (stack.a[i] > t)
 			t = stack.a[i];
-			stack.a[i] = stack.a[g];
-			stack.a[g] = t;
-		}
-		g++;
+		i++;
 	}
-	return (stack.a[i]);
+	return (t);
 }
 
-int	find_min(t_stack stack,char **av)
+int	find_min(t_stack stack)
 {
-	int	i;
-	int	g;
+	size_t	i;
 	int	t;
 
-	insert_into_a(av, stack);
-	g = 1;
-	i = 0;
-	while (g < 5)
+	i = 1;
+	t = stack.a[0];
+	while (i < stack.la)
 	{
-		if (stack.a[i] > stack.a[g])
-		{
+		if (stack.a[i] < t)
 			t = stack.a[i];
-			stack.a[i] = stack.a[g];
-			stack.a[g] = t;
-		}
-		g++;
+		i++;
 	}
-	return (stack.a[i]);
+	return (t);
 }
 
-void	fivecase(t_stack stack, char **av)
+void	fivecase(t_stack stack)
 {
 	int	max;
 	int	min;
 
-	max = find_max(stack, av);
-	min = find_min(stack, av);
+	max = find_max(stack);
+	min = find_min(stack);
 	printf("max = %d\nmin = %d\n", max, min);
+	printf("%d %d %d %d %d\n", stack.a[0], stack.a[1], stack.a[2], stack.a[3], stack.a[4]);
 	sort_min(stack, min);
 	sort_max(stack, max);
 	sort(stack);

@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 09:12:56 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/06 10:59:49 by kzak             ###   ########.fr       */
+/*   Updated: 2022/05/06 12:46:12 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ int	main(int argc, char **argv)
 		threecase(stack);
 	}
 	else if (stack.la == 5)
-		fivecase(stack, argv);
+		fivecase(stack);
 	else
 		printf("AO calma\n");
 	free(stack.a);
