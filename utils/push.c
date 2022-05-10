@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvolpi <mvolpi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 11:06:59 by mvolpi            #+#    #+#             */
-/*   Updated: 2022/05/10 10:42:22 by mvolpi           ###   ########.fr       */
+/*   Updated: 2022/05/10 14:13:50 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ void	pa(t_stack *stack)
 		stack->lb = stack->lb - 1;
 		stack->la = stack->la + 1;
 		ft_printf("pa\n");
+		printarray(stack);
 	}
 }
 
@@ -59,5 +60,6 @@ void	pb(t_stack *stack)
 		stack->la = stack->la - 1;
 		stack->lb = stack->lb + 1;
 		ft_printf("pb\n");
+		printarray(stack);
 	}
 }

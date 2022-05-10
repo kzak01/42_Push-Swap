@@ -6,7 +6,7 @@
 #    By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/13 09:13:08 by kzak              #+#    #+#              #
-#    Updated: 2022/05/10 10:56:45 by kzak             ###   ########.fr        #
+#    Updated: 2022/05/10 14:12:58 by kzak             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,8 @@ NAME = push_swap
 
 SRC = $(SRC_MAIN) $(SRC_UTILS)
 
-SRC_MAIN = main.c
+SRC_MAIN = main.c \
+			printarray.c \
 
 CC = gcc
 FLAGS = -Wall -Wextra -Werror

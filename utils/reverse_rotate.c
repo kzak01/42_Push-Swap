@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   reverse_rotate.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvolpi <mvolpi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 11:04:31 by mvolpi            #+#    #+#             */
-/*   Updated: 2022/05/10 10:42:42 by mvolpi           ###   ########.fr       */
+/*   Updated: 2022/05/10 14:14:07 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ void	rra(t_stack *stack)
 		}
 		stack->a[i] = first;
 		ft_printf("rra\n");
+		printarray(stack);
 	}
 }
 
@@ -47,6 +48,7 @@ void	rrb(t_stack *stack)
 		}
 		stack->b[i] = first;
 		ft_printf("rrb\n");
+		printarray(stack);
 	}
 }
 
@@ -57,5 +59,6 @@ void	rrr(t_stack *stack)
 		rra(stack);
 		rrb(stack);
 		ft_printf("rrr\n");
+		printarray(stack);
 	}
 }

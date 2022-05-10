@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 09:30:33 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/10 11:18:21 by kzak             ###   ########.fr       */
+/*   Updated: 2022/05/10 14:13:22 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,9 @@ typedef enum e_int
 
 //atoilong
 long	atoilong(const char *str);
+
+//printarray
+void	printarray(t_stack *st);
 
 //main
 int		main(int argc, char **argv);
