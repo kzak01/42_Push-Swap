@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/30 11:09:49 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/10 11:57:24 by kzak             ###   ########.fr       */
+/*   Updated: 2022/05/10 12:12:36 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static void	nocopy(char **av)
 		{
 			if (ft_atoi(av[i]) == ft_atoi(av[j]))
 			{
-				ft_printf("Error: duplicate number\n");
+				ft_printf("\033[0;31m" "Error: duplicate number\n" "\033[0m");
 				exit (0);
 			}
 			j++;
@@ -48,7 +48,7 @@ static void	nocopy2(char **av)
 		{
 			if (ft_atoi(av[i]) == ft_atoi(av[j]))
 			{
-				ft_printf("Error: duplicate number\n");
+				ft_printf("\033[0;31m" "Error: duplicate number\n" "\033[0m");
 				exit (0);
 			}
 			j++;
@@ -77,12 +77,7 @@ static void	isnumber(char **av)
 				j++;
 			else if (ft_isdigit(av[i][j]) == FALSE)
 			{
-				printf("Error: only number\n");
-				exit (0);
-			}
-			else if (ft_isalpha(av[i][j]) == TRUE)
-			{
-				printf("Error: only number\n");
+				ft_printf("\033[0;31m" "Error: put only number\n" "\033[0m");
 				exit (0);
 			}
 			j++;
@@ -101,7 +96,7 @@ static void	intmaxmin(char **av)
 	{
 		if (atoilong(av[j]) < INT_MIN || atoilong(av[j]) > INT_MAX)
 		{
-			ft_printf("Error: Number exceed int value\n");
+			ft_printf("\033[0;31m" "Error: Number exceed int value\n" "\033[0m");
 			exit (0);
 		}
 	j++;
@@ -113,25 +108,20 @@ void	ft_errors(int ac, char **av)
 	int	i;
 
 	i = 0;
-	isnumber(av);
-	while (av[i])
-	{
-		if (i == 0)
-		{
-			intmaxmin(&av[i]);
-		}
-		intmaxmin(ft_split(av[i], ' '));
-		i++;
-	}
-	i = 0;
 	if (ac == 2)
 	{
 		while (av[i])
 		{
+			isnumber(ft_split(av[i], ' '));
+			intmaxmin(ft_split(av[i], ' '));
 			nocopy(ft_split(av[i], ' '));
 			i++;
 		}
 	}
 	if (ac > 2)
+	{
+		isnumber(av);
+		intmaxmin(av);
 		nocopy2(av);
+	}
 }
