@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mvolpi <mvolpi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 09:30:33 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/06 12:46:07 by kzak             ###   ########.fr       */
+/*   Updated: 2022/05/10 10:37:30 by mvolpi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,41 +43,41 @@ typedef enum e_int
 
 //main
 int		main(int argc, char **argv);
-void	insert_into_a(char **argv, t_stack stack);
+void	insert_into_a(char **argv, t_stack *stack);
 
 //3case
-void	threecase(t_stack stack);
-int		sort(t_stack stack);
+void	threecase(t_stack *stack);
+int		sort(t_stack *stack);
 
 //5case
-void	fivecase(t_stack stack);
-int		find_min(t_stack stack);
-int		find_max(t_stack stack);
+void	fivecase(t_stack *stack);
+int		find_min(t_stack *stack);
+int		find_max(t_stack *stack);
 
 //moves
-int	sort_max(t_stack stack, int max);
-int	sort_min(t_stack stack, int min);
+void	sort_max(t_stack *stack, int max);
+void	sort_min(t_stack *stack, int min);
 
 //ft_errors
 void	ft_errors(int ac, char **av);
 
 //swap
-void	sa(t_stack stack);
-void	sb(t_stack stack);
-void	ss(t_stack stack);
+void	sa(t_stack *stack);
+void	sb(t_stack *stack);
+void	ss(t_stack *stack);
 
 //rotate
-void	ra(t_stack stack);
-void	rb(t_stack stack);
-void	rr(t_stack stack);
+void	ra(t_stack *stack);
+void	rb(t_stack *stack);
+void	rr(t_stack *stack);
 
 //reverse_rotate
-void	rra(t_stack stack);
-void	rrb(t_stack stack);
-void	rrr(t_stack stack);
+void	rra(t_stack *stack);
+void	rrb(t_stack *stack);
+void	rrr(t_stack *stack);
 
 //push
-void	pa(t_stack stack);
-void	pb(t_stack stack);
+void	pa(t_stack *stack);
+void	pb(t_stack *stack);
 
 #endif

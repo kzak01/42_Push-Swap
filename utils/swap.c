@@ -3,44 +3,44 @@
 /*                                                        :::      ::::::::   */
 /*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mvolpi <mvolpi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 10:52:13 by mvolpi            #+#    #+#             */
-/*   Updated: 2022/05/06 11:18:57 by kzak             ###   ########.fr       */
+/*   Updated: 2022/05/10 10:43:13 by mvolpi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	sa(t_stack stack)
+void	sa(t_stack *stack)
 {
 	int	t;
 
-	if (stack.la > 1)
+	if (stack->la > 1)
 	{
-		t = stack.a[0];
-		stack.a[0] = stack.a[1];
-		stack.a[1] = t;
+		t = stack->a[0];
+		stack->a[0] = stack->a[1];
+		stack->a[1] = t;
 	}	
 	ft_printf("sa\n");
 }
 
-void	sb(t_stack stack)
+void	sb(t_stack *stack)
 {
 	int	t;
 
-	if (stack.lb > 1)
+	if (stack->lb > 1)
 	{
-		t = stack.b[0];
-		stack.b[0] = stack.b[1];
-		stack.b[1] = t;
+		t = stack->b[0];
+		stack->b[0] = stack->b[1];
+		stack->b[1] = t;
 	}
 	ft_printf("sb\n");
 }
 
-void	ss(t_stack stack)
+void	ss(t_stack *stack)
 {
-	if (stack.la > 0 || stack.lb > 0)
+	if (stack->la > 0 || stack->lb > 0)
 	{
 		sa(stack);
 		sb(stack);

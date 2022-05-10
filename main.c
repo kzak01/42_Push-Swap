@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mvolpi <mvolpi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 09:12:56 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/06 12:46:12 by kzak             ###   ########.fr       */
+/*   Updated: 2022/05/10 10:44:41 by mvolpi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	insert_into_a(char **argv, t_stack stack)
+void	insert_into_a(char **argv, t_stack *stack)
 {
 	size_t		i;
 	size_t		j;
@@ -21,27 +21,21 @@ void	insert_into_a(char **argv, t_stack stack)
 	i = 0;
 	j = 1;
 	n = 0;
-	while (i < stack.la)
+	while (i < stack->la)
 	{
 		n = (long int)ft_atoi(argv[j]);
-		stack.a[i] = n;
+		stack->a[i] = n;
 		i++;
 		j++;
 	}
 }
-
-// void	sort(int *a, int *b, size_t *la, size_t *lb)
-// {
-// 	if (*la == 2)
-// 		threecase()
-// }
 
 static int	arrayleng(int ac, char **av)
 {
 	int		i;
 	int		j;
 	char	**str;
-	
+
 	i = 1;
 	j = 0;
 	if (ac > 2)
@@ -72,7 +66,7 @@ static int	arrayleng(int ac, char **av)
 int	main(int argc, char **argv)
 {
 	t_stack	stack;
-	
+
 	if (argc < 2)
 		exit(1);
 	ft_errors(argc, argv);
@@ -81,14 +75,11 @@ int	main(int argc, char **argv)
 	stack.lb = 0;
 	stack.a = (int *) malloc(stack.la * sizeof(int));
 	stack.b = (int *) malloc(stack.lb * sizeof(int));
-	insert_into_a(argv, stack);
-	// sort(a, b, &la, &lb);
+	insert_into_a(argv, &stack);
 	if (stack.la == 3)
-	{
-		threecase(stack);
-	}
+		threecase(&stack);
 	else if (stack.la == 5)
-		fivecase(stack);
+		fivecase(&stack);
 	else
 		printf("AO calma\n");
 	free(stack.a);
