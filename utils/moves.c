@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   moves.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvolpi <mvolpi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 10:23:49 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/10 10:41:32 by mvolpi           ###   ########.fr       */
+/*   Updated: 2022/05/10 11:49:56 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ void	sort_max(t_stack *stack, int max)
 	}
 	else if (max == stack->a[2])
 	{
-		rra(stack);
 		rra(stack);
 		rra(stack);
 		pb (stack);

@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/30 11:09:49 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/05 11:31:16 by kzak             ###   ########.fr       */
+/*   Updated: 2022/05/10 11:57:24 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,30 +35,27 @@ static void	nocopy(char **av)
 	}
 }
 
-static long	atoilong(const char *str)
+static void	nocopy2(char **av)
 {
-	long	res;
-	int		sign;
-	size_t	i;
+	int	i;
+	int	j;
 
-	res = 0;
-	sign = 1;
-	i = 0;
-	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n'
-		|| str[i] == '\r' || str[i] == '\v' || str[i] == '\f')
-		i++;
-	if (str[i] == '-' || str[i] == '+')
+	i = 1;
+	j = 2;
+	while (av[i])
 	{
-		if (str[i] == '-')
-			sign = -1;
+		while (av[j])
+		{
+			if (ft_atoi(av[i]) == ft_atoi(av[j]))
+			{
+				ft_printf("Error: duplicate number\n");
+				exit (0);
+			}
+			j++;
+		}
 		i++;
+		j = i + 1;
 	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		res = res * 10 + str[i] - '0';
-		i++;
-	}
-	return ((res * sign));
 }
 
 static void	isnumber(char **av)
@@ -79,6 +76,11 @@ static void	isnumber(char **av)
 			else if (av[i][j] == ' ')
 				j++;
 			else if (ft_isdigit(av[i][j]) == FALSE)
+			{
+				printf("Error: only number\n");
+				exit (0);
+			}
+			else if (ft_isalpha(av[i][j]) == TRUE)
 			{
 				printf("Error: only number\n");
 				exit (0);
@@ -131,5 +133,5 @@ void	ft_errors(int ac, char **av)
 		}
 	}
 	if (ac > 2)
-		nocopy(av);
+		nocopy2(av);
 }

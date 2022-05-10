@@ -3,31 +3,63 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvolpi <mvolpi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 09:12:56 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/10 10:44:41 by mvolpi           ###   ########.fr       */
+/*   Updated: 2022/05/10 11:48:55 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	insert_into_a(char **argv, t_stack *stack)
+static	void	insert2(char **av, int n, t_stack *stack)
+{
+	size_t	i;
+
+	i = 0;
+	while (i < stack->la)
+	{
+		n = ft_atoi(av[i]);
+		stack->a[i] = n;
+		i++;
+	}
+}
+
+static void	insert_into_a(int ac, char **argv, t_stack *stack)
 {
 	size_t		i;
 	size_t		j;
-	long int	n;
+	int			n;
 
 	i = 0;
 	j = 1;
 	n = 0;
-	while (i < stack->la)
+	if (ac > 2)
 	{
-		n = (long int)ft_atoi(argv[j]);
-		stack->a[i] = n;
-		i++;
-		j++;
+		while (i < stack->la)
+		{
+			n = ft_atoi(argv[j]);
+			stack->a[i] = n;
+			i++;
+			j++;
+		}
 	}
+	if (ac == 2)
+	{
+		insert2(ft_split(argv[1], ' '), n, stack);
+	}
+}
+
+static int	count1(char **av, int i, int j)
+{
+	i = 1;
+	j = 0;
+	while (av[i])
+	{
+		j++;
+		i++;
+	}
+	return (j);
 }
 
 static int	arrayleng(int ac, char **av)
@@ -39,17 +71,9 @@ static int	arrayleng(int ac, char **av)
 	i = 1;
 	j = 0;
 	if (ac > 2)
-	{
-		while (av[i])
-		{
-			j++;
-			i++;
-		}
-		return (j);
-	}
+		j = count1(av, i, j);
 	if (ac == 2)
 	{
-		i = 1;
 		while (i < ac)
 		{
 			str = ft_split(av[i], ' ');
@@ -60,7 +84,7 @@ static int	arrayleng(int ac, char **av)
 		}
 		return (j);
 	}
-	return (0);
+	return (j);
 }
 
 int	main(int argc, char **argv)
@@ -75,7 +99,7 @@ int	main(int argc, char **argv)
 	stack.lb = 0;
 	stack.a = (int *) malloc(stack.la * sizeof(int));
 	stack.b = (int *) malloc(stack.lb * sizeof(int));
-	insert_into_a(argv, &stack);
+	insert_into_a(argc, argv, &stack);
 	if (stack.la == 3)
 		threecase(&stack);
 	else if (stack.la == 5)

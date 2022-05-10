@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvolpi <mvolpi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 09:30:33 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/10 10:37:30 by mvolpi           ###   ########.fr       */
+/*   Updated: 2022/05/10 11:18:21 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,11 @@ typedef enum e_int
 	INT_MIN = -2147483648
 }	t_int;
 
+//atoilong
+long	atoilong(const char *str);
+
 //main
 int		main(int argc, char **argv);
-void	insert_into_a(char **argv, t_stack *stack);
 
 //3case
 void	threecase(t_stack *stack);
