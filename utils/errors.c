@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/30 11:09:49 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/05 11:31:16 by kzak             ###   ########.fr       */
+/*   Updated: 2022/05/10 12:12:36 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static void	nocopy(char **av)
 		{
 			if (ft_atoi(av[i]) == ft_atoi(av[j]))
 			{
-				ft_printf("Error: duplicate number\n");
+				ft_printf("\033[0;31m" "Error: duplicate number\n" "\033[0m");
 				exit (0);
 			}
 			j++;
@@ -35,30 +35,27 @@ static void	nocopy(char **av)
 	}
 }
 
-static long	atoilong(const char *str)
+static void	nocopy2(char **av)
 {
-	long	res;
-	int		sign;
-	size_t	i;
+	int	i;
+	int	j;
 
-	res = 0;
-	sign = 1;
-	i = 0;
-	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n'
-		|| str[i] == '\r' || str[i] == '\v' || str[i] == '\f')
-		i++;
-	if (str[i] == '-' || str[i] == '+')
+	i = 1;
+	j = 2;
+	while (av[i])
 	{
-		if (str[i] == '-')
-			sign = -1;
+		while (av[j])
+		{
+			if (ft_atoi(av[i]) == ft_atoi(av[j]))
+			{
+				ft_printf("\033[0;31m" "Error: duplicate number\n" "\033[0m");
+				exit (0);
+			}
+			j++;
+		}
 		i++;
+		j = i + 1;
 	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		res = res * 10 + str[i] - '0';
-		i++;
-	}
-	return ((res * sign));
 }
 
 static void	isnumber(char **av)
@@ -80,7 +77,7 @@ static void	isnumber(char **av)
 				j++;
 			else if (ft_isdigit(av[i][j]) == FALSE)
 			{
-				printf("Error: only number\n");
+				ft_printf("\033[0;31m" "Error: put only number\n" "\033[0m");
 				exit (0);
 			}
 			j++;
@@ -99,7 +96,7 @@ static void	intmaxmin(char **av)
 	{
 		if (atoilong(av[j]) < INT_MIN || atoilong(av[j]) > INT_MAX)
 		{
-			ft_printf("Error: Number exceed int value\n");
+			ft_printf("\033[0;31m" "Error: Number exceed int value\n" "\033[0m");
 			exit (0);
 		}
 	j++;
@@ -111,25 +108,20 @@ void	ft_errors(int ac, char **av)
 	int	i;
 
 	i = 0;
-	isnumber(av);
-	while (av[i])
-	{
-		if (i == 0)
-		{
-			intmaxmin(&av[i]);
-		}
-		intmaxmin(ft_split(av[i], ' '));
-		i++;
-	}
-	i = 0;
 	if (ac == 2)
 	{
 		while (av[i])
 		{
+			isnumber(ft_split(av[i], ' '));
+			intmaxmin(ft_split(av[i], ' '));
 			nocopy(ft_split(av[i], ' '));
 			i++;
 		}
 	}
 	if (ac > 2)
-		nocopy(av);
+	{
+		isnumber(av);
+		intmaxmin(av);
+		nocopy2(av);
+	}
 }

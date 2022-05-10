@@ -3,119 +3,62 @@
 /*                                                        :::      ::::::::   */
 /*   moves.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvolpi <mvolpi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 10:23:49 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/04 12:18:48 by mvolpi           ###   ########.fr       */
+/*   Updated: 2022/05/10 11:49:56 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	sort_max(int *a, int *b, int d)
+void	sort_max(t_stack *stack, int max)
 {
-	int	i;
-	int	j;
-
-	i = 0;
-	j = 1;
-	if (d == a[0])
+	if (max == stack->a[0])
+		pb (stack);
+	else if (max == stack->a[1])
 	{
-		pb (a, b, 5, 5);
-		printf("array b:%d %d\n", b[0], b[1]);
-		printf("arrey a: %d %d %d %d %d\n", a[0], a[1], a[2], a[3], a[4]);
+		sa(stack);
+		pb (stack);
 	}
-	else if (d == a[1])
+	else if (max == stack->a[2])
 	{
-		sa(a, 5);
-		pb (a, b, 5, 5);
-		printf("array b:%d %d\n", b[0], b[1]);
-		printf("arrey a: %d %d %d %d %d\n", a[0], a[1], a[2], a[3], a[4]);
+		rra(stack);
+		rra(stack);
+		pb (stack);
 	}
-	else if (d == a[2])
+	else if (max == stack->a[3])
 	{
-		rra(a, 5);
-		printf("arrey a: %d %d %d %d %d\n", a[0], a[1], a[2], a[3], a[4]);
-		rra(a, 5);
-		printf("arrey a: %d %d %d %d %d\n", a[0], a[1], a[2], a[3], a[4]);
-		rra(a, 5);
-		printf("arrey a: %d %d %d %d %d\n", a[0], a[1], a[2], a[3], a[4]);
-		pb (a, b, 5, 5);
-		printf("array b:%d %d\n", b[0], b[1]);
-		printf("arrey a: %d %d %d %d %d\n", a[0], a[1], a[2], a[3], a[4]);
+		rra(stack);
+		pb (stack);
 	}
-	else if (d == a[3])
-	{
-		rra(a, 5);
-		printf("arrey a: %d %d %d %d %d\n", a[0], a[1], a[2], a[3], a[4]);
-		rra(a, 5);
-		printf("arrey a: %d %d %d %d %d\n", a[0], a[1], a[2], a[3], a[4]);
-		pb (a, b, 5, 5);
-		printf("array b:%d %d\n", b[0], b[1]);
-		printf("arrey a: %d %d %d %d %d\n", a[0], a[1], a[2], a[3], a[4]);
-	}
-	else if (d == a[4])
-	{
-		rra(a, 5);
-		printf("arrey a: %d %d %d %d %d\n", a[0], a[1], a[2], a[3], a[4]);
-		pb (a, b, 5, 5);
-		printf("array b:%d %d\n", b[0], b[1]);
-		printf("arrey a: %d %d %d %d %d\n", a[0], a[1], a[2], a[3], a[4]);
-	}
-	return (a[5]);
-	return (b[5]);
 }
 
-int	sort_min(int *a, int *b, int d)
+void	sort_min(t_stack *stack, int min)
 {
-	int	i;
-	int	j;
-
-	i = 0;
-	j = 1;
-	if (d == a[0])
+	if (min == stack->a[0])
+		pb (stack);
+	else if (min == stack->a[1])
 	{
-		pb (a, b, 5, 5);
-		printf("array b:%d %d\n", b[0], b[1]);
-		printf("arrey a: %d %d %d %d %d\n", a[0], a[1], a[2], a[3], a[4]);
+		sa(stack);
+		pb (stack);
 	}
-	else if (d == a[1])
+	else if (min == stack->a[2])
 	{
-		sa(a, 5);
-		pb (a, b, 5, 5);
-		printf("array b:%d %d\n", b[0], b[1]);
-		printf("arrey a: %d %d %d %d %d\n", a[0], a[1], a[2], a[3], a[4]);
+		rra(stack);
+		rra(stack);
+		rra(stack);
+		pb (stack);
 	}
-	else if (d == a[2])
+	else if (min == stack->a[3])
 	{
-		rra(a, 5);
-		printf("arrey a: %d %d %d %d %d\n", a[0], a[1], a[2], a[3], a[4]);
-		rra(a, 5);
-		printf("arrey a: %d %d %d %d %d\n", a[0], a[1], a[2], a[3], a[4]);
-		rra(a, 5);
-		printf("arrey a: %d %d %d %d %d\n", a[0], a[1], a[2], a[3], a[4]);
-		pb (a, b, 5, 5);
-		printf("array b:%d %d\n", b[0], b[1]);
-		printf("arrey a: %d %d %d %d %d\n", a[0], a[1], a[2], a[3], a[4]);
+		rra(stack);
+		rra(stack);
+		pb (stack);
 	}
-	else if (d == a[3])
+	else if (min == stack->a[4])
 	{
-		rra(a, 5);
-		printf("arrey a: %d %d %d %d %d\n", a[0], a[1], a[2], a[3], a[4]);
-		rra(a, 5);
-		printf("arrey a: %d %d %d %d %d\n", a[0], a[1], a[2], a[3], a[4]);
-		pb (a, b, 5, 5);
-		printf("array b:%d %d\n", b[0], b[1]);
-		printf("arrey a: %d %d %d %d %d\n", a[0], a[1], a[2], a[3], a[4]);
+		rra(stack);
+		pb (stack);
 	}
-	else if (d == a[4])
-	{
-		rra(a, 5);
-		printf("arrey a: %d %d %d %d %d\n", a[0], a[1], a[2], a[3], a[4]);
-		pb (a, b, 5, 5);
-		printf("array b:%d %d\n", b[0], b[1]);
-		printf("arrey a: %d %d %d %d %d\n", a[0], a[1], a[2], a[3], a[4]);
-	}
-	return (a[5]);
-	return (b[5]);
 }

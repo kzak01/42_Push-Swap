@@ -6,44 +6,44 @@
 /*   By: mvolpi <mvolpi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 10:52:13 by mvolpi            #+#    #+#             */
-/*   Updated: 2022/05/04 11:23:19 by mvolpi           ###   ########.fr       */
+/*   Updated: 2022/05/10 10:43:13 by mvolpi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	sa(int *a, size_t l)
+void	sa(t_stack *stack)
 {
 	int	t;
 
-	if (l > 1)
+	if (stack->la > 1)
 	{
-		t = a[0];
-		a[0] = a[1];
-		a[1] = t;
+		t = stack->a[0];
+		stack->a[0] = stack->a[1];
+		stack->a[1] = t;
 	}	
 	ft_printf("sa\n");
 }
 
-void	sb(int *b, size_t l)
+void	sb(t_stack *stack)
 {
 	int	t;
 
-	if (l > 1)
+	if (stack->lb > 1)
 	{
-		t = b[0];
-		b[0] = b[1];
-		b[1] = t;
+		t = stack->b[0];
+		stack->b[0] = stack->b[1];
+		stack->b[1] = t;
 	}
 	ft_printf("sb\n");
 }
 
-void	ss(int *a, int *b, size_t la, size_t lb)
+void	ss(t_stack *stack)
 {
-	if (la > 0 || lb > 0)
+	if (stack->la > 0 || stack->lb > 0)
 	{
-		sa(a, la);
-		sb(b, lb);
+		sa(stack);
+		sb(stack);
 		ft_printf("ss\n");
 	}
 }

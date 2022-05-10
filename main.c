@@ -6,56 +6,74 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 09:12:56 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/05 11:49:46 by kzak             ###   ########.fr       */
+/*   Updated: 2022/05/10 11:48:55 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// void	insert_into_a(char **argv, int *a, size_t len)
-// {
-// 	size_t		i;
-// 	size_t		j;
-// 	long int	n;
+static	void	insert2(char **av, int n, t_stack *stack)
+{
+	size_t	i;
 
-// 	i = 0;
-// 	j = 1;
-// 	n = 0;
-// 	while (i < len)
-// 	{
-// 		n = (long int)ft_atoi(argv[j]);
-// 		a[i] = n;
-// 		i++;
-// 		j++;
-// 	}
-// }
+	i = 0;
+	while (i < stack->la)
+	{
+		n = ft_atoi(av[i]);
+		stack->a[i] = n;
+		i++;
+	}
+}
 
-// void	sort(int *a, int *b, size_t *la, size_t *lb)
-// {
-// 	if (*la == 2)
-// 		threecase()
-// }
+static void	insert_into_a(int ac, char **argv, t_stack *stack)
+{
+	size_t		i;
+	size_t		j;
+	int			n;
+
+	i = 0;
+	j = 1;
+	n = 0;
+	if (ac > 2)
+	{
+		while (i < stack->la)
+		{
+			n = ft_atoi(argv[j]);
+			stack->a[i] = n;
+			i++;
+			j++;
+		}
+	}
+	if (ac == 2)
+	{
+		insert2(ft_split(argv[1], ' '), n, stack);
+	}
+}
+
+static int	count1(char **av, int i, int j)
+{
+	i = 1;
+	j = 0;
+	while (av[i])
+	{
+		j++;
+		i++;
+	}
+	return (j);
+}
 
 static int	arrayleng(int ac, char **av)
 {
 	int		i;
 	int		j;
 	char	**str;
-	
+
 	i = 1;
 	j = 0;
 	if (ac > 2)
-	{
-		while (av[i])
-		{
-			j++;
-			i++;
-		}
-		return (j);
-	}
+		j = count1(av, i, j);
 	if (ac == 2)
 	{
-		i = 1;
 		while (i < ac)
 		{
 			str = ft_split(av[i], ' ');
@@ -66,34 +84,28 @@ static int	arrayleng(int ac, char **av)
 		}
 		return (j);
 	}
-	return (0);
+	return (j);
 }
 
 int	main(int argc, char **argv)
 {
-	int		*a;
-	int		*b;
-	size_t	la;
-	size_t	lb;
-	
+	t_stack	stack;
+
 	if (argc < 2)
 		exit(1);
 	ft_errors(argc, argv);
-	la = arrayleng(argc, argv);
-	printf("ciao %zu\n", la);
-	lb = 0;
-	a = (int *) malloc(la * sizeof(int));
-	b = (int *) malloc(lb * sizeof(int));
-	// insert_into_a(argv, a, la);
-	// sort(a, b, &la, &lb);
-	if (argc == 4)
-	{
-		threecase(argv);
-	}
-	// else if (argc == 6)
-	// 	fivecase(a, b, argv);
+	stack.la = arrayleng(argc, argv);
+	printf("ciao %zu\n", stack.la);
+	stack.lb = 0;
+	stack.a = (int *) malloc(stack.la * sizeof(int));
+	stack.b = (int *) malloc(stack.lb * sizeof(int));
+	insert_into_a(argc, argv, &stack);
+	if (stack.la == 3)
+		threecase(&stack);
+	else if (stack.la == 5)
+		fivecase(&stack);
 	else
 		printf("AO calma\n");
-	free(a);
-	free(b);
+	free(stack.a);
+	free(stack.b);
 }

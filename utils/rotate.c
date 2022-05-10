@@ -6,56 +6,56 @@
 /*   By: mvolpi <mvolpi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 10:55:24 by mvolpi            #+#    #+#             */
-/*   Updated: 2022/05/04 11:38:14 by mvolpi           ###   ########.fr       */
+/*   Updated: 2022/05/10 10:42:57 by mvolpi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ra(int *a, size_t l)
+void	ra(t_stack *stack)
 {
 	size_t	i;
 	int		end;
 
 	i = 0;
-	if (l > 0)
+	if (stack->la > 0)
 	{
-		end = a[0];
-		while (i < (l - 1))
+		end = stack->a[0];
+		while (i < (stack->la - 1))
 		{
-			a[i] = a[i + 1];
+			stack->a[i] = stack->a[i + 1];
 			i++;
 		}
-		a[i] = end;
+		stack->a[i] = end;
 	}
 	ft_printf("ra\n");
 }
 
-void	rb(int *b, size_t l)
+void	rb(t_stack *stack)
 {
 	size_t	i;
 	int		end;
 
 	i = 0;
-	if (l > 0)
+	if (stack->lb > 0)
 	{
-		end = b[0];
-		while (i < (l - 1))
+		end = stack->b[0];
+		while (i < (stack->lb - 1))
 		{
-			b[i] = b[i + 1];
+			stack->b[i] = stack->b[i + 1];
 			i++;
 		}
-		b[i] = end;
+		stack->b[i] = end;
 	}
 	ft_printf("rb\n");
 }
 
-void	rr(int *a, int *b, size_t la, size_t lb)
+void	rr(t_stack *stack)
 {
-	if (la > 0 || lb > 0)
+	if (stack->la > 0 || stack->lb > 0)
 	{
-		ra(a, la);
-		rb(b, lb);
+		ra(stack);
+		rb(stack);
 		ft_printf("rr\n");
 	}
 }
