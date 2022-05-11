@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   3case.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvolpi <mvolpi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 08:55:58 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/10 10:44:03 by mvolpi           ###   ########.fr       */
+/*   Updated: 2022/05/11 16:26:08 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,5 @@ int	sort(t_stack *stack)
 
 void	threecase(t_stack *stack)
 {
-	printf("\n");
-	printf("%d %d %d\n", stack->a[0], stack->a[1], stack->a[2]);
-	printf("\n");
 	sort(stack);
-	printf("\n");
-	printf("%d %d %d\n", stack->a[0], stack->a[1], stack->a[2]);
 }

@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 09:12:56 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/11 15:58:46 by kzak             ###   ########.fr       */
+/*   Updated: 2022/05/11 17:09:32 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,16 +90,19 @@ static int	arrayleng(int ac, char **av)
 int	main(int argc, char **argv)
 {
 	t_stack	stack;
+	int		n;
 
 	if (argc < 2)
 		exit(1);
 	ft_errors(argc, argv);
 	stack.la = arrayleng(argc, argv);
-	printf("lunghezza la: %zu\n", stack.la);
+	n = arrayleng(argc, argv);
+	printf("Length of la: %zu\n", stack.la);
 	stack.lb = 0;
 	stack.a = (int *) malloc(stack.la * sizeof(int));
-	stack.b = (int *) malloc(stack.lb * sizeof(int));
+	stack.b = (int *) malloc(stack.la * sizeof(int));
 	insert_into_a(argc, argv, &stack);
+	printf("Length of lis: %d\n", lis(&stack, n));
 	if (stack.la == 3)
 		threecase(&stack);
 	else if (stack.la == 5)

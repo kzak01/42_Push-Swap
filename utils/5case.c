@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   5case.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvolpi <mvolpi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 10:03:35 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/10 10:43:32 by mvolpi           ###   ########.fr       */
+/*   Updated: 2022/05/11 16:26:36 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,4 @@ void	fivecase(t_stack *stack)
 	pa(stack);
 	ra(stack);
 	pa(stack);
-	printf("%d %d %d %d %d\n", stack->a[0], stack->a[1],
-		stack->a[2], stack->a[3], stack->a[4]);
 }
