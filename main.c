@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 09:12:56 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/10 11:48:55 by kzak             ###   ########.fr       */
+/*   Updated: 2022/05/11 15:58:46 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,7 @@ int	main(int argc, char **argv)
 		exit(1);
 	ft_errors(argc, argv);
 	stack.la = arrayleng(argc, argv);
-	printf("ciao %zu\n", stack.la);
+	printf("lunghezza la: %zu\n", stack.la);
 	stack.lb = 0;
 	stack.a = (int *) malloc(stack.la * sizeof(int));
 	stack.b = (int *) malloc(stack.lb * sizeof(int));
