@@ -6,7 +6,7 @@
 #    By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/13 09:13:08 by kzak              #+#    #+#              #
-#    Updated: 2022/05/10 14:12:58 by kzak             ###   ########.fr        #
+#    Updated: 2022/05/11 17:13:55 by kzak             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,14 +31,15 @@ PRINTF_DIR = printf/
 FT_PRINTF = $(addprefix $(PRINTF_DIR), $(PRINTF_A))
 
 UTILS = 3case.c \
-			errors.c \
-			swap.c \
-			rotate.c \
-			reverse_rotate.c \
-			push.c \
 			5case.c \
-			moves.c \
 			atoilong.c \
+			errors.c \
+			lis.c \
+			moves.c \
+			push.c \
+			reverse_rotate.c \
+			rotate.c \
+			swap.c \
 
 SRC_UTILS = $(addprefix utils/, $(UTILS))
 

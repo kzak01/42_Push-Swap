@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 11:06:59 by mvolpi            #+#    #+#             */
-/*   Updated: 2022/05/10 14:13:50 by kzak             ###   ########.fr       */
+/*   Updated: 2022/05/11 17:02:07 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ void	pa(t_stack *stack)
 			i--;
 		}
 			stack->a[i] = stack->b[0];
-		i = 0;
 		while (i < stack->lb - 1)
 		{
 			stack->b[i] = stack->b[i + 1];
@@ -51,7 +50,6 @@ void	pb(t_stack *stack)
 			i--;
 		}
 		stack->b[i] = stack->a[0];
-		i = 0;
 		while (i < stack->la - 1)
 		{
 			stack->a[i] = stack->a[i + 1];

@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 09:30:33 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/10 14:13:22 by kzak             ###   ########.fr       */
+/*   Updated: 2022/05/11 17:15:29 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,6 @@ typedef enum e_int
 	INT_MIN = -2147483648
 }	t_int;
 
-//atoilong
-long	atoilong(const char *str);
-
 //printarray
 void	printarray(t_stack *st);
 
@@ -59,30 +56,36 @@ void	fivecase(t_stack *stack);
 int		find_min(t_stack *stack);
 int		find_max(t_stack *stack);
 
-//moves
-void	sort_max(t_stack *stack, int max);
-void	sort_min(t_stack *stack, int min);
+//atoilong
+long	atoilong(const char *str);
 
 //ft_errors
 void	ft_errors(int ac, char **av);
 
-//swap
-void	sa(t_stack *stack);
-void	sb(t_stack *stack);
-void	ss(t_stack *stack);
+//lis
+int	lis(t_stack *st, int n);
 
-//rotate
-void	ra(t_stack *stack);
-void	rb(t_stack *stack);
-void	rr(t_stack *stack);
+//moves
+void	sort_max(t_stack *stack, int max);
+void	sort_min(t_stack *stack, int min);
+
+//push
+void	pa(t_stack *stack);
+void	pb(t_stack *stack);
 
 //reverse_rotate
 void	rra(t_stack *stack);
 void	rrb(t_stack *stack);
 void	rrr(t_stack *stack);
 
-//push
-void	pa(t_stack *stack);
-void	pb(t_stack *stack);
+//rotate
+void	ra(t_stack *stack);
+void	rb(t_stack *stack);
+void	rr(t_stack *stack);
+
+//swap
+void	sa(t_stack *stack);
+void	sb(t_stack *stack);
+void	ss(t_stack *stack);
 
 #endif
