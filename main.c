@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvolpi <mvolpi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 09:12:56 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/12 10:26:37 by mvolpi           ###   ########.fr       */
+/*   Updated: 2022/05/13 10:57:52 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,7 @@ int	main(int argc, char **argv)
 	is_sort(&stack);
 	printf("Length of lis: %d\n", lis(&stack, n));
 	if (stack.la == 3)
-		threecase(&stack);
+		sort(&stack);
 	else if (stack.la == 5)
 		fivecase(&stack);
 	else

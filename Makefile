@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mvolpi <mvolpi@student.42.fr>              +#+  +:+       +#+         #
+#    By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/13 09:13:08 by kzak              #+#    #+#              #
-#    Updated: 2022/05/12 10:18:27 by mvolpi           ###   ########.fr        #
+#    Updated: 2022/05/13 10:59:13 by kzak             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,9 +30,7 @@ PRINTF_A = ft_printf.a
 PRINTF_DIR = printf/
 FT_PRINTF = $(addprefix $(PRINTF_DIR), $(PRINTF_A))
 
-UTILS = 3case.c \
-			5case.c \
-			atoilong.c \
+UTILS = 5case.c \
 			errors.c \
 			lis.c \
 			moves.c \
@@ -40,7 +38,7 @@ UTILS = 3case.c \
 			reverse_rotate.c \
 			rotate.c \
 			swap.c \
-			is_sort.c \
+			utils.c \
 
 SRC_UTILS = $(addprefix utils/, $(UTILS))
 

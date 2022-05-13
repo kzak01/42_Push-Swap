@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvolpi <mvolpi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 09:30:33 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/12 10:18:08 by mvolpi           ###   ########.fr       */
+/*   Updated: 2022/05/13 10:59:00 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,23 +47,13 @@ void	printarray(t_stack *st);
 //main
 int		main(int argc, char **argv);
 
-//3case
-void	threecase(t_stack *stack);
-int		sort(t_stack *stack);
-
 //5case
 void	fivecase(t_stack *stack);
 int		find_min(t_stack *stack);
 int		find_max(t_stack *stack);
 
-//atoilong
-long	atoilong(const char *str);
-
 //ft_errors
 void	ft_errors(int ac, char **av);
-
-//is_sort
-void	is_sort(t_stack *stack);
 
 //lis
 int	lis(t_stack *st, int n);
@@ -90,5 +80,10 @@ void	rr(t_stack *stack);
 void	sa(t_stack *stack);
 void	sb(t_stack *stack);
 void	ss(t_stack *stack);
+
+//utils
+void	is_sort(t_stack *stack);
+long	atoilong(const char *str);
+void	sort(t_stack *stack);
 
 #endif
