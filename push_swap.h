@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mvolpi <mvolpi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 09:30:33 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/11 17:27:14 by kzak             ###   ########.fr       */
+/*   Updated: 2022/05/12 10:18:08 by mvolpi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,9 @@ long	atoilong(const char *str);
 
 //ft_errors
 void	ft_errors(int ac, char **av);
+
+//is_sort
+void	is_sort(t_stack *stack);
 
 //lis
 int	lis(t_stack *st, int n);
