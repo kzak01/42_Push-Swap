@@ -6,76 +6,120 @@
 #    By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/13 09:13:08 by kzak              #+#    #+#              #
-#    Updated: 2022/05/13 10:59:13 by kzak             ###   ########.fr        #
+#    Updated: 2022/05/13 11:39:05 by kzak             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = push_swap
-
-SRC = $(SRC_MAIN) $(SRC_UTILS)
-
-SRC_MAIN = main.c \
-			printarray.c \
+PUSH_SWAP = push_swap
+NAME = $(PUSH_SWAP)
 
 CC = gcc
-FLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror
+# CFLAGS += -g3 -fsanitize=address
+ifeq ($(DEBUG),true)
+	CFLAGS += -g
+endif
 
-HEADER = push_swap.h
+RM = rm
+RMFLAGS = -rf
 
-LIBFT_A = libft.a
-LIBFT_DIR = libft/
-LIBFT = $(addprefix $(LIBFT_DIR), $(LIBFT_A))
+INC_DIR = include
+CFLAGS += -I $(INC_DIR)
+SRC_DIR = src
+OBJ_DIR = obj
 
-PRINTF_A = ft_printf.a
-PRINTF_DIR = printf/
-FT_PRINTF = $(addprefix $(PRINTF_DIR), $(PRINTF_A))
+# libft
+LIBFT = libft.a
+LIBFT_DIR = lib/libft
+LIBFT_FILE = $(LIBFT_DIR)/$(LIBFT)
+LIBFT_INC_DIR = $(LIBFT_DIR)/include
+LIBFT_FLAGS = -L./$(LIBFT_DIR) -lft
+CFLAGS += -I $(LIBFT_INC_DIR)
 
-UTILS = 5case.c \
-			errors.c \
-			lis.c \
-			moves.c \
-			push.c \
-			reverse_rotate.c \
-			rotate.c \
-			swap.c \
-			utils.c \
+HEADERS = $(wildcard $(INC_DIR)/*.h)
 
-SRC_UTILS = $(addprefix utils/, $(UTILS))
+# STACK_DIR = $(SRC_DIR)/stack
+# STACK_SRCS = $(wildcard $(STACK_DIR)/*.c)
 
-OBJ = $(SRC:.c=.o)
+# CHECKER_DIR = $(SRC_DIR)/checker
+# CHECKER_SRCS = $(wildcard $(CHECKER_DIR)/*.c)
 
-all: $(NAME)
+PUSH_SWAP_DIR = $(SRC_DIR)/push_swap
+PUSH_SWAP_SRCS = $(wildcard $(PUSH_SWAP_DIR)/*.c)
 
-$(NAME) : $(OBJ)
-	@echo "     - Making libft..."
-	@make -C $(LIBFT_DIR)
-	@echo "     - Making ft_printf..."
-	@make -C $(PRINTF_DIR)
-	@echo "     - Compiling $(NAME)..."
-	@gcc $(FLAGS) $(OBJ) $(LIBFT) $(FT_PRINTF) -o $(NAME)
-	@echo "     - Compiled -"
+# CHECKER_SRCS += $(STACK_SRCS)
+PUSH_SWAP_SRCS += $(STACK_SRCS)
 
-%.o:	%.c Makefile $(HEADER)
-	@$(CC) $(FLAGS) -c $< -o $@
+vpath %.c \
+	$(SRC_DIR) \
+	$(PUSH_SWAP_DIR)	\
+	# $(STACK_DIR) \
+	# $(CHECKER_DIR)	\
 
-exe: re
-	@make -C ./ clean
-	@echo "     - Executing $(NAME)... \n"
-	@./$(NAME) $(m)
-	@echo "\n     - Done -"
+# CHECKER_OBJS = $(addprefix $(OBJ_DIR)/, $(notdir $(CHECKER_SRCS:.c=.o)))
+PUSH_SWAP_OBJS = $(addprefix $(OBJ_DIR)/, $(notdir $(PUSH_SWAP_SRCS:.c=.o)))
 
-clean:
-	@echo "     - Removing object files..."
-	@rm -rf $(OBJ)
-	@make -C $(LIBFT_DIR) clean
-	@make -C $(PRINTF_DIR) clean
+# Color
+CL_BOLD	 = \e[1m
+CL_DIM	= \e[2m
+CL_UDLINE = \e[4m
 
-fclean: clean
-	@echo "     - Removing $(NAME)..."
-	@rm -rf $(NAME)
-	@make -C $(LIBFT_DIR) fclean
-	@make -C $(PRINTF_DIR) fclean
+NO_COLOR = \e[0m
 
-re: fclean all
+BG_TEXT = \e[48;2;45;55;72m
+BG_BLACK = \e[48;2;30;31;33m
 
-.PHONY: all clean fclean re
+FG_WHITE = $(NO_COLOR)\e[0;37m
+FG_TEXT = $(NO_COLOR)\e[38;2;189;147;249m
+FG_TEXT_PRIMARY = $(NO_COLOR)$(CL_BOLD)\e[38;2;255;121;198m
+
+LF = \e[1K\r$(NO_COLOR)
+CRLF= \n$(LF)
+
+all : $(NAME)
+
+clean :
+	@$(RM) $(RMFLAGS) $(OBJ_DIR)
+	@printf "$(LF)🧹 $(FG_TEXT)Cleaning $(FG_TEXT_PRIMARY)$(NAME)'s Object files...\n"
+
+fclean : clean
+	@$(RM) $(RMFLAGS) $(NAME)
+	@printf "$(LF)🧹 $(FG_TEXT)Cleaning $(FG_TEXT_PRIMARY)$(NAME)\n"
+
+re : fclean all
+
+$(OBJ_DIR) :
+	@mkdir $(OBJ_DIR)
+
+$(OBJ_DIR)/%.o : %.c $(LIBFT_FILE) | $(OBJ_DIR)
+	@$(CC) $(CFLAGS) -c $< -o $@
+	@printf "$(LF)🚧 $(FG_TEXT)Create $(FG_TEXT_PRIMARY)$@ $(FG_TEXT)from $(FG_TEXT_PRIMARY)$<"
+
+# $(CHECKER) : $(LIBFT_FILE) $(HEADERS) $(CHECKER_OBJS) $(SRC_DIR)/checker.c
+# 	@printf "$(LF)🚀 $(FG_TEXT)Successfully Created $(FG_TEXT_PRIMARY)$@'s Object files $(FG_TEXT)!"
+# 	@printf "$(CRLF)📚 $(FG_TEXT)Create $(FG_TEXT_PRIMARY)$@$(FG_TEXT)!\n"
+# 	@$(CC) $(CFLAGS) $(LIBFT_FLAGS) $(CHECKER_OBJS) $(SRC_DIR)/checker.c -o $@
+# 	@printf "$(LF)🎉 $(FG_TEXT)Successfully Created $(FG_TEXT_PRIMARY)$@ $(FG_TEXT)!\n$(NO_COLOR)"
+
+$(PUSH_SWAP) : $(LIBFT_FILE) $(HEADERS) $(PUSH_SWAP_OBJS) $(SRC_DIR)/push_swap.c
+	@printf "$(LF)🚀 $(FG_TEXT)Successfully Created $(FG_TEXT_PRIMARY)$@'s Object files $(FG_TEXT)!"
+	@printf "$(CRLF)📚 $(FG_TEXT)Create $(FG_TEXT_PRIMARY)$@$(FG_TEXT)!\n"
+	@$(CC) $(CFLAGS) $(LIBFT_FLAGS) $(PUSH_SWAP_OBJS) $(SRC_DIR)/push_swap.c -o $@
+	@printf "$(LF)🎉 $(FG_TEXT)Successfully Created $(FG_TEXT_PRIMARY)$@ $(FG_TEXT)!\n$(NO_COLOR)"
+
+# libft
+
+$(LIBFT) : $(LIBFT_FILE)
+
+$(LIBFT_FILE) :
+	@make --no-print-directory -C $(LIBFT_DIR)
+
+$(LIBFT)_clean :
+	@make --no-print-directory -C $(LIBFT_DIR) clean
+
+$(LIBFT)_fclean :
+	@make --no-print-directory -C $(LIBFT_DIR) fclean
+
+
+.PHONY: all clean fclean re test \
+	$(LIBFT) $(LIBFT)_clean $(LIBFT)_fclean
