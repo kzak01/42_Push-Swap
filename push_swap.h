@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: ldi-masc <ldi-masc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 09:30:33 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/10 14:13:22 by kzak             ###   ########.fr       */
+/*   Updated: 2022/05/17 17:12:33 by ldi-masc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ typedef struct s_stack
 {
 	int		*a;
 	int		*b;
+	int		*c;
 	size_t	la;
 	size_t	lb;
 }	t_stack;
@@ -43,6 +44,8 @@ typedef enum e_int
 
 //atoilong
 long	atoilong(const char *str);
+//othercase
+void othercase(t_stack *stack);
 
 //printarray
 void	printarray(t_stack *st);
