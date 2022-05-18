@@ -6,13 +6,13 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 10:52:32 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/13 11:44:50 by kzak             ###   ########.fr       */
+/*   Updated: 2022/05/18 09:08:09 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/push_swap.h"
+#include "push_swap.h"
 
-void	is_sort(t_stack *stack)
+int	is_sort(t_stack *stack)
 {
 	size_t	i;
 	size_t	j;
@@ -34,8 +34,9 @@ void	is_sort(t_stack *stack)
 	if (k == 0)
 	{
 		ft_printf("the stack is already sorted!\n");
-		exit (0);
+		return(1);
 	}
+	return(0);
 }
 
 long	atoilong(const char *str)
@@ -87,4 +88,19 @@ void	sort(t_stack *stack)
 	if (stack->a[0] > stack->a[1] && stack->a[1] < stack->a[2]
 		&& stack->a[2] > stack->a[0])
 		sa(stack);
+}
+
+void	return_stack(t_stack *stack, int ra_cnt, int rb_cnt)
+{
+	while (ra_cnt > 0 || rb_cnt > 0)
+	{
+		if(ra_cnt > 0 && rb_cnt > 0)
+			rrr(stack);
+		else if (ra_cnt > 0)
+			rra(stack);
+		else if (rb_cnt > 0)
+			rrb(stack);
+		--ra_cnt;
+		--rb_cnt;
+	}
 }

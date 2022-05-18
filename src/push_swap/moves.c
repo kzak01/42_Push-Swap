@@ -6,11 +6,11 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 10:23:49 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/13 11:44:32 by kzak             ###   ########.fr       */
+/*   Updated: 2022/05/18 09:07:44 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/push_swap.h"
+#include "push_swap.h"
 
 void	sort_max(t_stack *stack, int max)
 {

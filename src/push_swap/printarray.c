@@ -6,11 +6,11 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 14:06:30 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/13 11:44:34 by kzak             ###   ########.fr       */
+/*   Updated: 2022/05/10 14:15:48 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/push_swap.h"
+#include "push_swap.h"
 
 void	printarray(t_stack *st)
 {

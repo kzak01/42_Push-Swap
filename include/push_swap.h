@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 09:30:33 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/13 11:40:17 by kzak             ###   ########.fr       */
+/*   Updated: 2022/05/18 09:09:39 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,18 @@
 # include <fcntl.h>
 # include <stdio.h>
 # include <errno.h>
-# include "../lib/libft/include/libft.h"
-# include "../printf/ft_printf.h"
+# include "libft.h"
+# include "ft_printf.h"
+
+# define SMALL		0
+# define BIG		1
+
+# define PUSH_CNT	0
+# define RA_CNT		1
+# define RB_CNT		2
+
+# define DESC		0
+# define ASC		1
 
 typedef struct s_stack
 {
@@ -55,8 +65,9 @@ int		find_max(t_stack *stack);
 //ft_errors
 void	ft_errors(int ac, char **av);
 
-//lis
-int	lis(t_stack *st, int n);
+//get_pivot
+void	get_pivota(int *pivot, t_stack *stack, int n);
+void	get_pivotb(int *pivot, t_stack *stack, int n);
 
 //moves
 void	sort_max(t_stack *stack, int max);
@@ -82,8 +93,25 @@ void	sb(t_stack *stack);
 void	ss(t_stack *stack);
 
 //utils
-void	is_sort(t_stack *stack);
+int		is_sort(t_stack *stack);
 long	atoilong(const char *str);
 void	sort(t_stack *stack);
+void	return_stack(t_stack *stack, int ra_cnt, int rb_cnt);
+
+//sort_a
+void	sort_a(t_stack *stack, int size);
+
+//sort_b
+void	sort_b(t_stack *stack, int size);
+
+//sort_n
+int	check_sort_nb(t_stack *stack, int type, int n);
+int	check_sort_na(t_stack *stack, int type, int n);
+
+//sort_3_b
+void	sort_three_b(t_stack *stack);
+
+//sort_3_a
+void	sort_three_a(t_stack *stack);
 
 #endif

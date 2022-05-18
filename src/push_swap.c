@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 09:12:56 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/13 11:41:03 by kzak             ###   ########.fr       */
+/*   Updated: 2022/05/17 14:56:53 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
+#include "push_swap.h"
 
 static	void	insert2(char **av, int n, t_stack *stack)
 {
@@ -93,7 +93,7 @@ int	main(int argc, char **argv)
 	int		n;
 
 	if (argc < 2)
-		exit(1);
+		return (0);
 	ft_errors(argc, argv);
 	stack.la = arrayleng(argc, argv);
 	n = arrayleng(argc, argv);
@@ -103,13 +103,12 @@ int	main(int argc, char **argv)
 	stack.b = (int *) malloc(stack.la * sizeof(int));
 	insert_into_a(argc, argv, &stack);
 	is_sort(&stack);
-	printf("Length of lis: %d\n", lis(&stack, n));
 	if (stack.la == 3)
 		sort(&stack);
 	else if (stack.la == 5)
 		fivecase(&stack);
 	else
-		printf("AO calma\n");
+		sort_a(&stack, n);
 	free(stack.a);
 	free(stack.b);
 }
