@@ -6,7 +6,7 @@
 /*   By: ldi-masc <ldi-masc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 12:04:49 by ldi-masc          #+#    #+#             */
-/*   Updated: 2022/05/18 11:35:26 by ldi-masc         ###   ########.fr       */
+/*   Updated: 2022/05/18 11:57:22 by ldi-masc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,38 +87,68 @@ printf ("divisione finita\n");
 mhanz = find_minb(stack);
 medianb = stack->lb / 2;
 s = 0;
-while ((int)s < medianb)
-{
-    if(stack->b[s] == mhanz || stack->b[s] == median)
+    while ((int)s < medianb)
     {
-        printf("mhanz e %d\n", mhanz);
-        while (stack->b[0] != mhanz && stack->b[0] != median)
+        if(stack->b[s] == mhanz)
         {
-            rb(stack);
+            printf("mhanz e %d\n", mhanz);
+            while (stack->b[0] != mhanz)
+            {
+                rb(stack);
+            }
+            pa(stack);
+            printf("Bellaa\n");
+            ra(stack);
         }
-        pa(stack);
-        printf("Bellaa\n");
-        ra(stack);
+        s++;
     }
-    s++;
-}
-s = stack->lb;
-while ((int)s > medianb)
-{
-    if(stack->b[s] == mhanz || stack->b[s] == median)
+    s = stack->lb;
+    while ((int)s > medianb)
     {
-        printf("mhanz e %d\n", mhanz);
-        while (stack->b[0] != mhanz && stack->b[0] != median)
-        {
-            rrb(stack);
+        if(stack->b[s] == mhanz)
+            {
+            printf("mhanz e %d\n", mhanz);
+            while (stack->b[0] != mhanz)
+            {
+                rrb(stack);
+            }
+            pa(stack);
+            printf("Bellaa\n");
+            ra(stack);
         }
-        pa(stack);
-         printf("Bellaa\n");
-        ra(stack);
+        s--;
     }
-    s--;
-}
 
+    s = 0;
+    while ((int)s < medianb)
+    {
+        if(stack->b[s] == median)
+        {
+            printf("mhanz e %d\n", mhanz);
+            while (stack->b[0] != mhanz)
+            {
+                rb(stack);
+            }
+            pa(stack);
+            printf("Bellaa\n");
+        }
+        s++;
+    }
+    s = stack->lb;
+    while ((int)s > medianb)
+    {
+        if(stack->b[s] == median)
+            {
+            printf("mhanz e %d\n", mhanz);
+            while (stack->b[0] != median)
+            {
+                rrb(stack);
+            }
+            pa(stack);
+            printf("Bellaa\n");
+        }
+        s--;
+    }
 printf("il minimo della stack b è %d\n", mhanz);
 
 }
