@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 11:04:31 by mvolpi            #+#    #+#             */
-/*   Updated: 2022/05/18 09:07:50 by kzak             ###   ########.fr       */
+/*   Updated: 2022/05/18 10:15:53 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	rra(t_stack *stack)
 	int		first;
 
 	i = stack->la - 1;
-	if (stack->la > 0)
+	if (stack->la > 1)
 	{
 		first = stack->a[stack->la - 1];
 		while (i > 0)
@@ -38,7 +38,7 @@ void	rrb(t_stack *stack)
 	int		first;
 
 	i = stack->lb - 1;
-	if (stack->lb > 0)
+	if (stack->lb > 1)
 	{
 		first = stack->b[stack->lb - 1];
 		while (i > 0)
@@ -57,30 +57,24 @@ void	rrr(t_stack *stack)
 	size_t	i;
 	int		first;
 	
-	if (stack->la > 0 || stack->lb > 0)
+	if (stack->la > 1 || stack->lb > 1)
 	{
 		i = stack->la - 1;
-		if (stack->la > 0)
+		first = stack->a[stack->la - 1];
+		while (i > 0)
 		{
-			first = stack->a[stack->la - 1];
-			while (i > 0)
-			{
-				stack->a[i] = stack->a[i - 1];
-				i--;
-			}
-			stack->a[i] = first;
+			stack->a[i] = stack->a[i - 1];
+			i--;
 		}
+		stack->a[i] = first;
 		i = stack->lb - 1;
-		if (stack->lb > 0)
+		first = stack->b[stack->lb - 1];
+		while (i > 0)
 		{
-			first = stack->b[stack->lb - 1];
-			while (i > 0)
-			{
-				stack->b[i] = stack->b[i - 1];
-				i--;
-			}
-			stack->b[i] = first;
+			stack->b[i] = stack->b[i - 1];
+			i--;
 		}
+		stack->b[i] = first;
 		ft_printf("rrr\n");
 		printarray(stack);
 	}
