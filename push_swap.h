@@ -6,7 +6,7 @@
 /*   By: ldi-masc <ldi-masc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 09:30:33 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/17 17:12:33 by ldi-masc         ###   ########.fr       */
+/*   Updated: 2022/05/18 10:29:55 by ldi-masc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ int		sort(t_stack *stack);
 //5case
 void	fivecase(t_stack *stack);
 int		find_min(t_stack *stack);
+int		find_minb(t_stack *stack);
 int		find_max(t_stack *stack);
 
 //moves

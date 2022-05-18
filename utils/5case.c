@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   5case.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvolpi <mvolpi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ldi-masc <ldi-masc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 10:03:35 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/10 10:43:32 by mvolpi           ###   ########.fr       */
+/*   Updated: 2022/05/18 11:05:30 by ldi-masc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,22 @@ int	find_max(t_stack *stack)
 	{
 		if (stack->a[i] > t)
 			t = stack->a[i];
+		i++;
+	}
+	return (t);
+}
+
+int	find_minb(t_stack *stack)
+{
+	size_t	i;
+	int		t;
+
+	i = 1;
+	t = stack->b[0];
+	while (i < stack->lb)
+	{
+		if (stack->b[i] < t)
+			t = stack->b[i];
 		i++;
 	}
 	return (t);

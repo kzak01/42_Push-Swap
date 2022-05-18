@@ -6,7 +6,7 @@
 /*   By: ldi-masc <ldi-masc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 12:04:49 by ldi-masc          #+#    #+#             */
-/*   Updated: 2022/05/17 18:07:58 by ldi-masc         ###   ########.fr       */
+/*   Updated: 2022/05/18 11:35:26 by ldi-masc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 void othercase(t_stack *stack)
 {
-    // int a2[stack->la];
-    // size_t la2;
     int min_index;
     size_t j;
     size_t i;
@@ -26,6 +24,8 @@ void othercase(t_stack *stack)
     int m;
     int median;
     size_t s;
+    int mhanz;
+    int medianb;
 
     s = 0;
     l = 0;
@@ -33,19 +33,12 @@ void othercase(t_stack *stack)
     k = 0;
     i = 0;
     j = 1;
-    //t = 0;
-    // la2 = stack->la;
     stack->c = malloc(sizeof(int) * stack->la);
     while (k < stack->la)
     {
-        // printf("ciao mannaggia la: %zu\n", stack->la);
-        // fflush(stdout);
         stack->c[k] = stack->a[k];
         k++;
-        // sleep(1);
     }
-         
-    //c = find_min2(a2, la2);
     i = 0;
     while (i < stack->la)
     {
@@ -90,4 +83,42 @@ while((int)s <= len)
         ra(stack);
     s++;
 }
+printf ("divisione finita\n");
+mhanz = find_minb(stack);
+medianb = stack->lb / 2;
+s = 0;
+while ((int)s < medianb)
+{
+    if(stack->b[s] == mhanz || stack->b[s] == median)
+    {
+        printf("mhanz e %d\n", mhanz);
+        while (stack->b[0] != mhanz && stack->b[0] != median)
+        {
+            rb(stack);
+        }
+        pa(stack);
+        printf("Bellaa\n");
+        ra(stack);
+    }
+    s++;
+}
+s = stack->lb;
+while ((int)s > medianb)
+{
+    if(stack->b[s] == mhanz || stack->b[s] == median)
+    {
+        printf("mhanz e %d\n", mhanz);
+        while (stack->b[0] != mhanz && stack->b[0] != median)
+        {
+            rrb(stack);
+        }
+        pa(stack);
+         printf("Bellaa\n");
+        ra(stack);
+    }
+    s--;
+}
+
+printf("il minimo della stack b è %d\n", mhanz);
+
 }
