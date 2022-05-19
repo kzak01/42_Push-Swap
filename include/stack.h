@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 11:57:17 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/19 10:55:31 by kzak             ###   ########.fr       */
+/*   Updated: 2022/05/19 13:29:48 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ typedef struct s_push_swap
 {
 	t_stack2		*a;
 	t_stack2		*b;
-	int			visualizer;
+	int				visualizer;
 }				t_push_swap;
 
 //create_stack_with_arg

@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 10:52:32 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/18 11:59:51 by kzak             ###   ########.fr       */
+/*   Updated: 2022/05/19 13:34:34 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	is_sort(t_stack *stack)
 	size_t	i;
 	size_t	j;
 	size_t	k;
-	
+
 	j = 0;
 	k = 0;
 	while (j != stack->la)
@@ -34,9 +34,9 @@ int	is_sort(t_stack *stack)
 	if (k == 0)
 	{
 		ft_printf("the stack is already sorted!\n");
-		return(1);
+		return (1);
 	}
-	return(0);
+	return (0);
 }
 
 long	atoilong(const char *str)

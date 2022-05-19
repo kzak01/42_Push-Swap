@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 10:52:13 by mvolpi            #+#    #+#             */
-/*   Updated: 2022/05/18 10:14:49 by kzak             ###   ########.fr       */
+/*   Updated: 2022/05/19 13:34:27 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	sb(t_stack *stack)
 void	ss(t_stack *stack)
 {
 	int	t;
-	
+
 	if (stack->la > 0 || stack->lb > 0)
 	{
 		if (stack->la > 1)

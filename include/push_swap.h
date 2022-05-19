@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 09:30:33 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/19 11:08:07 by kzak             ###   ########.fr       */
+/*   Updated: 2022/05/19 13:29:32 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,6 @@ long	atoilong(const char *str);
 void	sort(t_stack *stack);
 
 //varius_sort
-void	varius_sort(t_stack *stack, t_push_swap *data, int argc, char **argv, int n);
+void	varius_sort(t_stack *stack, t_push_swap *data, int argc, char **argv);
 
 #endif

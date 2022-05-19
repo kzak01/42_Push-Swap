@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 11:00:25 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/19 11:07:57 by kzak             ###   ########.fr       */
+/*   Updated: 2022/05/19 13:29:24 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,11 @@ static void	insert_into_a(int ac, char **argv, t_stack *stack)
 	}
 }
 
-void	varius_sort(t_stack *stack, t_push_swap *data, int argc, char **argv, int n)
+void	varius_sort(t_stack *stack, t_push_swap *data, int argc, char **argv)
 {
+	int		n;
+
+	n = stack->la;
 	ft_memset(data, 0, sizeof(data));
 	if (stack->la == 3)
 	{

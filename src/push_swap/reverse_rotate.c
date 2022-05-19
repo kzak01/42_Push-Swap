@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 11:04:31 by mvolpi            #+#    #+#             */
-/*   Updated: 2022/05/18 10:15:53 by kzak             ###   ########.fr       */
+/*   Updated: 2022/05/19 13:34:13 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void	rrr(t_stack *stack)
 {
 	size_t	i;
 	int		first;
-	
+
 	if (stack->la > 1 || stack->lb > 1)
 	{
 		i = stack->la - 1;

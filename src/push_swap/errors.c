@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/30 11:09:49 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/18 09:07:40 by kzak             ###   ########.fr       */
+/*   Updated: 2022/05/19 13:33:34 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@ static void	nocopy(char **av)
 		{
 			if (ft_atoi(av[i]) == ft_atoi(av[j]))
 			{
-				ft_printf("\033[0;31m" "Error: duplicate number\n" "\033[0m");
+				ft_printf("\033[0;31m" "Error: '%d' is a duplicate number\n" \
+					"\033[0m", ft_atoi(av[j]));
 				exit (0);
 			}
 			j++;
@@ -48,7 +49,8 @@ static void	nocopy2(char **av)
 		{
 			if (ft_atoi(av[i]) == ft_atoi(av[j]))
 			{
-				ft_printf("\033[0;31m" "Error: duplicate number\n" "\033[0m");
+				ft_printf("\033[0;31m" "Error: '%d' is a duplicate number\n" \
+					"\033[0m", ft_atoi(av[j]));
 				exit (0);
 			}
 			j++;
@@ -69,15 +71,12 @@ static void	isnumber(char **av)
 	{
 		while (av[i][j])
 		{
-			if (av[i][j] == '"')
-				j++;
-			else if (av[i][j] == '-')
-				j++;
-			else if (av[i][j] == ' ')
+			if (av[i][j] == '"' || av[i][j] == '-' || av[i][j] == ' ')
 				j++;
 			else if (ft_isdigit(av[i][j]) == FALSE)
 			{
-				ft_printf("\033[0;31m" "Error: put only number\n" "\033[0m");
+				ft_printf("\033[0;31m" "Error: '%c' is not a number\n" \
+					"\033[0m", av[i][j]);
 				exit (0);
 			}
 			j++;
@@ -96,7 +95,8 @@ static void	intmaxmin(char **av)
 	{
 		if (atoilong(av[j]) < INT_MIN || atoilong(av[j]) > INT_MAX)
 		{
-			ft_printf("\033[0;31m" "Error: Number exceed int value\n" "\033[0m");
+			ft_printf("\033[0;31m" "Error: Number '%d' exceed int value\n" \
+				"\033[0m", ft_atoi(av[j]));
 			exit (0);
 		}
 	j++;

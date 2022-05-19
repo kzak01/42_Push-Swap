@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 09:12:56 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/19 11:08:21 by kzak             ###   ########.fr       */
+/*   Updated: 2022/05/19 13:29:02 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,6 @@ int	main(int argc, char **argv)
 {
 	t_stack		stack;
 	t_push_swap	data;
-	int			n;
 
 	if (argc < 2)
 		return (0);
@@ -65,27 +64,7 @@ int	main(int argc, char **argv)
 	stack.lb = 0;
 	stack.a = (int *) malloc(stack.la * sizeof(int));
 	stack.b = (int *) malloc(stack.la * sizeof(int));
-	n = arrayleng(argc, argv);
-	varius_sort(&stack, &data, argc, argv, n);
-	// if (stack.la == 3)
-	// {
-	// 	insert_into_a(argc, argv, &stack);
-	// 	is_sort(&stack);
-	// 	sort(&stack);
-	// }
-	// else if (stack.la == 5)
-	// {
-	// 	insert_into_a(argc, argv, &stack);
-	// 	is_sort(&stack);
-	// 	fivecase(&stack);
-	// }
-	// else
-	// {
-	// 	data.visualizer = OP;
-	// 	data.a = create_stack_with_arg(argc, argv);
-	// 	data.b = NULL;
-	// 	sort_a(&data, n);
-	// }
+	varius_sort(&stack, &data, argc, argv);
 	free(stack.a);
 	free(stack.b);
 }
