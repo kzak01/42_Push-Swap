@@ -6,7 +6,7 @@
 #    By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/13 11:10:21 by kzak              #+#    #+#              #
-#    Updated: 2022/05/13 12:17:13 by kzak             ###   ########.fr        #
+#    Updated: 2022/05/18 15:00:29 by kzak             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,6 +53,7 @@ SRC_MEMORY_DIR = $(SRC_DIR)/memory
 SRC_MEMORY = $(addprefix $(SRC_MEMORY_DIR)/, \
 	ft_bzero.c	\
 	ft_calloc.c	\
+	ft_malloc.c	\
 	ft_memchr.c	\
 	ft_memcmp.c	\
 	ft_memcpy.c	\
@@ -66,6 +67,7 @@ SRC_STRING = $(addprefix $(SRC_STRING_DIR)/, \
 	ft_itoa.c	\
 	ft_split.c	\
 	ft_strchr.c	\
+	ft_strcmp.c	\
 	ft_strdup.c	\
 	ft_strjoin.c	\
 	ft_strlcat.c	\

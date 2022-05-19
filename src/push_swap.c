@@ -1,54 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 09:12:56 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/17 14:56:53 by kzak             ###   ########.fr       */
+/*   Updated: 2022/05/19 11:08:21 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-static	void	insert2(char **av, int n, t_stack *stack)
-{
-	size_t	i;
-
-	i = 0;
-	while (i < stack->la)
-	{
-		n = ft_atoi(av[i]);
-		stack->a[i] = n;
-		i++;
-	}
-}
-
-static void	insert_into_a(int ac, char **argv, t_stack *stack)
-{
-	size_t		i;
-	size_t		j;
-	int			n;
-
-	i = 0;
-	j = 1;
-	n = 0;
-	if (ac > 2)
-	{
-		while (i < stack->la)
-		{
-			n = ft_atoi(argv[j]);
-			stack->a[i] = n;
-			i++;
-			j++;
-		}
-	}
-	if (ac == 2)
-	{
-		insert2(ft_split(argv[1], ' '), n, stack);
-	}
-}
+#include "push_swap2.h"
+#include "stack.h"
 
 static int	count1(char **av, int i, int j)
 {
@@ -89,26 +53,39 @@ static int	arrayleng(int ac, char **av)
 
 int	main(int argc, char **argv)
 {
-	t_stack	stack;
-	int		n;
+	t_stack		stack;
+	t_push_swap	data;
+	int			n;
 
 	if (argc < 2)
 		return (0);
 	ft_errors(argc, argv);
 	stack.la = arrayleng(argc, argv);
-	n = arrayleng(argc, argv);
 	printf("Length of la: %zu\n", stack.la);
 	stack.lb = 0;
 	stack.a = (int *) malloc(stack.la * sizeof(int));
 	stack.b = (int *) malloc(stack.la * sizeof(int));
-	insert_into_a(argc, argv, &stack);
-	is_sort(&stack);
-	if (stack.la == 3)
-		sort(&stack);
-	else if (stack.la == 5)
-		fivecase(&stack);
-	else
-		sort_a(&stack, n);
+	n = arrayleng(argc, argv);
+	varius_sort(&stack, &data, argc, argv, n);
+	// if (stack.la == 3)
+	// {
+	// 	insert_into_a(argc, argv, &stack);
+	// 	is_sort(&stack);
+	// 	sort(&stack);
+	// }
+	// else if (stack.la == 5)
+	// {
+	// 	insert_into_a(argc, argv, &stack);
+	// 	is_sort(&stack);
+	// 	fivecase(&stack);
+	// }
+	// else
+	// {
+	// 	data.visualizer = OP;
+	// 	data.a = create_stack_with_arg(argc, argv);
+	// 	data.b = NULL;
+	// 	sort_a(&data, n);
+	// }
 	free(stack.a);
 	free(stack.b);
 }

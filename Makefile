@@ -6,7 +6,7 @@
 #    By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/13 09:13:08 by kzak              #+#    #+#              #
-#    Updated: 2022/05/18 09:34:40 by kzak             ###   ########.fr        #
+#    Updated: 2022/05/19 10:54:29 by kzak             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,22 +38,22 @@ CFLAGS += -I $(LIBFT_INC_DIR)
 
 HEADERS = $(wildcard $(INC_DIR)/*.h)
 
-# STACK_DIR = $(SRC_DIR)/stack
-# STACK_SRCS = $(wildcard $(STACK_DIR)/*.c)
-
-# CHECKER_DIR = $(SRC_DIR)/checker
-# CHECKER_SRCS = $(wildcard $(CHECKER_DIR)/*.c)
+STACK_DIR = $(SRC_DIR)/stack
+STACK_SRCS = $(wildcard $(STACK_DIR)/*.c)
 
 PUSH_SWAP_DIR = $(SRC_DIR)/push_swap
 PUSH_SWAP_SRCS = $(wildcard $(PUSH_SWAP_DIR)/*.c)
 
-# CHECKER_SRCS += $(STACK_SRCS)
-PUSH_SWAP_SRCS += $(STACK_SRCS)
+PUSH_SWAP2_DIR = $(SRC_DIR)/push_swap2
+PUSH_SWAP2_SRCS = $(wildcard $(PUSH_SWAP2_DIR)/*.c)
+
+PUSH_SWAP_SRCS += $(STACK_SRCS) $(PUSH_SWAP2_SRCS)
 
 vpath %.c \
 	$(SRC_DIR) \
 	$(PUSH_SWAP_DIR)	\
-	# $(STACK_DIR) \
+	$(STACK_DIR) \
+	$(PUSH_SWAP2_DIR)
 	# $(CHECKER_DIR)	\
 
 # CHECKER_OBJS = $(addprefix $(OBJ_DIR)/, $(notdir $(CHECKER_SRCS:.c=.o)))

@@ -1,28 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   ft_malloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/17 16:01:03 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/18 15:00:42 by kzak             ###   ########.fr       */
+/*   Created: 2022/05/18 14:31:05 by kzak              #+#    #+#             */
+/*   Updated: 2022/05/18 14:31:16 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_back(t_list **lst, t_list *new)
+int	ft_malloc(void **dst, size_t size)
 {
-	t_list	*temp;
-
-	if (new == NULL)
-		return ;
-	if (*lst == NULL)
-		*lst = new;
-	else
-	{
-		temp = ft_lstlast(*lst);
-		temp->next = new;
-	}
+	*dst = ft_calloc(size, 1);
+	if (*dst == NULL)
+		return (0);
+	return (1);
 }
