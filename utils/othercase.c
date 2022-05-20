@@ -6,7 +6,7 @@
 /*   By: ldi-masc <ldi-masc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 12:04:49 by ldi-masc          #+#    #+#             */
-/*   Updated: 2022/05/20 12:24:44 by ldi-masc         ###   ########.fr       */
+/*   Updated: 2022/05/20 12:47:13 by ldi-masc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ medianb = stack->lb / 2;
 printf("mediana è:%d\n", median);
 printf("medianb è: %d\n", medianb);
 s = 0;
-    while ((int)s < medianb)
+    while ((int)s <= medianb)
     {
         if(stack->b[s] == mhanz)
         {
@@ -103,8 +103,8 @@ s = 0;
         }
         s++;
     }
-    s = stack->lb - 1;
-    while ((int)s > medianb)
+    s = stack->lb;
+    while ((int)s >= medianb)
     {
         if(stack->b[s] == mhanz)
             {
@@ -120,7 +120,7 @@ s = 0;
     }
     medianb = stack->lb / 2;
     s = 0;
-    while ((int)s < medianb)
+    while ((int)s <= medianb)
     {
         printf("median b è %d\n", medianb);
         if(stack->b[s] == median)
@@ -135,9 +135,9 @@ s = 0;
         }
         s++;
     }
-    
-    s = stack->lb - 1;
-    while ((int)s > medianb)
+    medianb = stack->lb / 2;
+    s = stack->lb;
+    while ((int)s >= medianb)
     {
         printf("entra %d\n", medianb);
         if(stack->b[s] == median)
@@ -152,6 +152,4 @@ s = 0;
         }
         s--;
     }
-printf("il minimo della stack b è %d\n", mhanz);
-
 }
