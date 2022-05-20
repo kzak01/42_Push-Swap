@@ -6,7 +6,7 @@
 /*   By: ldi-masc <ldi-masc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 12:04:49 by ldi-masc          #+#    #+#             */
-/*   Updated: 2022/05/18 11:57:22 by ldi-masc         ###   ########.fr       */
+/*   Updated: 2022/05/20 12:24:44 by ldi-masc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,8 @@ while((int)s <= len)
 printf ("divisione finita\n");
 mhanz = find_minb(stack);
 medianb = stack->lb / 2;
+printf("mediana è:%d\n", median);
+printf("medianb è: %d\n", medianb);
 s = 0;
     while ((int)s < medianb)
     {
@@ -96,13 +98,12 @@ s = 0;
             {
                 rb(stack);
             }
-            pa(stack);
-            printf("Bellaa\n");
+            pa(stack);;
             ra(stack);
         }
         s++;
     }
-    s = stack->lb;
+    s = stack->lb - 1;
     while ((int)s > medianb)
     {
         if(stack->b[s] == mhanz)
@@ -113,19 +114,19 @@ s = 0;
                 rrb(stack);
             }
             pa(stack);
-            printf("Bellaa\n");
             ra(stack);
         }
         s--;
     }
-
+    medianb = stack->lb / 2;
     s = 0;
     while ((int)s < medianb)
     {
+        printf("median b è %d\n", medianb);
         if(stack->b[s] == median)
         {
             printf("mhanz e %d\n", mhanz);
-            while (stack->b[0] != mhanz)
+            while (stack->b[0] != median)
             {
                 rb(stack);
             }
@@ -134,9 +135,11 @@ s = 0;
         }
         s++;
     }
-    s = stack->lb;
+    
+    s = stack->lb - 1;
     while ((int)s > medianb)
     {
+        printf("entra %d\n", medianb);
         if(stack->b[s] == median)
             {
             printf("mhanz e %d\n", mhanz);
