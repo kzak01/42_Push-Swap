@@ -6,14 +6,14 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 13:58:44 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/18 14:07:38 by kzak             ###   ########.fr       */
+/*   Updated: 2022/05/23 11:43:51 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap2.h"
 #include "stdio.h"
 
-static void	push_aaaaaaaaa(t_push_swap *data, int size)
+static void	push_to_a(t_push_swap *data, int size)
 {
 	while (size--)
 		operator("pa", data);
@@ -29,7 +29,7 @@ static void	call_next_sort(t_push_swap *data, int count[3])
 	if (!check_sort_n(data->b, DESC, count[RB_CNT]))
 		sort_b(data, count[RB_CNT]);
 	else
-		push_aaaaaaaaa(data, count[RB_CNT]);
+		push_to_a(data, count[RB_CNT]);
 }
 
 static void	move_stack(t_push_swap *data, int pivot[2], int count[3])
@@ -74,7 +74,7 @@ void	sort_b(t_push_swap *data, int size)
 	if (size <= 3)
 		return (switch_sort(data, size));
 	if (check_sort_n(data->b, DESC, size))
-		return (push_aaaaaaaaa(data, size));
+		return (push_to_a(data, size));
 	ft_memset(&count, 0, sizeof(count));
 	get_pivot(pivot, data->b, size);
 	while (size-- > 0)

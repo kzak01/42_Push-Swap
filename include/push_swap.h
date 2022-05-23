@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 09:30:33 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/19 13:29:32 by kzak             ###   ########.fr       */
+/*   Updated: 2022/05/23 11:46:08 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,6 @@ typedef enum e_int
 	INT_MAX = 2147483647,
 	INT_MIN = -2147483648
 }	t_int;
-
-//printarray
-void	printarray(t_stack *st);
 
 //main
 int		main(int argc, char **argv);

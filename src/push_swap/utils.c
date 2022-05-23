@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 10:52:32 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/23 11:38:48 by kzak             ###   ########.fr       */
+/*   Updated: 2022/05/23 11:39:55 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ int	is_sort(t_stack *stack)
 	}
 	if (k == 0)
 	{
-		// ft_printf("the stack is already sorted!\n");
 		return (1);
 	}
 	return (0);

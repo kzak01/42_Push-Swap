@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 11:00:25 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/23 11:38:16 by kzak             ###   ########.fr       */
+/*   Updated: 2022/05/23 11:42:07 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,6 @@ void	varius_sort(t_stack *stack, t_push_swap *data, int argc, char **argv)
 	}
 	else
 	{
-		data->visualizer = OP;
 		data->a = create_stack_with_arg(argc, argv);
 		data->b = NULL;
 		sort_a(data, n);
