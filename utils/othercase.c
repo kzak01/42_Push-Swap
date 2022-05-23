@@ -152,4 +152,30 @@ s = 0;
         }
         s--;
     }
+    s = 1;
+    j = stack->la / 2;
+    while(stack->lb != 0)
+    {
+        printf("%zusono s", s);
+        printf("%zusono j", j);
+        if (stack->b[0] == stack->c[s])
+        {
+            pa(stack);
+            ra(stack);
+            s++;
+            printf("%zusono s dentro", s);
+
+        }
+        else if (stack->b[0] == stack->c[j])
+        {
+            printf("sono dentro");
+            pa(stack);
+            j--;
+        }
+        else
+        {
+            rb(stack);
+        }
+
+    }
 }
