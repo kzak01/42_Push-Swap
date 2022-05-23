@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 11:04:31 by mvolpi            #+#    #+#             */
-/*   Updated: 2022/05/19 13:34:13 by kzak             ###   ########.fr       */
+/*   Updated: 2022/05/23 11:20:56 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	rra(t_stack *stack)
 		}
 		stack->a[i] = first;
 		ft_printf("rra\n");
-		printarray(stack);
+		// printarray(stack);
 	}
 }
 
@@ -48,7 +48,7 @@ void	rrb(t_stack *stack)
 		}
 		stack->b[i] = first;
 		ft_printf("rrb\n");
-		printarray(stack);
+		// printarray(stack);
 	}
 }
 
@@ -76,6 +76,6 @@ void	rrr(t_stack *stack)
 		}
 		stack->b[i] = first;
 		ft_printf("rrr\n");
-		printarray(stack);
+		// printarray(stack);
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 09:12:56 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/23 11:14:16 by kzak             ###   ########.fr       */
+/*   Updated: 2022/05/23 11:37:23 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,9 +60,7 @@ int	main(int argc, char **argv)
 		return (0);
 	ft_errors(argc, argv);
 	stack.la = arrayleng(argc, argv);
-	ft_printf("Length of la: %zu\n", stack.la);
+	// ft_printf("Length of la: %zu\n", stack.la);
 	stack.lb = 0;
 	varius_sort(&stack, &data, argc, argv);
-	free(stack.a);
-	free(stack.b);
 }

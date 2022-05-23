@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 11:00:25 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/23 11:18:47 by kzak             ###   ########.fr       */
+/*   Updated: 2022/05/23 11:38:16 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ static void	insert_into_a(int ac, char **argv, t_stack *stack)
 	{
 		insert2(ft_split(argv[1], ' '), n, stack);
 	}
+	is_sort(stack);
 }
 
 void	varius_sort(t_stack *stack, t_push_swap *data, int argc, char **argv)
@@ -73,19 +74,18 @@ void	varius_sort(t_stack *stack, t_push_swap *data, int argc, char **argv)
 	if (stack->la == 3)
 	{
 		insert_into_a(argc, argv, stack);
-		is_sort(stack);
 		sort(stack);
 		freearray(stack);
 	}
 	else if (stack->la == 5)
 	{
 		insert_into_a(argc, argv, stack);
-		is_sort(stack);
 		fivecase(stack);
 		freearray(stack);
 	}
 	else
 	{
+		data->visualizer = OP;
 		data->a = create_stack_with_arg(argc, argv);
 		data->b = NULL;
 		sort_a(data, n);

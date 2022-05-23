@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 10:52:13 by mvolpi            #+#    #+#             */
-/*   Updated: 2022/05/19 13:34:27 by kzak             ###   ########.fr       */
+/*   Updated: 2022/05/23 11:20:40 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	sa(t_stack *stack)
 		stack->a[0] = stack->a[1];
 		stack->a[1] = t;
 		ft_printf("sa\n");
-		printarray(stack);
+		// printarray(stack);
 	}
 }
 
@@ -36,7 +36,7 @@ void	sb(t_stack *stack)
 		stack->b[0] = stack->b[1];
 		stack->b[1] = t;
 		ft_printf("sb\n");
-		printarray(stack);
+		// printarray(stack);
 	}
 }
 
@@ -58,7 +58,7 @@ void	ss(t_stack *stack)
 			stack->b[0] = stack->b[1];
 			stack->b[1] = t;
 			ft_printf("ss\n");
-			printarray(stack);
+			// printarray(stack);
 		}
 	}
 }
