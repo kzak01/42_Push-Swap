@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 11:39:34 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/18 14:05:02 by kzak             ###   ########.fr       */
+/*   Updated: 2022/05/23 10:56:42 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ static int	*stack_to_array(t_stack2 *stack, int n)
 	int		*array;
 
 	ft_malloc((void **)&array, sizeof(int) * (n + 1));
+	// printf("%p\n", array);
 	i = 0;
 	while (i < n)
 	{

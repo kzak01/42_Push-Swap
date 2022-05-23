@@ -6,11 +6,23 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 11:00:25 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/19 13:29:24 by kzak             ###   ########.fr       */
+/*   Updated: 2022/05/23 11:18:47 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+static void	freearray(t_stack *stack)
+{
+	free(stack->a);
+	free(stack->b);
+}
+
+static void	freelist(t_push_swap *data)
+{
+	stack_clear(&data->a);
+	stack_clear(&data->b);
+}
 
 static	void	insert2(char **av, int n, t_stack *stack)
 {
@@ -34,6 +46,8 @@ static void	insert_into_a(int ac, char **argv, t_stack *stack)
 	i = 0;
 	j = 1;
 	n = 0;
+	stack->a = (int *) malloc(stack->la * sizeof(int));
+	stack->b = (int *) malloc(stack->la * sizeof(int));
 	if (ac > 2)
 	{
 		while (i < stack->la)
@@ -61,18 +75,20 @@ void	varius_sort(t_stack *stack, t_push_swap *data, int argc, char **argv)
 		insert_into_a(argc, argv, stack);
 		is_sort(stack);
 		sort(stack);
+		freearray(stack);
 	}
 	else if (stack->la == 5)
 	{
 		insert_into_a(argc, argv, stack);
 		is_sort(stack);
 		fivecase(stack);
+		freearray(stack);
 	}
 	else
 	{
-		data->visualizer = OP;
 		data->a = create_stack_with_arg(argc, argv);
 		data->b = NULL;
 		sort_a(data, n);
+		freelist(data);
 	}
 }

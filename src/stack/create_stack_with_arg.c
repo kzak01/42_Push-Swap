@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 13:49:19 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/19 13:35:09 by kzak             ###   ########.fr       */
+/*   Updated: 2022/05/23 11:03:44 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,9 @@ static void	put_error_with_clear(t_stack2 *result, char **split)
 
 static long	atoi_check(char *s, t_stack2 *result, char **split)
 {
-	t_stack2	*curr;
-	char		flag;
-	long long	n;
+	t_stack2		*curr;
+	char			flag;
+	long long		n;
 
 	flag = 0;
 	n = 0;

@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 13:55:32 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/19 11:17:11 by kzak             ###   ########.fr       */
+/*   Updated: 2022/05/23 10:37:50 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,5 @@ void	operator(char *op, t_push_swap *data)
 	}
 	if (data->visualizer == OP)
 		ft_putendl_fd(op, 1);
-	print_stacks(data->a, data->b);
+	// print_stacks(data->a, data->b);
 }
