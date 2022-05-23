@@ -176,4 +176,17 @@ s = 0;
         }
         // pushato alle 12:00
     }
+    printf("stack a completa\n");
+    j = len / 2;
+    while (stack->a[0] != stack->c[j])
+    {
+        ra(stack);
+    }
+    ra(stack);
+    s = 0;
+    while(stack->a[0] != stack->c[s])
+    {
+        pb(stack);
+    }
+    
 }
