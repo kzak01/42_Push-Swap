@@ -6,7 +6,7 @@
 /*   By: ldi-masc <ldi-masc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 12:04:49 by ldi-masc          #+#    #+#             */
-/*   Updated: 2022/05/20 12:47:13 by ldi-masc         ###   ########.fr       */
+/*   Updated: 2022/05/23 14:35:03 by ldi-masc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ void othercase(t_stack *stack)
     size_t s;
     int mhanz;
     int medianb;
+    int la;
 
     s = 0;
     l = 0;
@@ -33,6 +34,7 @@ void othercase(t_stack *stack)
     k = 0;
     i = 0;
     j = 1;
+    la = stack->la / 2;
     stack->c = malloc(sizeof(int) * stack->la);
     while (k < stack->la)
     {
@@ -153,25 +155,21 @@ s = 0;
         s--;
     }
     s = 1;
-    j = stack->la / 2;
+    j = len / 2 - 1;
     while(stack->lb != 0)
     {
-        printf("%zusono s", s);
-        printf("%zusono j", j);
-        if (stack->b[0] == stack->c[s])
+        if (stack->b[0] == stack->c[j])
         {
+            pa(stack);
+            j--;
+        }
+        else if (stack->b[0] == stack->c[s])
+        {
+            printf("aaaaaaaaaa\n");
             pa(stack);
             ra(stack);
             s++;
-            printf("%zusono s dentro", s);
-
         }
-        // else if (stack->b[0] == stack->c[j])
-        // {
-        //     printf("sono dentro");
-        //     pa(stack);
-        //     j--;
-        // }
         else
         {
             rb(stack);
