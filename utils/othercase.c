@@ -166,16 +166,16 @@ s = 0;
             printf("%zusono s dentro", s);
 
         }
-        else if (stack->b[0] == stack->c[j])
-        {
-            printf("sono dentro");
-            pa(stack);
-            j--;
-        }
+        // else if (stack->b[0] == stack->c[j])
+        // {
+        //     printf("sono dentro");
+        //     pa(stack);
+        //     j--;
+        // }
         else
         {
             rb(stack);
         }
-
+        // pushato alle 12:00
     }
 }
