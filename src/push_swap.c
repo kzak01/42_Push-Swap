@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 09:12:56 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/23 11:39:34 by kzak             ###   ########.fr       */
+/*   Updated: 2022/05/24 10:44:05 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,4 +62,5 @@ int	main(int argc, char **argv)
 	stack.la = arrayleng(argc, argv);
 	stack.lb = 0;
 	varius_sort(&stack, &data, argc, argv);
+	return (0);
 }

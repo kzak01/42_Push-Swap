@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/30 11:09:49 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/19 13:33:34 by kzak             ###   ########.fr       */
+/*   Updated: 2022/05/24 11:03:44 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,8 +95,8 @@ static void	intmaxmin(char **av)
 	{
 		if (atoilong(av[j]) < INT_MIN || atoilong(av[j]) > INT_MAX)
 		{
-			ft_printf("\033[0;31m" "Error: Number '%d' exceed int value\n" \
-				"\033[0m", ft_atoi(av[j]));
+			ft_printf("\033[0;31m" "Error: A number exceed int value\n" \
+				"\033[0m");
 			exit (0);
 		}
 	j++;
@@ -107,7 +107,7 @@ void	ft_errors(int ac, char **av)
 {
 	int	i;
 
-	i = 0;
+	i = 1;
 	if (ac == 2)
 	{
 		while (av[i])
