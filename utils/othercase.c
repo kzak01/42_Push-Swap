@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   othercase.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldi-masc <ldi-masc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vbellucc <vbellucc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 12:04:49 by ldi-masc          #+#    #+#             */
-/*   Updated: 2022/05/23 14:35:03 by ldi-masc         ###   ########.fr       */
+/*   Updated: 2022/05/24 12:12:15 by vbellucc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ void othercase(t_stack *stack)
     int mhanz;
     int medianb;
     int la;
+    int len;
 
     s = 0;
     l = 0;
@@ -75,7 +76,7 @@ printf("mediana è:%d\n", median);
 //t = 0;
 printf("la è:%zu\n", stack->la);
 s = 0;
-int len = stack->la;
+len = stack->la;
 while((int)s <= len)
 {
     //printf("%d\n", j);
@@ -90,103 +91,110 @@ mhanz = find_minb(stack);
 medianb = stack->lb / 2;
 printf("mediana è:%d\n", median);
 printf("medianb è: %d\n", medianb);
-s = 0;
-    while ((int)s <= medianb)
-    {
-        if(stack->b[s] == mhanz)
-        {
-            printf("mhanz e %d\n", mhanz);
-            while (stack->b[0] != mhanz)
-            {
-                rb(stack);
-            }
-            pa(stack);;
-            ra(stack);
-        }
-        s++;
-    }
-    s = stack->lb;
-    while ((int)s >= medianb)
-    {
-        if(stack->b[s] == mhanz)
-            {
-            printf("mhanz e %d\n", mhanz);
-            while (stack->b[0] != mhanz)
-            {
-                rrb(stack);
-            }
-            pa(stack);
-            ra(stack);
-        }
-        s--;
-    }
-    medianb = stack->lb / 2;
-    s = 0;
-    while ((int)s <= medianb)
-    {
-        printf("median b è %d\n", medianb);
-        if(stack->b[s] == median)
-        {
-            printf("mhanz e %d\n", mhanz);
-            while (stack->b[0] != median)
-            {
-                rb(stack);
-            }
-            pa(stack);
-            printf("Bellaa\n");
-        }
-        s++;
-    }
-    medianb = stack->lb / 2;
-    s = stack->lb;
-    while ((int)s >= medianb)
-    {
-        printf("entra %d\n", medianb);
-        if(stack->b[s] == median)
-            {
-            printf("mhanz e %d\n", mhanz);
-            while (stack->b[0] != median)
-            {
-                rrb(stack);
-            }
-            pa(stack);
-            printf("Bellaa\n");
-        }
-        s--;
-    }
-    s = 1;
-    j = len / 2 - 1;
-    while(stack->lb != 0)
-    {
-        if (stack->b[0] == stack->c[j])
-        {
-            pa(stack);
-            j--;
-        }
-        else if (stack->b[0] == stack->c[s])
-        {
-            printf("aaaaaaaaaa\n");
-            pa(stack);
-            ra(stack);
-            s++;
-        }
-        else
-        {
-            rb(stack);
-        }
-        // pushato alle 12:00
-    }
-    printf("stack a completa\n");
-    j = len / 2;
-    while (stack->a[0] != stack->c[j])
-    {
-        ra(stack);
-    }
-    ra(stack);
-    s = 0;
-    while(stack->a[0] != stack->c[s])
-    {
-        pb(stack);
-    }
+// s = 0;
+//     while ((int)s <= medianb)
+//     {
+//         if(stack->b[s] == mhanz)
+//         {
+//             printf("mhanz e %d\n", mhanz);
+//             while (stack->b[0] != mhanz)
+//             {
+//                 rb(stack);
+//             }
+//             pa(stack);;
+//             ra(stack);
+//         }
+//         s++;
+//     }
+//     s = stack->lb;
+//     while ((int)s >= medianb)
+//     {
+//         if(stack->b[s] == mhanz)
+//             {
+//             printf("mhanz e %d\n", mhanz);
+//             while (stack->b[0] != mhanz)
+//             {
+//                 rrb(stack);
+//             }
+//             pa(stack);
+//             ra(stack);
+//         }
+//         s--;
+//     }
+//     medianb = stack->lb / 2;
+//     s = 0;
+//     while ((int)s <= medianb)
+//     {
+//         printf("median b è %d\n", medianb);
+//         if(stack->b[s] == median)
+//         {
+//             printf("mhanz e %d\n", mhanz);
+//             while (stack->b[0] != median)
+//             {
+//                 rb(stack);
+//             }
+//             pa(stack);
+//             printf("Bellaa\n");
+//         }
+//         s++;
+//     }
+//     medianb = stack->lb / 2;
+//     s = stack->lb;
+//     while ((int)s >= medianb)
+//     {
+//         printf("entra %d\n", medianb);
+//         if(stack->b[s] == median)
+//             {
+//             printf("mhanz e %d\n", mhanz);
+//             while (stack->b[0] != median)
+//             {
+//                 rrb(stack);
+//             }
+//             pa(stack);
+//             printf("Bellaa\n");
+//         }
+//         s--;
+//     }
+//     s = 1;
+//     j = len / 2 - 1;
+//     while(stack->lb != 0)
+//     {
+//         if (stack->b[0] == stack->c[j])
+//         {
+//             pa(stack);
+//             j--;
+//         }
+//         else if (stack->b[0] == stack->c[s])
+//         {
+//             printf("aaaaaaaaaa\n");
+//             pa(stack);
+//             ra(stack);
+//             s++;
+//         }
+//         else
+//         {
+//             rb(stack);
+//         }
+//         // pushato alle 12:00==/
+//     }
+//     printf("stack a completa\n");
+//     j = len / 2;
+//     while (stack->a[0] != stack->c[j])
+//     {
+//         ra(stack);
+//     }
+//     ra(stack);
+//     s = 0;
+//     while(stack->a[0] != stack->c[s])
+//     {
+//         pb(stack);
+//     }
+    pa_minb1(stack, medianb, mhanz);
+    pa_minb2(stack, medianb, mhanz);
+    pa_maxb1(stack, medianb, median);
+    pa_maxb2(stack, medianb, median);
+    vordermaxmin(stack, medianb, median);
+    putadjacent(stack, len);
+    sortmaxmin(stack, len);
     
 }

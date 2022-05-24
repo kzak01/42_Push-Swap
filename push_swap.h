@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldi-masc <ldi-masc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vbellucc <vbellucc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 09:30:33 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/18 10:29:55 by ldi-masc         ###   ########.fr       */
+/*   Updated: 2022/05/24 12:12:42 by vbellucc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,5 +88,14 @@ void	rrr(t_stack *stack);
 //push
 void	pa(t_stack *stack);
 void	pb(t_stack *stack);
+
+//othercase_utils
+void	pa_minb1(t_stack *stack, int medianb, int mhanz);
+void    pa_minb2(t_stack *stack, int medianb, int mhanz);
+void    pa_maxb1(t_stack *stack, int medianb, int median);
+void    pa_maxb2(t_stack *stack, int medianb, int median);
+void    vordermaxmin(t_stack *stack, int medianb, int median);
+void    putadjacent(t_stack *stack,int len);
+void    sortmaxmin(t_stack *stack,int len);
 
 #endif
