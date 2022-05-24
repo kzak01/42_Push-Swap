@@ -6,7 +6,7 @@
 /*   By: vbellucc <vbellucc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 09:30:33 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/24 12:12:42 by vbellucc         ###   ########.fr       */
+/*   Updated: 2022/05/24 15:39:34 by vbellucc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,5 +97,7 @@ void    pa_maxb2(t_stack *stack, int medianb, int median);
 void    vordermaxmin(t_stack *stack, int medianb, int median);
 void    putadjacent(t_stack *stack,int len);
 void    sortmaxmin(t_stack *stack,int len);
+void 	sortmaxmin2(t_stack *stack);
+void	putadjacent2(t_stack *stack, int len, int median);
 
 #endif

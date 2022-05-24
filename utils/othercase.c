@@ -6,7 +6,7 @@
 /*   By: vbellucc <vbellucc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 12:04:49 by ldi-masc          #+#    #+#             */
-/*   Updated: 2022/05/24 12:12:15 by vbellucc         ###   ########.fr       */
+/*   Updated: 2022/05/24 15:59:27 by vbellucc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -189,12 +189,46 @@ printf("medianb è: %d\n", medianb);
 //     {
 //         pb(stack);
 //     }
+    printf("medianb %d\n", medianb);
+    printf("mhanz %d\n", mhanz);
     pa_minb1(stack, medianb, mhanz);
     pa_minb2(stack, medianb, mhanz);
     pa_maxb1(stack, medianb, median);
     pa_maxb2(stack, medianb, median);
-    vordermaxmin(stack, medianb, median);
+    // vordermaxmin(stack, medianb, median);
     putadjacent(stack, len);
+    printf("inizio sortmax min dopo c di 0 che sminchia");
     sortmaxmin(stack, len);
+    printf("inizia parte nuova\n");
+    mhanz = find_minb(stack);
+    medianb = stack->lb / 2;
+    // printf("medianb %d\n", medianb);
+    // printf("mhanz %d\n", mhanz);
+    printf ("inizio minb1 nuovo\n");
+    pa_minb1(stack, medianb, mhanz);
+    printf("fine minb1\n");
+    printf("inizio minb2 nuovo");
+    pa_minb2(stack, medianb, mhanz);
+    printf("fine minb2\n");
+    // median = stack->c[la * 2];
+    medianb = stack->lb / 2;
+    printf("inizio maxb1 nuovo\n");
+    pa_maxb1(stack, medianb, median);
+    printf("fine maxb1\n");
+    printf("inizio maxb2 nuovo\n");
+    pa_maxb2(stack, medianb, median);
+    printf("fine maxb2\n");
+    // printf("inizio vordermaxmin\n");
+    // vordermaxmin(stack, medianb, median);
+    // printf("fine vordermaxmin\n");
+    printf("inizio putadjacent nuovo\n");
+    putadjacent2(stack, len, median);
+    printf("fine putadjacent\n");
+    printf("inizio sortmaxmin2\n");
+    sortmaxmin2(stack);
+    printf("fine sortmaxmin\n");
+    // printf("median è:%d\n", median);
+    
+    printf("fine parte nuova");
     
 }
