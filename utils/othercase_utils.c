@@ -6,7 +6,7 @@
 /*   By: vbellucc <vbellucc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 09:51:37 by vbellucc          #+#    #+#             */
-/*   Updated: 2022/05/24 17:11:02 by vbellucc         ###   ########.fr       */
+/*   Updated: 2022/05/25 11:52:31 by vbellucc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,9 +112,9 @@ void putadjacent(t_stack *stack, int len)
         if (stack->b[0] == stack->c[len])
         {
             pa(stack);
-            printf("stack c di 0 è nel prima del pa: %d\n", porcoddue);
+            //printf("stack c di 0 è nel prima del pa: %d\n", porcoddue);
             len--;
-            printf("stack c di 0 è nel primo if: %d\n", porcoddue);
+            //printf("stack c di 0 è nel primo if: %d\n", porcoddue);
             printf("len è nell if: %d\n", len);
         }
         else if (stack->b[0] == stack->c[s])
