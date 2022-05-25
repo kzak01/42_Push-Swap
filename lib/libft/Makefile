@@ -6,7 +6,7 @@
 #    By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/13 11:10:21 by kzak              #+#    #+#              #
-#    Updated: 2022/05/18 15:00:29 by kzak             ###   ########.fr        #
+#    Updated: 2022/05/25 15:33:17 by kzak             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -107,6 +107,11 @@ SRC_PRINTF = $(addprefix $(SRC_PRINTF_DIR)/, \
 	ft_printf.c	\
 )
 
+SRC_GNL_DIR = $(SRC_DIR)/gnl
+SRC_GNL = $(addprefix $(SRC_GNL_DIR)/, \
+	get_next_line.c	\
+)
+
 SRCS = \
 	$(SRC_LST)	\
 	$(SRC_MEMORY)	\
@@ -114,6 +119,7 @@ SRCS = \
 	$(SRC_TYPE)	\
 	$(SRC_WRITE)	\
 	$(SRC_PRINTF)	\
+	$(SRC_GNL)	\
 
 vpath %.c \
 	$(SRC_DIR)	\
@@ -123,6 +129,7 @@ vpath %.c \
 	$(SRC_TYPE_DIR)	\
 	$(SRC_WRITE_DIR)	\
 	$(SRC_PRINTF_DIR)	\
+	$(SRC_GNL_DIR)	\
 
 OBJS = $(addprefix $(OBJ_DIR)/, $(notdir $(SRCS:.c=.o)))
 

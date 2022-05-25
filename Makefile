@@ -6,12 +6,13 @@
 #    By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/13 09:13:08 by kzak              #+#    #+#              #
-#    Updated: 2022/05/24 10:52:15 by kzak             ###   ########.fr        #
+#    Updated: 2022/05/25 15:35:22 by kzak             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+CHECKER = checker
 PUSH_SWAP = push_swap
-NAME = $(PUSH_SWAP)
+NAME = $(PUSH_SWAP) $(CHECKER)
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
@@ -41,12 +42,16 @@ HEADERS = $(wildcard $(INC_DIR)/*.h)
 STACK_DIR = $(SRC_DIR)/stack
 STACK_SRCS = $(wildcard $(STACK_DIR)/*.c)
 
+CHECKER_DIR = $(SRC_DIR)/checker
+CHECKER_SRCS = $(wildcard $(CHECKER_DIR)/*.c)
+
 PUSH_SWAP_DIR = $(SRC_DIR)/push_swap
 PUSH_SWAP_SRCS = $(wildcard $(PUSH_SWAP_DIR)/*.c)
 
 PUSH_SWAP2_DIR = $(SRC_DIR)/push_swap2
 PUSH_SWAP2_SRCS = $(wildcard $(PUSH_SWAP2_DIR)/*.c)
 
+CHECKER_SRCS += $(STACK_SRCS)
 PUSH_SWAP_SRCS += $(STACK_SRCS) $(PUSH_SWAP2_SRCS)
 
 vpath %.c \
@@ -54,9 +59,9 @@ vpath %.c \
 	$(PUSH_SWAP_DIR)	\
 	$(STACK_DIR) \
 	$(PUSH_SWAP2_DIR)
-	# $(CHECKER_DIR)	\
+	$(CHECKER_DIR)	\
 
-# CHECKER_OBJS = $(addprefix $(OBJ_DIR)/, $(notdir $(CHECKER_SRCS:.c=.o)))
+CHECKER_OBJS = $(addprefix $(OBJ_DIR)/, $(notdir $(CHECKER_SRCS:.c=.o)))
 PUSH_SWAP_OBJS = $(addprefix $(OBJ_DIR)/, $(notdir $(PUSH_SWAP_SRCS:.c=.o)))
 
 # Color
@@ -95,11 +100,11 @@ $(OBJ_DIR)/%.o : %.c $(LIBFT_FILE) | $(OBJ_DIR)
 	@$(CC) $(CFLAGS) -c $< -o $@
 	@printf "$(LF)🚧 $(FG_TEXT)Create $(FG_TEXT_PRIMARY)$@ $(FG_TEXT)from $(FG_TEXT_PRIMARY)$<"
 
-# $(CHECKER) : $(LIBFT_FILE) $(HEADERS) $(CHECKER_OBJS) $(SRC_DIR)/checker.c
-# 	@printf "$(LF)🚀 $(FG_TEXT)Successfully Created $(FG_TEXT_PRIMARY)$@'s Object files $(FG_TEXT)!"
-# 	@printf "$(CRLF)📚 $(FG_TEXT)Create $(FG_TEXT_PRIMARY)$@$(FG_TEXT)!\n"
-# 	@$(CC) $(CFLAGS) $(LIBFT_FLAGS) $(CHECKER_OBJS) $(SRC_DIR)/checker.c -o $@
-# 	@printf "$(LF)🎉 $(FG_TEXT)Successfully Created $(FG_TEXT_PRIMARY)$@ $(FG_TEXT)!\n$(NO_COLOR)"
+$(CHECKER) : $(LIBFT_FILE) $(HEADERS) $(CHECKER_OBJS) $(SRC_DIR)/checker.c
+	@printf "$(LF)🚀 $(FG_TEXT)Successfully Created $(FG_TEXT_PRIMARY)$@'s Object files $(FG_TEXT)!"
+	@printf "$(CRLF)📚 $(FG_TEXT)Create $(FG_TEXT_PRIMARY)$@$(FG_TEXT)!\n"
+	@$(CC) $(CFLAGS) $(LIBFT_FLAGS) $(CHECKER_OBJS) $(SRC_DIR)/checker.c -o $@
+	@printf "$(LF)🎉 $(FG_TEXT)Successfully Created $(FG_TEXT_PRIMARY)$@ $(FG_TEXT)!\n$(NO_COLOR)"
 
 $(PUSH_SWAP) : $(LIBFT_FILE) $(HEADERS) $(PUSH_SWAP_OBJS) $(SRC_DIR)/push_swap.c
 	@printf "$(LF)🚀 $(FG_TEXT)Successfully Created $(FG_TEXT_PRIMARY)$@'s Object files $(FG_TEXT)!"
