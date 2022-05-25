@@ -6,15 +6,15 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 14:20:29 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/23 11:11:04 by kzak             ###   ########.fr       */
+/*   Updated: 2022/05/25 12:13:53 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "stack.h"
 
-void	stack_add_back(t_stack2 **lst, t_stack2 *new_list)
+void	stack_add_back(t_stack **lst, t_stack *new_list)
 {
-	t_stack2	*last;
+	t_stack	*last;
 
 	if (*lst == NULL)
 	{
@@ -26,7 +26,7 @@ void	stack_add_back(t_stack2 **lst, t_stack2 *new_list)
 	new_list->prev = last;
 }
 
-void	stack_add_front(t_stack2 **lst, t_stack2 *new_list)
+void	stack_add_front(t_stack **lst, t_stack *new_list)
 {
 	if (*lst == NULL)
 	{
@@ -38,7 +38,7 @@ void	stack_add_front(t_stack2 **lst, t_stack2 *new_list)
 	*lst = new_list;
 }
 
-int	check_stack_sorted(t_stack2 *stack_a, t_stack2 *stack_b)
+int	check_stack_sorted(t_stack *stack_a, t_stack *stack_b)
 {
 	int	n;
 
@@ -55,7 +55,7 @@ int	check_stack_sorted(t_stack2 *stack_a, t_stack2 *stack_b)
 	return (1);
 }
 
-int	stack_size(t_stack2 *lst)
+int	stack_size(t_stack *lst)
 {
 	int		cnt;
 

@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   moves.c                                            :+:      :+:    :+:   */
+/*   moves2.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 14:00:22 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/18 14:16:24 by kzak             ###   ########.fr       */
+/*   Updated: 2022/05/25 12:12:34 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "stack.h"
 
-void	push(t_stack2 **from, t_stack2 **to)
+void	push(t_stack **from, t_stack **to)
 {
-	t_stack2	*tmp;
+	t_stack	*tmp;
 
 	if (*from == NULL)
 		return ;
@@ -29,9 +29,9 @@ void	push(t_stack2 **from, t_stack2 **to)
 	(*to)->prev = NULL;
 }
 
-void	rotate(t_stack2 **stack)
+void	rotate(t_stack **stack)
 {
-	t_stack2	*tmp;
+	t_stack	*tmp;
 
 	if (*stack == NULL || (*stack)->next == NULL)
 		return ;
@@ -43,9 +43,9 @@ void	rotate(t_stack2 **stack)
 	tmp->prev->next = tmp;
 }
 
-void	rrotate(t_stack2 **stack)
+void	rrotate(t_stack **stack)
 {
-	t_stack2	*last;
+	t_stack	*last;
 
 	if (*stack == NULL || (*stack)->next == NULL)
 		return ;
@@ -57,7 +57,7 @@ void	rrotate(t_stack2 **stack)
 	*stack = last;
 }
 
-void	swap(t_stack2 *stack)
+void	swap(t_stack *stack)
 {
 	int	content_tmp;
 

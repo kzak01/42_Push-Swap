@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 11:39:34 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/24 10:54:29 by kzak             ###   ########.fr       */
+/*   Updated: 2022/05/25 12:12:57 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,12 @@ static void	swap_int(int *a, int *b)
 	*b = tmp;
 }
 
-static int	*stack_to_array(t_stack2 *stack, int n)
+static int	*stack_to_array(t_stack *stack, int n)
 {
 	int		i;
 	int		*array;
 
-	// ft_malloc((void **)&array, sizeof(int) * (n + 1));
-	array = malloc(sizeof(int) * (n + 1));
+	ft_malloc((void **)&array, sizeof(int) * (n + 1));
 	i = 0;
 	while (i < n)
 	{
@@ -38,7 +37,7 @@ static int	*stack_to_array(t_stack2 *stack, int n)
 	return (array);
 }
 
-void	get_pivot(int pivot[], t_stack2 *stack, int n)
+void	get_pivot(int pivot[], t_stack *stack, int n)
 {
 	int		iv[2];
 	int		*array;

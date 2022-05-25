@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 13:58:44 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/23 11:43:51 by kzak             ###   ########.fr       */
+/*   Updated: 2022/05/25 12:09:57 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,12 @@ static void	push_to_a(t_push_swap *data, int size)
 
 static void	call_next_sort(t_push_swap *data, int count[3])
 {
-	if (!check_sort_n(data->a, ASC, count[PUSH_CNT] - count[RA_CNT]))
+	if (!is_sort(data->a, ASC, count[PUSH_CNT] - count[RA_CNT]))
 		sort_a(data, count[PUSH_CNT] - count[RA_CNT]);
 	return_stack(data, count[RA_CNT], count[RB_CNT]);
-	if (!check_sort_n(data->a, ASC, count[RA_CNT]))
+	if (!is_sort(data->a, ASC, count[RA_CNT]))
 		sort_a(data, count[RA_CNT]);
-	if (!check_sort_n(data->b, DESC, count[RB_CNT]))
+	if (!is_sort(data->b, DESC, count[RB_CNT]))
 		sort_b(data, count[RB_CNT]);
 	else
 		push_to_a(data, count[RB_CNT]);
@@ -73,7 +73,7 @@ void	sort_b(t_push_swap *data, int size)
 
 	if (size <= 3)
 		return (switch_sort(data, size));
-	if (check_sort_n(data->b, DESC, size))
+	if (is_sort(data->b, DESC, size))
 		return (push_to_a(data, size));
 	ft_memset(&count, 0, sizeof(count));
 	get_pivot(pivot, data->b, size);

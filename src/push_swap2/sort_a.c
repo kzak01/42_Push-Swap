@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 11:28:28 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/18 14:03:51 by kzak             ###   ########.fr       */
+/*   Updated: 2022/05/25 12:10:06 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 static void	call_next_sort(t_push_swap *data, int count[3])
 {
 	return_stack(data, count[RA_CNT], count[RB_CNT]);
-	if (!check_sort_n(data->a, ASC, count[RA_CNT]))
+	if (!is_sort(data->a, ASC, count[RA_CNT]))
 		sort_a(data, count[RA_CNT]);
 	sort_b(data, count[RB_CNT]);
 	sort_b(data, count[PUSH_CNT] - count[RB_CNT]);
@@ -63,7 +63,7 @@ void	sort_a(t_push_swap *data, int size)
 
 	if (size <= 3)
 		return (switch_sort(data, size));
-	if (check_sort_n(data->a, ASC, size))
+	if (is_sort(data->a, ASC, size))
 		return ;
 	ft_memset(&count, 0, sizeof(count));
 	get_pivot(pivot, data->a, size);

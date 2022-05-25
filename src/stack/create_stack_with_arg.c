@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 13:49:19 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/23 11:03:44 by kzak             ###   ########.fr       */
+/*   Updated: 2022/05/25 11:40:49 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static void	ft_split_clean(char **split)
 	free(split);
 }
 
-static void	put_error_with_clear(t_stack2 *result, char **split)
+static void	put_error_with_clear(t_stack *result, char **split)
 {
 	stack_clear(&result);
 	ft_putendl_fd("Error", 2);
@@ -30,9 +30,9 @@ static void	put_error_with_clear(t_stack2 *result, char **split)
 	exit(1);
 }
 
-static long	atoi_check(char *s, t_stack2 *result, char **split)
+static long	atoi_check(char *s, t_stack *result, char **split)
 {
-	t_stack2		*curr;
+	t_stack		*curr;
 	char			flag;
 	long long		n;
 
@@ -59,12 +59,12 @@ static long	atoi_check(char *s, t_stack2 *result, char **split)
 	return (n);
 }
 
-t_stack2	*create_stack_with_arg(int argc, char *argv[])
+t_stack	*create_stack_with_arg(int argc, char *argv[])
 {
-	int			iv[2];
-	char		**split;
-	t_stack2	*result;
-	t_stack2	*tmp;
+	int		iv[2];
+	char	**split;
+	t_stack	*result;
+	t_stack	*tmp;
 
 	result = NULL;
 	iv[0] = 0;

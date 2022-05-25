@@ -6,36 +6,37 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 10:52:32 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/23 11:39:55 by kzak             ###   ########.fr       */
+/*   Updated: 2022/05/25 12:21:33 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	is_sort(t_stack *stack)
+int	is_sort(t_stack *stack, int type, int n)
 {
-	size_t	i;
-	size_t	j;
-	size_t	k;
+	int		check;
 
-	j = 0;
-	k = 0;
-	while (j != stack->la)
-	{
-		i = j + 1;
-		while (i <= stack->la)
-		{
-			if (stack->a[j] > stack->a[i])
-				k = 1;
-			i++;
-		}
-		j++;
-	}
-	if (k == 0)
-	{
+	if (stack == NULL)
 		return (1);
+	check = stack->content;
+	stack = stack->next;
+	while (--n > 0 && stack)
+	{
+		if (type == DESC)
+		{
+			if (stack->content > check)
+				return (0);
+			check = stack->content;
+		}
+		else if (type == ASC)
+		{
+			if (stack->content < check)
+				return (0);
+			check = stack->content;
+		}
+		stack = stack->next;
 	}
-	return (0);
+	return (1);
 }
 
 long	atoilong(const char *str)
@@ -64,27 +65,27 @@ long	atoilong(const char *str)
 	return ((res * sign));
 }
 
-void	sort(t_stack *stack)
+void	sort(t_push_swap *stack)
 {
-	if (stack->a[0] > stack->a[1] && stack->a[1] < stack->a[2]
-		&& stack->a[2] < stack->a[0])
-		ra(stack);
-	if (stack->a[0] < stack->a[1] && stack->a[1] > stack->a[2]
-		&& stack->a[2] < stack->a[0])
-		rra(stack);
-	if (stack->a[0] > stack->a[1] && stack->a[1] > stack->a[2]
-		&& stack->a[2] < stack->a[0])
+	if (stack->a->content > stack->a->next->content && stack->a->next->content < stack->a->next->next->content
+		&& stack->a->next->next->content < stack->a->content)
+		operator("ra", stack);
+	if (stack->a->content < stack->a->next->content && stack->a->next->content > stack->a->next->next->content
+		&& stack->a->next->next->content < stack->a->content)
+		operator("rra", stack);
+	if (stack->a->content > stack->a->next->content && stack->a->next->content > stack->a->next->next->content
+		&& stack->a->next->next->content < stack->a->content)
 	{
-		sa(stack);
-		rra(stack);
+		operator("sa", stack);
+		operator("rra", stack);
 	}
-	if (stack->a[0] < stack->a[1] && stack->a[1] > stack->a[2]
-		&& stack->a[2] > stack->a[0])
+	if (stack->a->content < stack->a->next->content && stack->a->next->content > stack->a->next->next->content
+		&& stack->a->next->next->content > stack->a->content)
 	{
-		sa(stack);
-		ra(stack);
+		operator("sa", stack);
+		operator("ra", stack);
 	}
-	if (stack->a[0] > stack->a[1] && stack->a[1] < stack->a[2]
-		&& stack->a[2] > stack->a[0])
-		sa(stack);
+	if (stack->a->content > stack->a->next->content && stack->a->next->content < stack->a->next->next->content
+		&& stack->a->next->next->content > stack->a->content)
+		operator("sa", stack);
 }

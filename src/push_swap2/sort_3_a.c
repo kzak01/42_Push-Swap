@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 11:51:17 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/19 13:34:51 by kzak             ###   ########.fr       */
+/*   Updated: 2022/05/25 12:10:31 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ static void	type_d(t_push_swap *data)
 
 void	sort_three_a(t_push_swap *data)
 {
-	if (check_sort_n(data->a, ASC, 3))
+	if (is_sort(data->a, ASC, 3))
 		return ;
 	if (data->a->content > data->a->next->content && \
 		data->a->next->content < data->a->next->next->content)
