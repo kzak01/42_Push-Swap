@@ -6,7 +6,7 @@
 /*   By: vbellucc <vbellucc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 09:12:56 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/25 12:20:21 by vbellucc         ###   ########.fr       */
+/*   Updated: 2022/05/25 14:14:17 by vbellucc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,4 +109,5 @@ int	main(int argc, char **argv)
 		// printf("AO calma\n");
 	free(stack.a);
 	free(stack.b);
+	
 }
