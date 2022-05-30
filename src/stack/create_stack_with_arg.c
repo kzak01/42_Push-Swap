@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 13:49:19 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/30 11:13:39 by kzak             ###   ########.fr       */
+/*   Updated: 2022/05/30 11:38:42 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,12 @@ static void	put_error_with_clear(t_stack *result, char **split)
 static long	atoi_check(char *s, t_stack *result, char **split)
 {
 	t_stack			*curr;
-	// char			flag;
+	char			flag;
 	long long		n;
 
-	// flag = 0;
+	flag = 0;
 	n = 0;
-	// ((*s == '-') && (flag = 1) && (++s));
+	((*s == '-') && (flag = 1) && (++s));
 	if (ft_strlen(s) > 10 || ft_strlen(s) == 0)
 		put_error_with_clear(result, split);
 	while (ft_isdigit(*s))
@@ -46,7 +46,7 @@ static long	atoi_check(char *s, t_stack *result, char **split)
 		n *= 10;
 		n += *s++ - '0';
 	}
-	// ((flag == 1) && (n *= -1));
+	((flag == 1) && (n *= -1));
 	if (*s != '\0' || (n < FT_INT_MIN) || (n > FT_INT_MAX))
 		put_error_with_clear(result, split);
 	curr = result;

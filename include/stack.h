@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 11:57:17 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/30 11:21:09 by kzak             ###   ########.fr       */
+/*   Updated: 2022/05/30 11:38:19 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void		swap(t_stack *stack);
 void		operator(char *op, t_push_swap *data);
 
 //print_stack
-void	print_stacks(t_stack *stack_a, t_stack *stack_b);
+void		print_stacks(t_stack *stack_a, t_stack *stack_b);
 
 //utils3
 t_stack		*stack_new(int content);
