@@ -6,56 +6,57 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 10:03:35 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/13 11:44:20 by kzak             ###   ########.fr       */
+/*   Updated: 2022/05/30 11:48:03 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/push_swap.h"
+#include "push_swap.h"
 
-int	find_max(t_stack *stack)
+int	find_max(t_stack *stack, int n)
 {
-	size_t	i;
-	int		t;
+	int		iter;
+	int		cur_max;
 
-	i = 1;
-	t = stack->a[0];
-	while (i < stack->la)
+	iter = 0;
+	cur_max = stack->content;
+	while (iter < n)
 	{
-		if (stack->a[i] > t)
-			t = stack->a[i];
-		i++;
+		if (stack->content > cur_max)
+			cur_max = stack->content;
+		iter++;
+		stack = stack->next;
 	}
-	return (t);
+	return (cur_max);
 }
 
-int	find_min(t_stack *stack)
+int	find_min(t_stack *stack, int n)
 {
-	size_t	i;
-	int		t;
+	int		iter;
+	int		cur_min;
 
-	i = 1;
-	t = stack->a[0];
-	while (i < stack->la)
+	iter = 0;
+	cur_min = stack->content;
+	while (iter < n)
 	{
-		if (stack->a[i] < t)
-			t = stack->a[i];
-		i++;
+		if (stack->content < cur_min)
+			cur_min = stack->content;
+		iter++;
+		stack = stack->next;
 	}
-	return (t);
+	return (cur_min);
 }
 
-void	fivecase(t_stack *stack)
+void	fivecase(t_push_swap *stack, int n)
 {
 	int	max;
 	int	min;
 
-	max = find_max(stack);
-	min = find_min(stack);
-	printf("max = %d\nmin = %d\n", max, min);
+	max = find_max(stack->a, n);
+	min = find_min(stack->a, n);
 	sort_min(stack, min);
 	sort_max(stack, max);
 	sort(stack);
-	pa(stack);
-	ra(stack);
-	pa(stack);
+	operator("pa", stack);
+	operator("ra", stack);
+	operator("pa", stack);
 }

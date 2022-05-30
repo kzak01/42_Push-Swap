@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   varius_sort.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/13 15:44:46 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/23 10:45:42 by kzak             ###   ########.fr       */
+/*   Created: 2022/05/19 11:00:25 by kzak              #+#    #+#             */
+/*   Updated: 2022/05/25 14:39:56 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+void	varius_sort(t_push_swap *stack)
 {
-	char	*str;
-	size_t	l;
+	int		n;
 
-	if (s == NULL)
-		return (NULL);
-	if ((unsigned int)ft_strlen(s) < start)
-		return (ft_strdup(""));
-	l = ft_strlen(s + start);
-	if (l < len)
-		len = l;
-	str = (char *)malloc(sizeof(char) * (len + 1));
-	if (!str)
-		return (NULL);
-	ft_strlcpy(str, s + start, len + 1);
-	return (str);
+	n = stack_size(stack->a);
+	if (n == 5)
+		return (fivecase(stack, n));
+	if (n == 3)
+		return (sort(stack));
+	if (n == 2 && stack->a->content > stack->a->next->content)
+		return (operator("sa", stack));
+	return (sort_a(stack, n));
 }

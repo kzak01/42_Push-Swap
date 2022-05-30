@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/05 10:51:56 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/11 08:52:31 by kzak             ###   ########.fr       */
+/*   Updated: 2022/05/30 10:36:49 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 # include <unistd.h>
 # include <stdarg.h>
 # include <stdio.h>
+
+# include "libft.h"
 
 int		ft_printf(const char *str, ...);
 void	ft_format(const char *str, va_list args, int *j, int i);

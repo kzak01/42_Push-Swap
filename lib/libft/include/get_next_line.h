@@ -1,32 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/13 15:44:46 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/23 10:45:42 by kzak             ###   ########.fr       */
+/*   Created: 2020/10/03 17:49:05 by jaeskim           #+#    #+#             */
+/*   Updated: 2022/05/30 10:36:54 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+# include <stdlib.h>
+# include <unistd.h>
+# include <limits.h>
+
+# include "libft.h"
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 1
+# endif
+
+typedef struct s_gnl
 {
-	char	*str;
-	size_t	l;
+	int			fd;
+	char		*line;
+	void		*next;
+}				t_gnl;
 
-	if (s == NULL)
-		return (NULL);
-	if ((unsigned int)ft_strlen(s) < start)
-		return (ft_strdup(""));
-	l = ft_strlen(s + start);
-	if (l < len)
-		len = l;
-	str = (char *)malloc(sizeof(char) * (len + 1));
-	if (!str)
-		return (NULL);
-	ft_strlcpy(str, s + start, len + 1);
-	return (str);
-}
+int		get_next_line(int fd, char **line);
+
+#endif

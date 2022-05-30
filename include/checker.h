@@ -1,32 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   checker.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/13 15:44:46 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/23 10:45:42 by kzak             ###   ########.fr       */
+/*   Created: 2022/05/25 15:10:14 by kzak              #+#    #+#             */
+/*   Updated: 2022/05/30 10:50:19 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef CHECKER_H
+# define CHECKER_H
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
-{
-	char	*str;
-	size_t	l;
+# include "libft.h"
+# include "stack.h"
+# include "push_swap2.h"
+# include "push_swap.h"
 
-	if (s == NULL)
-		return (NULL);
-	if ((unsigned int)ft_strlen(s) < start)
-		return (ft_strdup(""));
-	l = ft_strlen(s + start);
-	if (l < len)
-		len = l;
-	str = (char *)malloc(sizeof(char) * (len + 1));
-	if (!str)
-		return (NULL);
-	ft_strlcpy(str, s + start, len + 1);
-	return (str);
-}
+t_list	*read_instruction(void);
+int		exec_instruction(t_list *instruction, t_push_swap *stack);
+
+#endif

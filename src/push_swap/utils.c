@@ -6,36 +6,37 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 10:52:32 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/13 11:44:50 by kzak             ###   ########.fr       */
+/*   Updated: 2022/05/30 11:45:27 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/push_swap.h"
+#include "push_swap.h"
 
-void	is_sort(t_stack *stack)
+int	is_sort(t_stack *stack, int type, int n)
 {
-	size_t	i;
-	size_t	j;
-	size_t	k;
-	
-	j = 0;
-	k = 0;
-	while (j != stack->la)
+	int		check;
+
+	if (stack == NULL)
+		return (1);
+	check = stack->content;
+	stack = stack->next;
+	while (--n > 0 && stack)
 	{
-		i = j + 1;
-		while (i <= stack->la)
+		if (type == DESC)
 		{
-			if (stack->a[j] > stack->a[i])
-				k = 1;
-			i++;
+			if (stack->content > check)
+				return (0);
+			check = stack->content;
 		}
-		j++;
+		else if (type == ASC)
+		{
+			if (stack->content < check)
+				return (0);
+			check = stack->content;
+		}
+		stack = stack->next;
 	}
-	if (k == 0)
-	{
-		ft_printf("the stack is already sorted!\n");
-		exit (0);
-	}
+	return (1);
 }
 
 long	atoilong(const char *str)
@@ -64,27 +65,37 @@ long	atoilong(const char *str)
 	return ((res * sign));
 }
 
-void	sort(t_stack *stack)
+static void	sort2(t_push_swap *stack)
 {
-	if (stack->a[0] > stack->a[1] && stack->a[1] < stack->a[2]
-		&& stack->a[2] < stack->a[0])
-		ra(stack);
-	if (stack->a[0] < stack->a[1] && stack->a[1] > stack->a[2]
-		&& stack->a[2] < stack->a[0])
-		rra(stack);
-	if (stack->a[0] > stack->a[1] && stack->a[1] > stack->a[2]
-		&& stack->a[2] < stack->a[0])
+	if (stack->a->content < stack->a->next->content
+		&& stack->a->next->content > stack->a->next->next->content
+		&& stack->a->next->next->content > stack->a->content)
 	{
-		sa(stack);
-		rra(stack);
+		operator("sa", stack);
+		operator("ra", stack);
 	}
-	if (stack->a[0] < stack->a[1] && stack->a[1] > stack->a[2]
-		&& stack->a[2] > stack->a[0])
+	if (stack->a->content > stack->a->next->content
+		&& stack->a->next->content < stack->a->next->next->content
+		&& stack->a->next->next->content > stack->a->content)
+		operator("sa", stack);
+}
+
+void	sort(t_push_swap *stack)
+{
+	if (stack->a->content > stack->a->next->content
+		&& stack->a->next->content < stack->a->next->next->content
+		&& stack->a->next->next->content < stack->a->content)
+		operator("ra", stack);
+	if (stack->a->content < stack->a->next->content
+		&& stack->a->next->content > stack->a->next->next->content
+		&& stack->a->next->next->content < stack->a->content)
+		operator("rra", stack);
+	if (stack->a->content > stack->a->next->content
+		&& stack->a->next->content > stack->a->next->next->content
+		&& stack->a->next->next->content < stack->a->content)
 	{
-		sa(stack);
-		ra(stack);
+		operator("sa", stack);
+		operator("rra", stack);
 	}
-	if (stack->a[0] > stack->a[1] && stack->a[1] < stack->a[2]
-		&& stack->a[2] > stack->a[0])
-		sa(stack);
+	sort2(stack);
 }

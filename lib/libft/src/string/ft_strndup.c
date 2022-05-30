@@ -1,32 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strndup.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/13 15:44:46 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/23 10:45:42 by kzak             ###   ########.fr       */
+/*   Created: 2022/05/30 10:07:13 by kzak              #+#    #+#             */
+/*   Updated: 2022/05/30 10:07:15 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_strndup(const char *s, size_t n)
 {
-	char	*str;
-	size_t	l;
+	size_t	i;
+	char	*result;
 
-	if (s == NULL)
-		return (NULL);
-	if ((unsigned int)ft_strlen(s) < start)
-		return (ft_strdup(""));
-	l = ft_strlen(s + start);
-	if (l < len)
-		len = l;
-	str = (char *)malloc(sizeof(char) * (len + 1));
-	if (!str)
-		return (NULL);
-	ft_strlcpy(str, s + start, len + 1);
-	return (str);
+	result = (char *)malloc(sizeof(char) * (n + 1));
+	if (result == NULL)
+		return (0);
+	i = 0;
+	while (i < n)
+	{
+		result[i] = s[i];
+		i++;
+	}
+	result[i] = 0;
+	return (result);
 }

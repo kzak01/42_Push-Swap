@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 09:30:33 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/13 11:40:17 by kzak             ###   ########.fr       */
+/*   Updated: 2022/05/30 11:05:53 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,19 @@
 # include <fcntl.h>
 # include <stdio.h>
 # include <errno.h>
-# include "../lib/libft/include/libft.h"
-# include "../printf/ft_printf.h"
+# include "push_swap2.h"
+# include "stack.h"
+# include "libft.h"
 
-typedef struct s_stack
-{
-	int		*a;
-	int		*b;
-	size_t	la;
-	size_t	lb;
-}	t_stack;
+# define PUSH_CNT	0
+# define RA_CNT		1
+# define RB_CNT		2
+
+# define DESC		0
+# define ASC		1
+
+# define SMALL		0
+# define BIG		1
 
 typedef enum e_bool
 {
@@ -35,55 +38,33 @@ typedef enum e_bool
 	FALSE = 0
 }	t_bool;
 
-typedef enum e_int
-{
-	INT_MAX = 2147483647,
-	INT_MIN = -2147483648
-}	t_int;
-
-//printarray
-void	printarray(t_stack *st);
+// typedef enum e_int
+// {
+// 	INT_MAX = 2147483647,
+// 	INT_MIN = -2147483648
+// }	t_int;
 
 //main
 int		main(int argc, char **argv);
 
 //5case
-void	fivecase(t_stack *stack);
-int		find_min(t_stack *stack);
-int		find_max(t_stack *stack);
+void	fivecase(t_push_swap *stack, int n);
+int		find_min(t_stack *stack, int n);
+int		find_max(t_stack *stack, int n);
 
 //ft_errors
 void	ft_errors(int ac, char **av);
 
-//lis
-int	lis(t_stack *st, int n);
-
 //moves
-void	sort_max(t_stack *stack, int max);
-void	sort_min(t_stack *stack, int min);
-
-//push
-void	pa(t_stack *stack);
-void	pb(t_stack *stack);
-
-//reverse_rotate
-void	rra(t_stack *stack);
-void	rrb(t_stack *stack);
-void	rrr(t_stack *stack);
-
-//rotate
-void	ra(t_stack *stack);
-void	rb(t_stack *stack);
-void	rr(t_stack *stack);
-
-//swap
-void	sa(t_stack *stack);
-void	sb(t_stack *stack);
-void	ss(t_stack *stack);
+void	sort_max(t_push_swap *stack, int max);
+void	sort_min(t_push_swap *stack, int min);
 
 //utils
-void	is_sort(t_stack *stack);
+int		is_sort(t_stack *stack, int type, int n);
 long	atoilong(const char *str);
-void	sort(t_stack *stack);
+void	sort(t_push_swap *stack);
+
+//varius_sort
+void	varius_sort(t_push_swap *stack);
 
 #endif
