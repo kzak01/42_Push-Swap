@@ -6,7 +6,7 @@
 #    By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/13 11:10:21 by kzak              #+#    #+#              #
-#    Updated: 2022/05/25 15:33:17 by kzak             ###   ########.fr        #
+#    Updated: 2022/05/30 10:32:19 by kzak             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,6 +34,8 @@ OBJ_DIR = obj
 
 HEADERS = $(addprefix $(INC_DIR)/, \
 	libft.h	\
+	ft_printf.h \
+	get_next_line.h \
 )
 
 SRC_LST_DIR = $(SRC_DIR)/lst
@@ -69,12 +71,14 @@ SRC_STRING = $(addprefix $(SRC_STRING_DIR)/, \
 	ft_strchr.c	\
 	ft_strcmp.c	\
 	ft_strdup.c	\
+	ft_strjoin_free.c	\
 	ft_strjoin.c	\
 	ft_strlcat.c	\
 	ft_strlcpy.c	\
 	ft_strlen.c	\
 	ft_strmapi.c	\
 	ft_strncmp.c	\
+	ft_strndup.c	\
 	ft_strnstr.c	\
 	ft_strrchr.c	\
 	ft_strtrim.c	\
@@ -135,15 +139,15 @@ OBJS = $(addprefix $(OBJ_DIR)/, $(notdir $(SRCS:.c=.o)))
 
 # Color
 CL_BOLD   = \e[1m
-# CL_DIM    = \e[2m
-# CL_UDLINE = \e[4m
+CL_DIM    = \e[2m
+CL_UDLINE = \e[4m
 
 NO_COLOR = \e[0m
 
-# BG_TEXT = \e[48;2;45;55;72m
-# BG_BLACK = \e[48;2;30;31;33m
+BG_TEXT = \e[48;2;45;55;72m
+BG_BLACK = \e[48;2;30;31;33m
 
-# FG_WHITE = $(NO_COLOR)\e[0;37m
+FG_WHITE = $(NO_COLOR)\e[0;37m
 FG_TEXT = $(NO_COLOR)\e[38;2;189;147;249m
 FG_TEXT_PRIMARY = $(NO_COLOR)$(CL_BOLD)\e[38;2;255;121;198m
 

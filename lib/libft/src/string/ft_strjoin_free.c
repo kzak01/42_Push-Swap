@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin_free.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/13 09:12:56 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/30 11:12:06 by kzak             ###   ########.fr       */
+/*   Created: 2022/05/30 10:08:41 by kzak              #+#    #+#             */
+/*   Updated: 2022/05/30 10:08:43 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	main(int argc, char **argv)
+char	*ft_strjoin_free(char const *s1, char const *s2, int check)
 {
-	t_push_swap	stack;
+	char	*result;
 
-	if (argc < 2)
-		return (0);
-	ft_memset(&stack, 0, sizeof(stack));
-	stack.visualizer = OP;
-	stack.a = create_stack_with_arg(argc, argv);
-	stack.b = NULL;
-	varius_sort(&stack);
-	stack_clear(&stack.a);
-	stack_clear(&stack.b);
-	return (0);
+	result = ft_strjoin(s1, s2);
+	if (check & 1)
+		free((char *)s1);
+	if (check & 2)
+		free((char *)s2);
+	return (result);
 }

@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 11:57:17 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/25 12:14:50 by kzak             ###   ########.fr       */
+/*   Updated: 2022/05/30 11:21:09 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,9 @@
 # define FT_INT_MAX 	2147483647
 # define FT_INT_MIN 	-2147483648
 
+# define OP		1
+# define VISUAL	2
+
 typedef struct s_stack
 {
 	struct s_stack	*next;
@@ -31,6 +34,7 @@ typedef struct s_push_swap
 {
 	t_stack		*a;
 	t_stack		*b;
+	int			visualizer;
 }				t_push_swap;
 
 //create_stack_with_arg
@@ -44,6 +48,9 @@ void		swap(t_stack *stack);
 
 //operator
 void		operator(char *op, t_push_swap *data);
+
+//print_stack
+void	print_stacks(t_stack *stack_a, t_stack *stack_b);
 
 //utils3
 t_stack		*stack_new(int content);

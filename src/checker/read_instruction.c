@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 15:22:16 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/25 15:30:34 by kzak             ###   ########.fr       */
+/*   Updated: 2022/05/30 11:02:11 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static void	put_error_with_clear(t_list *result, char *instruction)
 	exit(1);
 }
 
-t_list *read_instruction(void)
+t_list	*read_instruction(void)
 {
 	int		gnl_status;
 	char	*instruction;

@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_strndup.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/13 09:12:56 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/30 11:12:06 by kzak             ###   ########.fr       */
+/*   Created: 2022/05/30 10:07:13 by kzak              #+#    #+#             */
+/*   Updated: 2022/05/30 10:07:15 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	main(int argc, char **argv)
+char	*ft_strndup(const char *s, size_t n)
 {
-	t_push_swap	stack;
+	size_t	i;
+	char	*result;
 
-	if (argc < 2)
+	result = (char *)malloc(sizeof(char) * (n + 1));
+	if (result == NULL)
 		return (0);
-	ft_memset(&stack, 0, sizeof(stack));
-	stack.visualizer = OP;
-	stack.a = create_stack_with_arg(argc, argv);
-	stack.b = NULL;
-	varius_sort(&stack);
-	stack_clear(&stack.a);
-	stack_clear(&stack.b);
-	return (0);
+	i = 0;
+	while (i < n)
+	{
+		result[i] = s[i];
+		i++;
+	}
+	result[i] = 0;
+	return (result);
 }

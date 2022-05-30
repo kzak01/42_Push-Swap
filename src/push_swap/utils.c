@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 10:52:32 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/25 12:21:33 by kzak             ###   ########.fr       */
+/*   Updated: 2022/05/30 10:56:29 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,27 +65,37 @@ long	atoilong(const char *str)
 	return ((res * sign));
 }
 
+static void	sort2(t_push_swap *stack)
+{
+	if (stack->a->content < stack->a->next->content
+		&& stack->a->next->content > stack->a->next->next->content
+		&& stack->a->next->next->content > stack->a->content)
+	{
+		operator("sa", stack);
+		operator("ra", stack);
+	}
+	if (stack->a->content > stack->a->next->content
+		&& stack->a->next->content < stack->a->next->next->content
+		&& stack->a->next->next->content > stack->a->content)
+		operator("sa", stack);
+}
+
 void	sort(t_push_swap *stack)
 {
-	if (stack->a->content > stack->a->next->content && stack->a->next->content < stack->a->next->next->content
+	if (stack->a->content > stack->a->next->content
+		&& stack->a->next->content < stack->a->next->next->content
 		&& stack->a->next->next->content < stack->a->content)
 		operator("ra", stack);
-	if (stack->a->content < stack->a->next->content && stack->a->next->content > stack->a->next->next->content
+	if (stack->a->content < stack->a->next->content
+		&& stack->a->next->content > stack->a->next->next->content
 		&& stack->a->next->next->content < stack->a->content)
 		operator("rra", stack);
-	if (stack->a->content > stack->a->next->content && stack->a->next->content > stack->a->next->next->content
+	if (stack->a->content > stack->a->next->content
+		&& stack->a->next->content > stack->a->next->next->content
 		&& stack->a->next->next->content < stack->a->content)
 	{
 		operator("sa", stack);
 		operator("rra", stack);
 	}
-	if (stack->a->content < stack->a->next->content && stack->a->next->content > stack->a->next->next->content
-		&& stack->a->next->next->content > stack->a->content)
-	{
-		operator("sa", stack);
-		operator("ra", stack);
-	}
-	if (stack->a->content > stack->a->next->content && stack->a->next->content < stack->a->next->next->content
-		&& stack->a->next->next->content > stack->a->content)
-		operator("sa", stack);
+	sort2(stack);
 }

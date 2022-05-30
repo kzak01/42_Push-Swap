@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 10:43:29 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/23 11:03:36 by kzak             ###   ########.fr       */
+/*   Updated: 2022/05/30 10:35:37 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,11 @@
 # include <unistd.h>
 # include <stdio.h>
 # include <stdlib.h>
+# include <stdarg.h>
+# include <limits.h>
+
+# include "get_next_line.h"
+# include "ft_printf.h"
 
 typedef struct s_list
 {
@@ -68,5 +73,8 @@ char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
+
+char	*ft_strndup(const char *s, size_t n);
+char	*ft_strjoin_free(char const *s1, char const *s2, int check);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 13:55:32 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/23 11:42:00 by kzak             ###   ########.fr       */
+/*   Updated: 2022/05/30 11:18:58 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,12 @@ void	operator(char *op, t_push_swap *data)
 		swap(data->a);
 	if (!ft_strcmp(op, "sb") || !ft_strcmp(op, "ss"))
 		swap(data->b);
-	ft_putendl_fd(op, 1);
+	if (data->visualizer == VISUAL)
+	{
+		system("clear");
+		print_stacks(data->a, data->b);
+		usleep(VISUAL_SPEED);
+	}
+	if (data->visualizer == OP)
+		ft_putendl_fd(op, 1);
 }

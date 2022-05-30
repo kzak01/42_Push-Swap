@@ -6,7 +6,7 @@
 #    By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/13 09:13:08 by kzak              #+#    #+#              #
-#    Updated: 2022/05/25 15:35:22 by kzak             ###   ########.fr        #
+#    Updated: 2022/05/30 10:43:50 by kzak             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,11 +55,11 @@ CHECKER_SRCS += $(STACK_SRCS)
 PUSH_SWAP_SRCS += $(STACK_SRCS) $(PUSH_SWAP2_SRCS)
 
 vpath %.c \
+	$(CHECKER_DIR)	\
 	$(SRC_DIR) \
 	$(PUSH_SWAP_DIR)	\
-	$(STACK_DIR) \
-	$(PUSH_SWAP2_DIR)
-	$(CHECKER_DIR)	\
+	$(PUSH_SWAP2_DIR) \
+	$(STACK_DIR)
 
 CHECKER_OBJS = $(addprefix $(OBJ_DIR)/, $(notdir $(CHECKER_SRCS:.c=.o)))
 PUSH_SWAP_OBJS = $(addprefix $(OBJ_DIR)/, $(notdir $(PUSH_SWAP_SRCS:.c=.o)))

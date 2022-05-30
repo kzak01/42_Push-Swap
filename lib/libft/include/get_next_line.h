@@ -1,29 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/13 09:12:56 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/30 11:12:06 by kzak             ###   ########.fr       */
+/*   Created: 2020/10/03 17:49:05 by jaeskim           #+#    #+#             */
+/*   Updated: 2022/05/30 10:36:54 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
-int	main(int argc, char **argv)
+# include <stdlib.h>
+# include <unistd.h>
+# include <limits.h>
+
+# include "libft.h"
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 1
+# endif
+
+typedef struct s_gnl
 {
-	t_push_swap	stack;
+	int			fd;
+	char		*line;
+	void		*next;
+}				t_gnl;
 
-	if (argc < 2)
-		return (0);
-	ft_memset(&stack, 0, sizeof(stack));
-	stack.visualizer = OP;
-	stack.a = create_stack_with_arg(argc, argv);
-	stack.b = NULL;
-	varius_sort(&stack);
-	stack_clear(&stack.a);
-	stack_clear(&stack.b);
-	return (0);
-}
+int		get_next_line(int fd, char **line);
+
+#endif

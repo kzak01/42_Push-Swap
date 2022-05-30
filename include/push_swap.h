@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 09:30:33 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/25 14:35:44 by kzak             ###   ########.fr       */
+/*   Updated: 2022/05/30 11:05:53 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,18 @@
 # include <stdio.h>
 # include <errno.h>
 # include "push_swap2.h"
+# include "stack.h"
 # include "libft.h"
-# include "ft_printf.h"
+
+# define PUSH_CNT	0
+# define RA_CNT		1
+# define RB_CNT		2
+
+# define DESC		0
+# define ASC		1
+
+# define SMALL		0
+# define BIG		1
 
 typedef enum e_bool
 {
@@ -28,11 +38,11 @@ typedef enum e_bool
 	FALSE = 0
 }	t_bool;
 
-typedef enum e_int
-{
-	INT_MAX = 2147483647,
-	INT_MIN = -2147483648
-}	t_int;
+// typedef enum e_int
+// {
+// 	INT_MAX = 2147483647,
+// 	INT_MIN = -2147483648
+// }	t_int;
 
 //main
 int		main(int argc, char **argv);
