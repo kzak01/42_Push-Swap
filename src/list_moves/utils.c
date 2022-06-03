@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 10:20:45 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/03 12:38:48 by kzak             ###   ########.fr       */
+/*   Updated: 2022/06/03 12:53:09 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,4 +101,12 @@ int	is_sort(t_stack *stack, int	order, int n)
 		stack = stack->next;
 	}
 	return (1);
+}
+
+void	sort_small(t_push_swap *stack, int n)
+{
+	if (n == 3)
+		return (sort(stack));
+	else if (n == 2 && stack->a->content > stack->a->next->content)
+		return(sa(stack));
 }

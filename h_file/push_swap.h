@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 09:53:15 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/03 12:39:23 by kzak             ###   ########.fr       */
+/*   Updated: 2022/06/03 12:53:29 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,7 @@ void	sort(t_push_swap *stack);
 long	atoilong(const char *str);
 void	free_str(char **str);
 int		is_sort(t_stack *stack, int	order, int n);
+void	sort_small(t_push_swap *stack, int n);
 
 /*push_swap*/
 
