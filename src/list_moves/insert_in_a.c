@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 10:02:32 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/03 12:19:15 by kzak             ###   ########.fr       */
+/*   Updated: 2022/06/03 12:31:00 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,19 +39,6 @@ int	is_sort(t_stack *stack, int	order, int n)
 	return (1);
 }
 
-t_stack	*create_stack(int content)
-{
-	t_stack	*temp;
-
-	temp = malloc(sizeof(t_stack));
-	if (temp == NULL)
-		return (0);
-	temp->content = content;
-	temp->prev = 0;
-	temp->next = 0;
-	return (temp);
-}
-
 t_stack	*insert_into_a(int ac, char **av)
 {
 	int			i;
@@ -68,7 +55,7 @@ t_stack	*insert_into_a(int ac, char **av)
 		j = 0;
 		while (str[j])
 		{
-			cont = create_stack(atoilong(str[j]));
+			cont = ft_lstnew2(ft_atoi(str[j]));
 			ft_lstadd_back2(&result, cont);
 			j++;
 		}
