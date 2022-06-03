@@ -6,37 +6,11 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 10:06:59 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/01 16:05:57 by kzak             ###   ########.fr       */
+/*   Updated: 2022/06/03 12:11:30 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-long	atoilong(const char *str)
-{
-	long	res;
-	int		sign;
-	size_t	i;
-
-	res = 0;
-	sign = 1;
-	i = 0;
-	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n'
-		|| str[i] == '\r' || str[i] == '\v' || str[i] == '\f')
-		i++;
-	if (str[i] == '-' || str[i] == '+')
-	{
-		if (str[i] == '-')
-			sign = -1;
-		i++;
-	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		res = res * 10 + str[i] - '0';
-		i++;
-	}
-	return ((res * sign));
-}
 
 static void	nocopy(char **av)
 {
@@ -95,7 +69,7 @@ static void	intmaxmin(char **av)
 	j = 1;
 	while (av[j])
 	{
-		if (atoilong(av[j]) < INT_MIN || atoilong(av[j]) > INT_MAX)
+		if (atoilong(av[j]) < MIN_INT || atoilong(av[j]) > MAX_INT)
 		{
 			ft_printf("\033[0;31m" "Error: A number exceed int value\n" \
 				"\033[0m");
@@ -126,4 +100,7 @@ void	ft_errors(int ac, char **av)
 		i++;
 		free_str(str);
 	}
+	isnumber(av);
+	intmaxmin(av);
+	nocopy(av);
 }

@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 10:02:32 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/01 16:14:33 by kzak             ###   ########.fr       */
+/*   Updated: 2022/06/03 11:27:35 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,6 @@ t_stack	*insert_into_a(int ac, char **av)
 		while (str[j])
 		{
 			cont = create_stack(atoilong(str[j]));
-			// stack_last(&result, cont);
 			ft_lstadd_back2(&result, cont);
 			j++;
 		}

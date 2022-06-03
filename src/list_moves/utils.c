@@ -6,20 +6,11 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 10:20:45 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/01 16:27:38 by kzak             ###   ########.fr       */
+/*   Updated: 2022/06/03 12:13:00 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-t_stack	*ft_lstlast2(t_stack *lst)
-{
-	if (!lst)
-		return (NULL);
-	while (lst -> next)
-		lst = lst -> next;
-	return (lst);
-}
 
 void	sort(t_push_swap *stack)
 {
@@ -46,21 +37,41 @@ void	sort(t_push_swap *stack)
 		sa(stack);
 }
 
-void	ft_lstadd_back2(t_stack **lst, t_stack *new)
+long	atoilong(const char *str)
 {
-	t_stack	*temp;
+	long	res;
+	int		sign;
+	size_t	i;
 
-	if (new == NULL)
-		return ;
-	if (*lst == NULL)
+	res = 0;
+	sign = 1;
+	i = 0;
+	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n'
+		|| str[i] == '\r' || str[i] == '\v' || str[i] == '\f')
+		i++;
+	if (str[i] == '-' || str[i] == '+')
 	{
-		*lst = new;
-		return ;
+		if (str[i] == '-')
+			sign = -1;
+		i++;
 	}
-	else
+	while (str[i] >= '0' && str[i] <= '9')
 	{
-		temp = ft_lstlast2(*lst);
-		temp->next = new;
-		new->prev = temp;
+		res = res * 10 + str[i] - '0';
+		i++;
 	}
+	return ((res * sign));
+}
+
+void	free_str(char **str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		free(str[i]);
+		i++;
+	}
+	free(str);
 }
