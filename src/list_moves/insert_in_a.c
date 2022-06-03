@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 10:02:32 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/03 11:27:35 by kzak             ###   ########.fr       */
+/*   Updated: 2022/06/03 12:19:15 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,19 +37,6 @@ int	is_sort(t_stack *stack, int	order, int n)
 		stack = stack->next;
 	}
 	return (1);
-}
-
-void	free_str(char **str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-	{
-		free(str[i]);
-		i++;
-	}
-	free(str);
 }
 
 t_stack	*create_stack(int content)
