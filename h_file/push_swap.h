@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 09:53:15 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/03 12:13:13 by kzak             ###   ########.fr       */
+/*   Updated: 2022/06/03 12:39:23 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,6 @@ int		main(int argc, char **argv);
 /*list_moves*/
 
 /*insert_in_a*/
-int		is_sort(t_stack *stack, int	order, int n);
 t_stack	*insert_into_a(int ac, char **av);
 
 /**/
@@ -90,6 +89,7 @@ t_stack	*ft_lstnew2(int content);
 void	sort(t_push_swap *stack);
 long	atoilong(const char *str);
 void	free_str(char **str);
+int		is_sort(t_stack *stack, int	order, int n);
 
 /*push_swap*/
 

@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 10:20:45 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/03 12:13:00 by kzak             ###   ########.fr       */
+/*   Updated: 2022/06/03 12:38:48 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,4 +74,31 @@ void	free_str(char **str)
 		i++;
 	}
 	free(str);
+}
+
+int	is_sort(t_stack *stack, int	order, int n)
+{
+	int	temp;
+
+	if (stack == NULL)
+		return (1);
+	temp = stack->content;
+	stack = stack->next;
+	while (n > 0 && stack)
+	{
+		if (order == DESCENDING)
+		{
+			if (stack->content > temp)
+				return (0);
+			temp = stack->content;
+		}
+		else if (order == ASCENDING)
+		{
+			if (stack->content < temp)
+				return (0);
+			temp = stack->content;
+		}
+		stack = stack->next;
+	}
+	return (1);
 }

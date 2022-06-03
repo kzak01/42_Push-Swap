@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 16:01:03 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/01 16:21:29 by kzak             ###   ########.fr       */
+/*   Updated: 2022/06/03 12:36:46 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,10 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	if (new == NULL)
 		return ;
 	if (*lst == NULL)
+	{
 		*lst = new;
+		return ;
+	}
 	else
 	{
 		temp = ft_lstlast(*lst);
