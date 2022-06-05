@@ -6,9 +6,11 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 13:02:10 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/03 13:11:30 by kzak             ###   ########.fr       */
+/*   Updated: 2022/06/05 21:29:36 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "push_swap.h"
 
 static int	*insert_into_array(t_stack *stack, int n)
 {
@@ -35,13 +37,13 @@ static void	swap(int *a, int*b)
 	*b = temp;
 }
 
-void	find_pivot(int *pivot, t_stack *stack, int n)
+void	find_pivot(int pivot[], t_stack *stack, int n)
 {
 	int i;
 	int j;
 	int *temp;
 	
-	temp = insert_into_array(stack, n)
+	temp = insert_into_array(stack, n);
 	i = 0;
 	while (i < n -1)
 	{
@@ -54,7 +56,7 @@ void	find_pivot(int *pivot, t_stack *stack, int n)
 		}
 		i++;
 	}
-	pivot[1] = array[(n * 2) / 3];
-	pivot[2] = array[n / 3];
-	free(array);
+	pivot[0] = temp[(n * 2) / 3];
+	pivot[1] = temp[n / 3];
+	free(temp);
 }
