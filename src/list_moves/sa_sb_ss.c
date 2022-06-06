@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 09:52:10 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/01 15:28:12 by kzak             ###   ########.fr       */
+/*   Updated: 2022/06/06 14:15:19 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ void	sa(t_push_swap *stack)
 {
 	int	temp;
 
+	// ft_printf("sa\n");
 	if (stack->a == NULL || stack->a->next == NULL)
 		return ;
 	temp = stack->a->content;
@@ -28,6 +29,7 @@ void	sb(t_push_swap *stack)
 {
 	int	temp;
 
+	// ft_printf("sb\n");
 	if (stack->b == NULL || stack->b->next == NULL)
 		return ;
 	temp = stack->b->content;
@@ -40,6 +42,7 @@ void	ss(t_push_swap *stack)
 {
 	int	temp;
 
+	ft_printf("ss\n");
 	if (stack->a == NULL || stack->a->next == NULL)
 		return ;
 	temp = stack->a->content;
@@ -50,5 +53,5 @@ void	ss(t_push_swap *stack)
 	temp = stack->b->content;
 	stack->b->content = stack->b->next->content;
 	stack->b->next->content = temp;
-	ft_printf("ss\n");
+	// ft_printf("ss\n");
 }

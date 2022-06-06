@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pa_pb.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvolpi <mvolpi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 10:34:15 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/06 10:22:38 by mvolpi           ###   ########.fr       */
+/*   Updated: 2022/06/06 14:15:02 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ void	pa(t_push_swap *stack)
 {
 	t_stack	*temp;
 
+	// ft_printf("pa\n");
 	if (stack->b == NULL)
 		return ;
 	temp = stack->b;
@@ -34,6 +35,7 @@ void	pb(t_push_swap *stack)
 {
 	t_stack	*temp;
 
+	// ft_printf("pb\n");
 	if (stack->a == NULL)
 		return ;
 	temp = stack->a;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   find_pivot.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvolpi <mvolpi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 13:02:10 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/06 10:20:54 by mvolpi           ###   ########.fr       */
+/*   Updated: 2022/06/06 13:48:23 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,18 +23,18 @@ static int	*insert_into_array(t_stack *stack, int n)
 	{
 		array[i] = stack->content;
 		stack = stack->next;
-		i++;
+		++i;
 	}
 	return (array);
 }
 
 static void	swap(int *a, int*b)
 {
-	int	temp;
+	int	c;
 
-	temp = *a;
+	c = *a;
 	*a = *b;
-	*b = temp;
+	*b = c;
 }
 
 void	find_pivot(int pivot[], t_stack *stack, int n)
@@ -52,11 +52,11 @@ void	find_pivot(int pivot[], t_stack *stack, int n)
 		{
 			if (temp[i] < temp[j])
 				swap(&temp[i], &temp[j]);
-			j++;
+			++j;
 		}
-		i++;
+		++i;
 	}
-	pivot[0] = temp[(n * 2) / 3];
 	pivot[1] = temp[n / 3];
+	pivot[0] = temp[(n * 2) / 3];
 	free(temp);
 }

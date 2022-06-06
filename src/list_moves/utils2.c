@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/05 19:42:44 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/06 11:34:02 by kzak             ###   ########.fr       */
+/*   Updated: 2022/06/06 12:02:34 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,20 +27,10 @@ void	rmoves_check(t_push_swap *stack, int ra, int rb)
 	}
 }
 
-static void	sortb2(t_push_swap *stack)
-{
-	if (stack->b->content < stack->b->next->content
-		&& stack->b->next->content > stack->b->next->next->content
-		&& stack->b->next->next->content > stack->b->content)
-	{
-		sa(stack);
-		ra(stack);
-	}
-	if (stack->b->content > stack->b->next->content
-		&& stack->b->next->content < stack->b->next->next->content
-		&& stack->b->next->next->content > stack->b->content)
-		sa(stack);
-}
+// static void	sortb2(t_push_swap *stack)
+// {
+
+// }
 
 static void	sortb(t_push_swap *stack)
 {
@@ -50,22 +40,48 @@ static void	sortb(t_push_swap *stack)
 		pa(stack);
 		return (pa(stack));
 	}
-	if (stack->b->content > stack->b->next->content
-		&& stack->b->next->content < stack->b->next->next->content
-		&& stack->b->next->next->content < stack->b->content)
-		ra(stack);
 	if (stack->b->content < stack->b->next->content
-		&& stack->b->next->content > stack->b->next->next->content
-		&& stack->b->next->next->content < stack->b->content)
-		rra(stack);
-	if (stack->b->content > stack->b->next->content
-		&& stack->b->next->content > stack->b->next->next->content
-		&& stack->b->next->next->content < stack->b->content)
+		&& stack->b->next->content > stack->b->next->next->content)
 	{
-		sa(stack);
-		rra(stack);
+		if (stack->b->content > stack->b->next->next->content)
+		{
+			sb(stack);
+			pa(stack);
+			pa(stack);
+			return(pa(stack));
+		}
+		pa(stack);
+		ra(stack);
+		pa(stack);
+		pa(stack);
+		return (rra(stack));
 	}
-	sortb2(stack);
+	if (stack->b->content > stack->b->next->content
+		&& stack->b->next->content < stack->b->next->next->content)
+	{
+		if (stack->b->content > stack->b->next->next->content)
+		{
+			pa(stack);
+			sb(stack);
+			pa(stack);
+			return (pa(stack));
+		}
+		pa(stack);
+		sb(stack);
+		pa(stack);
+		sa(stack);
+		return(pa(stack));
+	}
+	if (stack->b->content < stack->b->next->content
+		&& stack->b->next->content < stack->b->next->next->content)
+	{
+		pa(stack);
+		ra(stack);
+		sb(stack);
+		pa(stack);
+		pa(stack);
+		return(rra(stack));
+	}
 }
 
 void	sort_small(t_push_swap *stack, int n, int index)

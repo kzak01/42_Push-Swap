@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_stack.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvolpi <mvolpi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 12:46:26 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/06 10:28:29 by mvolpi           ###   ########.fr       */
+/*   Updated: 2022/06/06 14:10:34 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,20 @@ static void	moves(t_push_swap *stack, int *pivot, int *n, int *temp)
 		pb(stack);
 		if (stack->b->content > pivot[0])
 		{
+			// printf("prima\n");
 			if (*n > 0 && stack->a->content > pivot[1])
 			{
 				--(*n);
 				++temp[0];
 				rr(stack);
+				// printf("ciao\n");
 			}
 			else
+			{
+				// printf("stampi?\n");
 				rb(stack);
+				// printf("dopo\n");
+			}
 			++temp[2];
 		}
 	}
@@ -47,6 +53,7 @@ void	sort_stack(t_push_swap *stack, int n)
 		return (sort_small(stack, n, STACK_A));
 	if (is_sort(stack->a, STACK_A, n))
 		return ;
+	ft_memset(&temp, 0, sizeof(temp));
 	find_pivot(pivot, stack->a, n);
 	while (n-- > 0)
 		moves(stack, pivot, &n, temp);

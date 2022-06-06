@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_reverse.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvolpi <mvolpi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/05 19:46:20 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/06 10:21:28 by mvolpi           ###   ########.fr       */
+/*   Updated: 2022/06/06 11:45:59 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ void	sort_reverse(t_push_swap *stack, int n)
 		return (sort_small(stack, n, STACK_B));
 	if (is_sort(stack->b, STACK_B, n))
 		return (do_pa(stack, n));
+	ft_memset(&temp, 0, sizeof(temp));
 	find_pivot(pivot, stack->b, n);
 	while (n-- > 0)
 		moves(pivot, stack, temp);

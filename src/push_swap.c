@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvolpi <mvolpi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 10:00:52 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/06 10:30:10 by mvolpi           ###   ########.fr       */
+/*   Updated: 2022/06/06 14:09:33 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,12 +100,12 @@ int	main(int argc, char **argv)
 	ft_errors(argc, argv);
 	ft_memset(&stack, 0, sizeof(stack));
 	stack.la = arrayleng(argc, argv);
-	printf("stack leng %d\n", stack.la);
+	// printf("stack leng %d\n", stack.la);
 	stack.a = insert_into_a(argc, argv);
-	print_stacks(stack.a, stack.b);
+	// print_stacks(stack.a, stack.b);
 	stack.b = NULL;
 	varius_sort(&stack);
-	print_stacks(stack.a, stack.b);
+	// print_stacks(stack.a, stack.b);
 	free_stack(&stack);
 	return (0);
 }
