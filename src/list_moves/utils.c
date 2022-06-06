@@ -3,50 +3,48 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvolpi <mvolpi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 10:20:45 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/06 10:28:21 by mvolpi           ###   ########.fr       */
+/*   Updated: 2022/06/06 11:26:55 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sort_2(t_stack *stack, t_push_swap *stack2)
+static void	sort_2(t_push_swap *stack)
 {
-	if (stack->content < stack->next->content
-		&& stack->next->content > stack->next->next->content
-		&& stack->next->next->content > stack->content)
+	if (stack->a->content < stack->a->next->content
+		&& stack->a->next->content > stack->a->next->next->content
+		&& stack->a->next->next->content > stack->a->content)
 	{
-		sa(stack2);
-		ra(stack2);
+		sa(stack);
+		ra(stack);
 	}
-	if (stack->content > stack->next->content
-		&& stack->next->content < stack->next->next->content
-		&& stack->next->next->content > stack->content)
-		sa(stack2);
+	if (stack->a->content > stack->a->next->content
+		&& stack->a->next->content < stack->a->next->next->content
+		&& stack->a->next->next->content > stack->a->content)
+		sa(stack);
 }
 
-void	sort(t_stack *stack)
+void	sort(t_push_swap *stack)
 {
-	t_push_swap	stack2;
-
-	if (stack->content > stack->next->content
-		&& stack->next->content < stack->next->next->content
-		&& stack->next->next->content < stack->content)
-		ra(&stack2);
-	if (stack->content < stack->next->content
-		&& stack->next->content > stack->next->next->content
-		&& stack->next->next->content < stack->content)
-		rra(&stack2);
-	if (stack->content > stack->next->content
-		&& stack->next->content > stack->next->next->content
-		&& stack->next->next->content < stack->content)
+	if (stack->a->content > stack->a->next->content
+		&& stack->a->next->content < stack->a->next->next->content
+		&& stack->a->next->next->content < stack->a->content)
+		ra(stack);
+	if (stack->a->content < stack->a->next->content
+		&& stack->a->next->content > stack->a->next->next->content
+		&& stack->a->next->next->content < stack->a->content)
+		rra(stack);
+	if (stack->a->content > stack->a->next->content
+		&& stack->a->next->content > stack->a->next->next->content
+		&& stack->a->next->next->content < stack->a->content)
 	{
-		sa(&stack2);
-		rra(&stack2);
+		sa(stack);
+		rra(stack);
 	}
-	sort_2(stack, &stack2);
+	sort_2(stack);
 }
 
 long	atoilong(const char *str)

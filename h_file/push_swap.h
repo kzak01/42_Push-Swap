@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvolpi <mvolpi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 09:53:15 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/06 10:29:50 by mvolpi           ###   ########.fr       */
+/*   Updated: 2022/06/06 11:27:19 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,8 +86,7 @@ void	ft_lstadd_back2(t_stack **lst, t_stack *new);
 t_stack	*ft_lstnew2(int content);
 
 /*utils*/
-void	sort_2(t_stack *stack, t_push_swap *stack2);
-void	sort(t_stack *stack);
+void	sort(t_push_swap *stack);
 long	atoilong(const char *str);
 void	free_str(char **str);
 int		is_sort(t_stack *stack, int order, int n);

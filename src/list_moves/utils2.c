@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils2.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvolpi <mvolpi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/05 19:42:44 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/06 10:28:16 by mvolpi           ###   ########.fr       */
+/*   Updated: 2022/06/06 11:34:02 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,19 +27,60 @@ void	rmoves_check(t_push_swap *stack, int ra, int rb)
 	}
 }
 
+static void	sortb2(t_push_swap *stack)
+{
+	if (stack->b->content < stack->b->next->content
+		&& stack->b->next->content > stack->b->next->next->content
+		&& stack->b->next->next->content > stack->b->content)
+	{
+		sa(stack);
+		ra(stack);
+	}
+	if (stack->b->content > stack->b->next->content
+		&& stack->b->next->content < stack->b->next->next->content
+		&& stack->b->next->next->content > stack->b->content)
+		sa(stack);
+}
+
+static void	sortb(t_push_swap *stack)
+{
+	if (is_sort(stack->b, STACK_B, 3))
+	{
+		pa(stack);
+		pa(stack);
+		return (pa(stack));
+	}
+	if (stack->b->content > stack->b->next->content
+		&& stack->b->next->content < stack->b->next->next->content
+		&& stack->b->next->next->content < stack->b->content)
+		ra(stack);
+	if (stack->b->content < stack->b->next->content
+		&& stack->b->next->content > stack->b->next->next->content
+		&& stack->b->next->next->content < stack->b->content)
+		rra(stack);
+	if (stack->b->content > stack->b->next->content
+		&& stack->b->next->content > stack->b->next->next->content
+		&& stack->b->next->next->content < stack->b->content)
+	{
+		sa(stack);
+		rra(stack);
+	}
+	sortb2(stack);
+}
+
 void	sort_small(t_push_swap *stack, int n, int index)
 {
 	if (index == STACK_A)
 	{
 		if (n == 3)
-			return (sort(stack->a));
+			return (sort(stack));
 		else if (n == 2 && stack->a->content > stack->a->next->content)
 			return (sa(stack));
 	}
 	else if (index == STACK_B)
 	{
 		if (n == 3)
-			return (sort(stack->b));
+			return (sortb(stack));
 		if (n == 2)
 		{
 			if (stack->b->content < stack->b->next->content)
