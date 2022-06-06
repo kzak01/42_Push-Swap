@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   sort_stack.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mvolpi <mvolpi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 12:46:26 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/05 21:31:58 by kzak             ###   ########.fr       */
+/*   Updated: 2022/06/06 10:28:29 by mvolpi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	moves(t_push_swap *stack, int *pivot,int *n, int *temp)
+static void	moves(t_push_swap *stack, int *pivot, int *n, int *temp)
 {
 	if (stack->a->content > pivot[1])
 	{
@@ -42,7 +42,7 @@ void	sort_stack(t_push_swap *stack, int n)
 {
 	int	pivot[2];
 	int	temp[3];
-	
+
 	if (n <= 3)
 		return (sort_small(stack, n, STACK_A));
 	if (is_sort(stack->a, STACK_A, n))

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   insert_in_a.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mvolpi <mvolpi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 10:02:32 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/03 12:38:54 by kzak             ###   ########.fr       */
+/*   Updated: 2022/06/06 10:22:22 by mvolpi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 t_stack	*insert_into_a(int ac, char **av)
 {
-	int			i;
-	int			j;
-	t_stack		*result;
-	t_stack		*cont;
-	char		**str;
+	int		i;
+	int		j;
+	t_stack	*result;
+	t_stack	*cont;
+	char	**str;
 
 	result = NULL;
 	i = 1;

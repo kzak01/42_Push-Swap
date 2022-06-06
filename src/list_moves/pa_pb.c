@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pa&pb.c                                            :+:      :+:    :+:   */
+/*   pa_pb.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mvolpi <mvolpi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 10:34:15 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/01 10:39:44 by kzak             ###   ########.fr       */
+/*   Updated: 2022/06/06 10:22:38 by mvolpi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	pa(t_push_swap *stack)
 {
-	t_stack *temp;
-	
+	t_stack	*temp;
+
 	if (stack->b == NULL)
 		return ;
 	temp = stack->b;
@@ -32,8 +32,8 @@ void	pa(t_push_swap *stack)
 
 void	pb(t_push_swap *stack)
 {
-	t_stack *temp;
-	
+	t_stack	*temp;
+
 	if (stack->a == NULL)
 		return ;
 	temp = stack->a;

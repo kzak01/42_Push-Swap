@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils2.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mvolpi <mvolpi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/05 19:42:44 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/05 21:32:26 by kzak             ###   ########.fr       */
+/*   Updated: 2022/06/06 10:28:16 by mvolpi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,31 @@ void	rmoves_check(t_push_swap *stack, int ra, int rb)
 			rrb(stack);
 		ra--;
 		rb--;
+	}
+}
+
+void	sort_small(t_push_swap *stack, int n, int index)
+{
+	if (index == STACK_A)
+	{
+		if (n == 3)
+			return (sort(stack->a));
+		else if (n == 2 && stack->a->content > stack->a->next->content)
+			return (sa(stack));
+	}
+	else if (index == STACK_B)
+	{
+		if (n == 3)
+			return (sort(stack->b));
+		if (n == 2)
+		{
+			if (stack->b->content < stack->b->next->content)
+				sb(stack);
+			pa(stack);
+			return (pa(stack));
+		}
+		if (n == 1)
+			return (pa(stack));
 	}
 }
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mvolpi <mvolpi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 10:00:52 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/01 16:31:21 by kzak             ###   ########.fr       */
+/*   Updated: 2022/06/06 10:30:10 by mvolpi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ void	print_stacks(t_stack *stack_a, t_stack *stack_b)
 	}
 }
 /*cancellare sopra*/
+
 static void	free_stack(t_push_swap *stack)
 {
 	t_stack	*cont;
