@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   othercase.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vbellucc <vbellucc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ldi-masc <ldi-masc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 12:04:49 by ldi-masc          #+#    #+#             */
-/*   Updated: 2022/05/26 16:26:03 by vbellucc         ###   ########.fr       */
+/*   Updated: 2022/06/06 12:16:09 by ldi-masc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void othercase(t_stack *stack)
         stack->c[i] = t;
         i++;
     }
-    median = stack->c[stack->la / 2 - 1];
+    median = stack->c[stack->la / 2];
     
     m = 0;
     while(m < (int)stack->la)
@@ -78,7 +78,7 @@ t = 0;
 printf("la è:%zu\n", stack->la);
 s = 0;
 len = stack->la;
-while(s <= len)
+while(s < len)
 {
     m = 0;
     while(m < len)
@@ -86,7 +86,7 @@ while(s <= len)
         printf("  %d", stack->c[m]);
         m++;
     }
-    if (stack->a[0] <= median)
+    if (stack->a[0] < median)
         pb(stack);
     else
         ra(stack);
@@ -101,7 +101,7 @@ m = 0;
     }
 mhanz = find_minb(stack);
 medianb = stack->lb / 2;
-// printf("mediana è:%d\n", median);
+// printf("mhanz è:%d\n", mhanz);
 // printf("medianb è: %d\n", medianb);
 // s = 0;
 //     while ((int)s <= medianb)
@@ -220,12 +220,14 @@ medianb = stack->lb / 2;
     pa_maxb1(stack, medianb, median);
     pa_maxb2(stack, medianb, median);
 //     vordermaxmin(stack, medianb, median);
+printf("inizio putadjacent : \n");
     //  sleep(5);
      putadjacent(stack, len);
-     sleep(5);
+     printf("fine putadjacent : \n");
+    //  sleep(5);
 // //     printf("inizio sortmax min dopo c di 0 che sminchia");
     printf("stack prima di sort maxmin è : \n");
-     sortmaxmin(stack, len);
+     sortmaxmin(stack, len, median);
 // //     printf("inizia parte nuova\n");
 //     mhanz = find_minb(stack);
 //     medianb = stack->lb / 2 - 1;

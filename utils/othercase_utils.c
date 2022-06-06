@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   othercase_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vbellucc <vbellucc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ldi-masc <ldi-masc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 09:51:37 by vbellucc          #+#    #+#             */
-/*   Updated: 2022/05/26 16:27:02 by vbellucc         ###   ########.fr       */
+/*   Updated: 2022/06/06 11:48:12 by ldi-masc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@ void pa_minb1(t_stack *stack,int medianb,int mhanz)
 {
     int s;
     s = 0;
-    while ((int)s < medianb)
+     printf("medianb e : %d\n", medianb);
+    while (s <= medianb)
     {
         if(stack->b[s] == mhanz)
         {
@@ -29,12 +30,13 @@ void pa_minb1(t_stack *stack,int medianb,int mhanz)
         }
         s++;
     }
+     printf("\n fine minb1 : \n");
 }
 void pa_minb2(t_stack *stack,int medianb,int mhanz)
 {
     int s;
     s = stack->lb;
-    while ((int)s > medianb)
+    while (s >= medianb)
     {
         if(stack->b[s] == mhanz)
             {
@@ -47,12 +49,13 @@ void pa_minb2(t_stack *stack,int medianb,int mhanz)
         }
         s--;
     }
+     printf("fine minb2 : \n");
 }
 void pa_maxb1(t_stack *stack,int medianb,int median)
 {
     int s;
     s = 0;
-    while ((int)s < medianb)
+    while (s <= medianb)
     {
         if(stack->b[s] == median)
         {
@@ -64,12 +67,13 @@ void pa_maxb1(t_stack *stack,int medianb,int median)
         }
         s++;
     }
+     printf("fine maxb1 : \n");
 }
 void pa_maxb2(t_stack *stack, int medianb, int median)
 {
     int s;
     s = stack->lb;
-    while ((int)s > medianb)
+    while (s >= medianb)
     {
         if(stack->b[s] == median)
         {
@@ -81,6 +85,7 @@ void pa_maxb2(t_stack *stack, int medianb, int median)
         }
         s--;
     }
+     printf("fine maxb2 : \n");
 }
 
 void vordermaxmin(t_stack *stack, int medianb, int median)
@@ -132,16 +137,16 @@ void putadjacent(t_stack *stack, int len)
         printf("len è nell if: %d\n", len);
     }
 }
-void sortmaxmin(t_stack *stack, int len)    
+void sortmaxmin(t_stack *stack, int len, int median)    
 {
     int s;
+    s = 0;
     len = len / 2;
-    while (stack->a[0] != stack->c[len])
+    while (stack->a[0] != median)
     {
         ra(stack);
     }
     ra(stack);
-    s = 0;
     while(stack->a[0] != stack->c[s])
     {
         pb(stack);
