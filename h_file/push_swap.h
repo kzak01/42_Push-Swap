@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 09:53:15 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/06 19:24:40 by kzak             ###   ########.fr       */
+/*   Updated: 2022/06/06 22:16:00 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,11 @@ typedef enum e_bool
 	FALSE = 0
 }	t_bool;
 
-typedef enum e_order
+typedef enum e_stacks
 {
 	STACK_B = 0,
 	STACK_A = 1
-}	t_order;
+}	t_stacks;
 
 typedef struct s_stack
 {
@@ -61,30 +61,24 @@ int		main(int argc, char **argv);
 /*insert_in_a*/
 t_stack	*insert_into_a(int ac, char **av);
 
-/**/
+/*pa_pb*/
 void	pa(t_push_swap *stack);
 void	pb(t_push_swap *stack);
 
-/*ra&rb&rr*/
+/*ra_rb_rr*/
 void	ra(t_push_swap *stack);
 void	rb(t_push_swap *stack);
 void	rr(t_push_swap *stack);
 
-/*rra&rrb&rrr*/
+/*rra_rrb_rrr*/
 void	rra(t_push_swap *stack);
 void	rrb(t_push_swap *stack);
 void	rrr(t_push_swap *stack);
 
-/*sa&sb&ss*/
+/*sa_sb_ss*/
 void	sa(t_push_swap *stack);
 void	sb(t_push_swap *stack);
 void	ss(t_push_swap *stack);
-
-/*sort_small*/
-void	sort_small(t_push_swap *stack, int n, int order);
-
-/*recursive_call*/
-void	recursive_call(t_push_swap *stack, int *temp, int order);
 
 /*utils_libft_lst*/
 t_stack	*ft_lstlast2(t_stack *lst);
@@ -108,9 +102,15 @@ void	ft_errors(int ac, char **av);
 /*find_pivot*/
 void	find_pivot(int *pivot, t_stack *stack, int n);
 
+/*recursive_call*/
+void	recursive_call(t_push_swap *stack, int *temp, int order);
+
 /*sort_reverse*/
 void	sort_reverse(t_push_swap *stack, int n);
 void	do_pa(t_push_swap *stack, int n);
+
+/*sort_small*/
+void	sort_small(t_push_swap *stack, int n, int order);
 
 /*sort_stack*/
 void	sort_stack(t_push_swap *stack, int n);
