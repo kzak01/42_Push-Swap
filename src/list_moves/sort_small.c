@@ -1,44 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils2.c                                           :+:      :+:    :+:   */
+/*   sort_small.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/05 19:42:44 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/06 12:02:34 by kzak             ###   ########.fr       */
+/*   Updated: 2022/06/06 19:37:06 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	rmoves_check(t_push_swap *stack, int ra, int rb)
+static void	sortB2(t_push_swap *stack)
 {
-	while (ra > 0 || rb > 0)
-	{
-		if (ra > 0 && rb > 0)
-			rrr(stack);
-		else if (ra > 0)
-			rra(stack);
-		else if (rb > 0)
-			rrb(stack);
-		ra--;
-		rb--;
-	}
-}
-
-// static void	sortb2(t_push_swap *stack)
-// {
-
-// }
-
-static void	sortb(t_push_swap *stack)
-{
-	if (is_sort(stack->b, STACK_B, 3))
+	if (stack->b->content < stack->b->next->content
+		&& stack->b->next->content < stack->b->next->next->content)
 	{
 		pa(stack);
-		pa(stack);
-		return (pa(stack));
+		ra(stack);
+		sb(stack);
+		do_pa(stack, 2);
+		return(rra(stack));
 	}
 	if (stack->b->content < stack->b->next->content
 		&& stack->b->next->content > stack->b->next->next->content)
@@ -46,15 +29,22 @@ static void	sortb(t_push_swap *stack)
 		if (stack->b->content > stack->b->next->next->content)
 		{
 			sb(stack);
-			pa(stack);
-			pa(stack);
+			do_pa(stack, 2);
 			return(pa(stack));
 		}
 		pa(stack);
 		ra(stack);
-		pa(stack);
-		pa(stack);
+		do_pa(stack, 2);
 		return (rra(stack));
+	}
+}
+
+static void	sortB(t_push_swap *stack)
+{
+	if (is_sort(stack->b, STACK_B, 3))
+	{
+		do_pa(stack, 3);
+		return (pa(stack));
 	}
 	if (stack->b->content > stack->b->next->content
 		&& stack->b->next->content < stack->b->next->next->content)
@@ -72,16 +62,50 @@ static void	sortb(t_push_swap *stack)
 		sa(stack);
 		return(pa(stack));
 	}
-	if (stack->b->content < stack->b->next->content
-		&& stack->b->next->content < stack->b->next->next->content)
+	sortB2(stack);
+}
+
+static void	sortA2(t_push_swap *stack)
+{
+	if (stack->a->content > stack->a->next->content
+		&& stack->a->next->content < stack->a->next->next->content)
 	{
-		pa(stack);
+		if (stack->a->content < stack->a->next->next->content)
+			return (sa(stack));
+		sa(stack);
 		ra(stack);
-		sb(stack);
-		pa(stack);
-		pa(stack);
-		return(rra(stack));
+		sa(stack);
+		return (rra(stack));
 	}
+	if (stack->a->content > stack->a->next->content
+		&& stack->a->next->content > stack->a->next->next->content)
+	{
+			sa(stack);
+			ra(stack);
+			sa(stack);
+			rra(stack);
+			return (sa(stack));
+	}
+}
+static void	sortA(t_push_swap *stack)
+{
+	if (is_sort(stack->a, STACK_A, 3))
+		return ;
+	if (stack->a->content < stack->a->next->content
+		&& stack->a->next->content > stack->a->next->next->content)
+	{
+		if (stack->a->content > stack->a->next->next->content)
+		{
+			ra(stack);
+			sa(stack);
+			rra(stack);
+			return (sa(stack));
+		}
+		ra(stack);
+		sa(stack);
+		return (rra(stack));
+	}
+	sortA2(stack);
 }
 
 void	sort_small(t_push_swap *stack, int n, int index)
@@ -89,14 +113,14 @@ void	sort_small(t_push_swap *stack, int n, int index)
 	if (index == STACK_A)
 	{
 		if (n == 3)
-			return (sort(stack));
+			return (sortA(stack));
 		else if (n == 2 && stack->a->content > stack->a->next->content)
 			return (sa(stack));
 	}
 	else if (index == STACK_B)
 	{
 		if (n == 3)
-			return (sortb(stack));
+			return (sortB(stack));
 		if (n == 2)
 		{
 			if (stack->b->content < stack->b->next->content)
@@ -106,29 +130,5 @@ void	sort_small(t_push_swap *stack, int n, int index)
 		}
 		if (n == 1)
 			return (pa(stack));
-	}
-}
-
-void	recursive_call(t_push_swap *stack, int *temp, int index)
-{
-	if (index == STACK_A)
-	{
-		rmoves_check(stack, temp[0], temp[2]);
-		if (!is_sort(stack->a, STACK_A, temp[0]))
-			sort_stack(stack, temp[0]);
-		sort_reverse(stack, temp[2]);
-		sort_reverse(stack, temp[1] - temp[2]);
-	}
-	else if (index == STACK_B)
-	{
-		if (!is_sort(stack->a, STACK_A, temp[1] - temp[0]))
-			sort_stack(stack, temp[1] - temp[0]);
-		rmoves_check(stack, temp[0], temp[2]);
-		if (!is_sort(stack->a, STACK_A, temp[0]))
-			sort_stack(stack, temp[0]);
-		if (!is_sort(stack->b, STACK_B, temp[2]))
-			sort_reverse(stack, temp[2]);
-		else
-			do_pa(stack, temp[2]);
 	}
 }

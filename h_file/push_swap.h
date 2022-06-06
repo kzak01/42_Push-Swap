@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 09:53:15 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/06 11:27:19 by kzak             ###   ########.fr       */
+/*   Updated: 2022/06/06 19:24:40 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,12 @@ void	sa(t_push_swap *stack);
 void	sb(t_push_swap *stack);
 void	ss(t_push_swap *stack);
 
+/*sort_small*/
+void	sort_small(t_push_swap *stack, int n, int order);
+
+/*recursive_call*/
+void	recursive_call(t_push_swap *stack, int *temp, int order);
+
 /*utils_libft_lst*/
 t_stack	*ft_lstlast2(t_stack *lst);
 void	ft_lstadd_back2(t_stack **lst, t_stack *new);
@@ -90,11 +96,6 @@ void	sort(t_push_swap *stack);
 long	atoilong(const char *str);
 void	free_str(char **str);
 int		is_sort(t_stack *stack, int order, int n);
-
-/*utils2*/
-void	rmoves_check(t_push_swap *stack, int ra, int rb);
-void	sort_small(t_push_swap *stack, int n, int order);
-void	recursive_call(t_push_swap *stack, int *temp, int order);
 
 /*push_swap*/
 
