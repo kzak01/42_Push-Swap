@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 09:24:18 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/06 11:26:00 by kzak             ###   ########.fr       */
+/*   Updated: 2022/06/08 11:15:34 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	varius_sort(t_push_swap *stack)
 {
-	int		n;
+	int	n;
 
 	n = stack->la;
 	if (stack->la == 2 && stack->a->content > stack->a->next->content)

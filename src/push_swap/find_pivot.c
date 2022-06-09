@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 13:02:10 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/06 13:48:23 by kzak             ###   ########.fr       */
+/*   Updated: 2022/06/08 12:35:17 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,12 @@ static int	*insert_into_array(t_stack *stack, int n)
 	{
 		array[i] = stack->content;
 		stack = stack->next;
-		++i;
+		i++;
 	}
 	return (array);
 }
 
-static void	swap(int *a, int*b)
+static void	swap(int *a, int *b)
 {
 	int	c;
 
@@ -45,16 +45,16 @@ void	find_pivot(int pivot[], t_stack *stack, int n)
 
 	temp = insert_into_array(stack, n);
 	i = 0;
-	while (i < n -1)
+	while (i < n - 1)
 	{
 		j = i + 1;
 		while (j < n)
 		{
 			if (temp[i] < temp[j])
 				swap(&temp[i], &temp[j]);
-			++j;
+			j++;
 		}
-		++i;
+		i++;
 	}
 	pivot[1] = temp[n / 3];
 	pivot[0] = temp[(n * 2) / 3];

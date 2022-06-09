@@ -6,33 +6,29 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 10:06:59 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/06 19:11:14 by kzak             ###   ########.fr       */
+/*   Updated: 2022/06/09 11:22:19 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	nocopy(char **av)
+void	nocopy(t_stack *result)
 {
-	int	i;
-	int	j;
+	int	temp;
 
-	i = 0;
-	j = 1;
-	while (av[i])
+	temp = result->content;
+	result = result->next;
+	while (result)
 	{
-		while (av[j])
+		if (result->content == temp)
 		{
-			if (ft_atoi(av[i]) == ft_atoi(av[j]))
-			{
-				ft_printf("\033[0;31m" "Error: '%d' is a duplicate number\n" \
-					"\033[0m", ft_atoi(av[j]));
-				exit (0);
-			}
-			j++;
+			
+			ft_printf("\033[0;31m" "Error: '%d' is a duplicate number\n" \
+					"\033[0m", temp);
+			exit (1);
 		}
-		i++;
-		j = i + 1;
+		nocopy(result);
+		result = result->next;
 	}
 }
 
@@ -79,28 +75,8 @@ static void	intmaxmin(char **av)
 	}
 }
 
-void	ft_errors(int ac, char **av)
+void	ft_errors(char **av)
 {
-	int			i;
-	int			j;
-	char		**str;
-
-	i = 1;
-	while (i < ac)
-	{
-		str = ft_split(av[i], ' ');
-		j = 0;
-		while (str[j])
-		{
-			isnumber(str);
-			intmaxmin(str);
-			nocopy(str);
-			j++;
-		}
-		i++;
-		free_str(str);
-	}
 	isnumber(av);
 	intmaxmin(av);
-	nocopy(av);
 }

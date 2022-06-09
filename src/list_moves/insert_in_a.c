@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   insert_in_a.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvolpi <mvolpi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 10:02:32 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/06 10:22:22 by mvolpi           ###   ########.fr       */
+/*   Updated: 2022/06/09 11:07:07 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ t_stack	*insert_into_a(int ac, char **av)
 	t_stack	*cont;
 	char	**str;
 
-	result = NULL;
 	i = 1;
+	result = NULL;
 	while (i < ac)
 	{
 		str = ft_split(av[i], ' ');
@@ -35,5 +35,6 @@ t_stack	*insert_into_a(int ac, char **av)
 		i++;
 		free_str(str);
 	}
+	nocopy(result);
 	return (result);
 }

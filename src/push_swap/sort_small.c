@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/05 19:42:44 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/06 19:37:06 by kzak             ###   ########.fr       */
+/*   Updated: 2022/06/08 13:03:28 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,6 @@
 
 static void	sortB2(t_push_swap *stack)
 {
-	if (stack->b->content < stack->b->next->content
-		&& stack->b->next->content < stack->b->next->next->content)
-	{
-		pa(stack);
-		ra(stack);
-		sb(stack);
-		do_pa(stack, 2);
-		return(rra(stack));
-	}
 	if (stack->b->content < stack->b->next->content
 		&& stack->b->next->content > stack->b->next->next->content)
 	{
@@ -37,13 +28,22 @@ static void	sortB2(t_push_swap *stack)
 		do_pa(stack, 2);
 		return (rra(stack));
 	}
+	if (stack->b->content < stack->b->next->content
+		&& stack->b->next->content < stack->b->next->next->content)
+	{
+		pa(stack);
+		ra(stack);
+		sb(stack);
+		do_pa(stack, 2);
+		return(rra(stack));
+	}
 }
 
 static void	sortB(t_push_swap *stack)
 {
 	if (is_sort(stack->b, STACK_B, 3))
 	{
-		do_pa(stack, 3);
+		do_pa(stack, 2);
 		return (pa(stack));
 	}
 	if (stack->b->content > stack->b->next->content

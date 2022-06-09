@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 10:20:45 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/06 11:26:55 by kzak             ###   ########.fr       */
+/*   Updated: 2022/06/08 12:58:03 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,24 +91,26 @@ int	is_sort(t_stack *stack, int index, int n)
 	int	temp;
 
 	if (stack == NULL)
-		return (1);
+		return (TRUE);
 	temp = stack->content;
 	stack = stack->next;
-	while (n > 0 && stack)
+	// n--;
+	while (--n > 0 && stack)
 	{
-		if (index == STACK_B)
-		{
-			if (stack->content > temp)
-				return (0);
-			temp = stack->content;
-		}
-		else if (index == STACK_A)
+		if (index == STACK_A)
 		{
 			if (stack->content < temp)
-				return (0);
+				return (FALSE);
 			temp = stack->content;
 		}
+		else if (index == STACK_B)
+		{
+			if (stack->content > temp)
+				return (FALSE);
+			temp = stack->content;
+		}
+		// n--;
 		stack = stack->next;
 	}
-	return (1);
+	return (TRUE);
 }

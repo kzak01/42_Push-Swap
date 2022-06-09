@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 09:53:15 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/06 22:16:00 by kzak             ###   ########.fr       */
+/*   Updated: 2022/06/09 11:22:38 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ typedef struct s_push_swap
 
 /*push_swap*/
 int		main(int argc, char **argv);
+void	free_stack(t_push_swap *stack);
 
 /*list_moves*/
 
@@ -97,7 +98,8 @@ int		is_sort(t_stack *stack, int order, int n);
 void	fivecase(t_push_swap *stack, int n);
 
 /*error*/
-void	ft_errors(int ac, char **av);
+void	ft_errors(char **av);
+void	nocopy(t_stack *result);
 
 /*find_pivot*/
 void	find_pivot(int *pivot, t_stack *stack, int n);
