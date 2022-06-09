@@ -6,7 +6,7 @@
 /*   By: ldi-masc <ldi-masc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 09:30:33 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/06 11:50:50 by ldi-masc         ###   ########.fr       */
+/*   Updated: 2022/06/09 12:55:36 by ldi-masc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ void	fivecase(t_stack *stack);
 int		find_min(t_stack *stack);
 int		find_minb(t_stack *stack);
 int		find_max(t_stack *stack);
+int		find_maxb(t_stack *stack);
 
 //moves
 void	sort_max(t_stack *stack, int max);
@@ -97,7 +98,7 @@ void    pa_maxb2(t_stack *stack, int medianb, int median);
 void    vordermaxmin(t_stack *stack, int medianb, int median);
 void    putadjacent(t_stack *stack,int len);
 void    sortmaxmin(t_stack *stack,int len, int median);
-void 	sortmaxmin2(t_stack *stack);
-void	putadjacent2(t_stack *stack, int len, int median);
+void 	sortmaxmin2(t_stack *stack, int medianb);
+void	putadjacent2(t_stack *stack, int len);
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: ldi-masc <ldi-masc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 10:52:13 by mvolpi            #+#    #+#             */
-/*   Updated: 2022/05/10 14:14:27 by kzak             ###   ########.fr       */
+/*   Updated: 2022/06/09 12:53:13 by ldi-masc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	sa(t_stack *stack)
 		stack->a[1] = t;
 	}	
 	ft_printf("sa\n");
-	printarray(stack);
+	// printarray(stack);
 }
 
 void	sb(t_stack *stack)
@@ -37,7 +37,7 @@ void	sb(t_stack *stack)
 		stack->b[1] = t;
 	}
 	ft_printf("sb\n");
-	printarray(stack);
+	// printarray(stack);
 }
 
 void	ss(t_stack *stack)
@@ -47,6 +47,6 @@ void	ss(t_stack *stack)
 		sa(stack);
 		sb(stack);
 		ft_printf("ss\n");
-		printarray(stack);
+		// printarray(stack);
 	}
 }
