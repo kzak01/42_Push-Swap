@@ -6,7 +6,7 @@
 /*   By: ldi-masc <ldi-masc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 09:12:56 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/09 12:58:22 by ldi-masc         ###   ########.fr       */
+/*   Updated: 2022/06/10 14:49:19 by ldi-masc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,25 +91,23 @@ int	main(int argc, char **argv)
 {
 	t_stack	stack;
 
-	if (argc < 2)
+	if (argc < 3)
 		exit(1);
 	ft_errors(argc, argv);
 	stack.la = arrayleng(argc, argv);
-	// printf("ciao %zu\n", stack.la);
 	stack.lb = 0;
-	stack.a = (int *) malloc(8000 * sizeof(int));
+	stack.a = (int *) malloc(600 * sizeof(int));
 	stack.b = (int *) malloc(stack.lb * sizeof(int));
-	stack.c = (int *) malloc(8000 * sizeof(int));
+	stack.c = (int *) malloc(600 * sizeof(int));
 	insert_into_a(argc, argv, &stack);
-	// printarray(&stack);
-	if (stack.la == 3)
+	if (stack.la == 3 || stack.la == 2)
 		threecase(&stack);
-	else if (stack.la == 5)
+	else if (stack.la == 5 || stack.la == 4)
 		fivecase(&stack);
-	else
+	else if (stack.la <= 100)
 		othercase(&stack);
-		// printf("AO calma\n");
-	// printarray(&stack);
+	else
+		printf("AO calma\n");
 	free(stack.a);
 	free(stack.b);	
 	free(stack.c);

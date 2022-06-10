@@ -6,7 +6,7 @@
 /*   By: ldi-masc <ldi-masc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 09:51:37 by vbellucc          #+#    #+#             */
-/*   Updated: 2022/06/09 12:55:20 by ldi-masc         ###   ########.fr       */
+/*   Updated: 2022/06/10 10:48:34 by ldi-masc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,24 +89,6 @@ void pa_maxb2(t_stack *stack, int medianb, int median)
     //  printf("fine maxb2 : \n");
 }
 
-void vordermaxmin(t_stack *stack, int medianb, int median)
-{
-    int s;
-    s = 0;
-    medianb = stack->lb / 2;
-    while (s <= medianb)
-    {
-        if(stack->b[s] == median)
-        {
-            while (stack->b[0] != median)
-            {
-                rb(stack);
-            }
-            pa(stack);
-        }
-        s++;
-    }
-}
 void putadjacent(t_stack *stack, int len)
 {
     int s;

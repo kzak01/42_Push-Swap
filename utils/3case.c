@@ -6,7 +6,7 @@
 /*   By: ldi-masc <ldi-masc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 08:55:58 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/09 13:02:38 by ldi-masc         ###   ########.fr       */
+/*   Updated: 2022/06/10 14:46:54 by ldi-masc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,15 @@ int	sort(t_stack *stack)
 
 void	threecase(t_stack *stack)
 {
-	// printf("\n");
-	// printf("%d %d %d\n", stack->a[0], stack->a[1], stack->a[2]);
-	// printf("\n");
-	sort(stack);
-	// printf("\n");
-	// printf("%d %d %d\n", stack->a[0], stack->a[1], stack->a[2]);
+	if (stack->la == 3)
+		sort(stack);
+	else
+		if (stack->a[0] > stack->a[1])
+		{
+			sa(stack);			
+		}
+		else
+		{
+			exit(0);
+		}	
 }
