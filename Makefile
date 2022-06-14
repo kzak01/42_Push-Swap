@@ -6,7 +6,7 @@
 #    By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/31 09:49:00 by kzak              #+#    #+#              #
-#    Updated: 2022/06/01 16:36:19 by kzak             ###   ########.fr        #
+#    Updated: 2022/06/14 11:28:27 by kzak             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,7 +55,6 @@ PUSH_SWAP_OBJS = $(addprefix $(OBJ_DIR)/, $(notdir $(PUSH_SWAP_SRCS:.c=.o)))
 LF = \e[1K\r$(NO_COLOR)
 
 NO_COLOR = \e[0m
-
 
 all : $(NAME)
 

@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 10:11:31 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/06 14:14:56 by kzak             ###   ########.fr       */
+/*   Updated: 2022/06/14 14:15:16 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ra(t_push_swap *stack)
 {
 	t_stack	*temp;
 
-	// ft_printf("ra\n");
+	ft_printf("ra\n");
 	if (stack->a == NULL || stack->a->next == NULL)
 		return ;
 	temp = stack->a;
@@ -25,14 +25,14 @@ void	ra(t_push_swap *stack)
 	temp->next = NULL;
 	temp->prev = ft_lstlast2(stack->a);
 	temp->prev->next = temp;
-	ft_printf("ra\n");
+	// ft_printf("ra\n");
 }
 
 void	rb(t_push_swap *stack)
 {
 	t_stack	*temp;
 
-	// ft_printf("rb\n");
+	ft_printf("rb\n");
 	if (stack->b == NULL || stack->b->next == NULL)
 		return ;
 	temp = stack->b;
@@ -41,7 +41,7 @@ void	rb(t_push_swap *stack)
 	temp->next = NULL;
 	temp->prev = ft_lstlast2(stack->b);
 	temp->prev->next = temp;
-	ft_printf("rb\n");
+	// ft_printf("rb\n");
 }
 
 void	rr(t_push_swap *stack)

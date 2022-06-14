@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 09:53:15 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/09 11:22:38 by kzak             ###   ########.fr       */
+/*   Updated: 2022/06/14 14:07:39 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,19 @@ typedef struct s_push_swap
 	t_stack		*b;
 	int			la;
 }	t_push_swap;
+
+typedef struct s_counter
+{
+	int		i;
+	int		j;
+	int		temp;
+	char	**str;
+	int		first_pivot;
+	int		second_pivot;
+	int		push;
+	int		ra;
+	int		rb;
+}	t_counter;
 
 /*push_swap*/
 int		main(int argc, char **argv);

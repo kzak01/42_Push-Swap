@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 10:20:45 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/08 12:58:03 by kzak             ###   ########.fr       */
+/*   Updated: 2022/06/14 14:20:19 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,42 +75,40 @@ long	atoilong(const char *str)
 
 void	free_str(char **str)
 {
-	int	i;
+	t_counter	count;
 
-	i = 0;
-	while (str[i])
+	count.i = 0;
+	while (str[count.i])
 	{
-		free(str[i]);
-		i++;
+		free(str[count.i]);
+		count.i++;
 	}
 	free(str);
 }
 
 int	is_sort(t_stack *stack, int index, int n)
 {
-	int	temp;
+	t_counter	count;
 
 	if (stack == NULL)
-		return (TRUE);
-	temp = stack->content;
+		return (1);
+	count.temp = stack->content;
 	stack = stack->next;
-	// n--;
 	while (--n > 0 && stack)
 	{
 		if (index == STACK_A)
 		{
-			if (stack->content < temp)
-				return (FALSE);
-			temp = stack->content;
+			if (stack->content < count.temp)
+				return (0);
+			count.temp = stack->content;
 		}
 		else if (index == STACK_B)
 		{
-			if (stack->content > temp)
-				return (FALSE);
-			temp = stack->content;
+			if (stack->content > count.temp)
+				return (0);
+			count.temp = stack->content;
 		}
-		// n--;
 		stack = stack->next;
 	}
-	return (TRUE);
+	return (1);
 }

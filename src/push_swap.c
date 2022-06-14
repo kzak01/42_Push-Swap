@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 10:00:52 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/09 11:22:28 by kzak             ###   ########.fr       */
+/*   Updated: 2022/06/14 14:14:20 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ void	print_stacks(t_stack *stack_a, t_stack *stack_b)
 		ft_putchar_fd('\n', 1);
 	}
 }
+
 /*cancellare sopra*/
 
 void	free_stack(t_push_swap *stack)
@@ -69,26 +70,23 @@ void	free_stack(t_push_swap *stack)
 
 static int	arrayleng(int ac, char **av)
 {
-	int			i;
-	int			j;
-	char		**str;
-	int			count;
+	t_counter	count;
 
-	i = 1;
-	count = 0;
-	while (i < ac)
+	count.i = 1;
+	count.temp = 0;
+	while (count.i < ac)
 	{
-		str = ft_split(av[i], ' ');
-		j = 0;
-		while (str[j])
+		count.str = ft_split(av[count.i], ' ');
+		count.j = 0;
+		while (count.str[count.j])
 		{
-			count++;
-			j++;
+			count.temp++;
+			count.j++;
 		}
-		i++;
-		free_str(str);
+		count.i++;
+		free_str(count.str);
 	}
-	return (count);
+	return (count.temp);
 }
 
 int	main(int argc, char **argv)
@@ -99,7 +97,6 @@ int	main(int argc, char **argv)
 		return (0);
 	ft_errors(argv);
 	stack.la = arrayleng(argc, argv);
-	// printf("stack leng %d\n", stack.la);
 	stack.a = insert_into_a(argc, argv);
 	print_stacks(stack.a, stack.b);
 	stack.b = NULL;

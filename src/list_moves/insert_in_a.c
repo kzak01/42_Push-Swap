@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 10:02:32 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/09 11:07:07 by kzak             ###   ########.fr       */
+/*   Updated: 2022/06/14 14:17:43 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,24 @@
 
 t_stack	*insert_into_a(int ac, char **av)
 {
-	int		i;
-	int		j;
-	t_stack	*result;
-	t_stack	*cont;
-	char	**str;
+	t_stack		*result;
+	t_stack		*cont;
+	t_counter	count;
 
-	i = 1;
+	count.i = 1;
 	result = NULL;
-	while (i < ac)
+	while (count.i < ac)
 	{
-		str = ft_split(av[i], ' ');
-		j = 0;
-		while (str[j])
+		count.str = ft_split(av[count.i], ' ');
+		count.j = 0;
+		while (count.str[count.j])
 		{
-			cont = ft_lstnew2(ft_atoi(str[j]));
+			cont = ft_lstnew2(ft_atoi(count.str[count.j]));
 			ft_lstadd_back2(&result, cont);
-			j++;
+			count.j++;
 		}
-		i++;
-		free_str(str);
+		count.i++;
+		free_str(count.str);
 	}
 	nocopy(result);
 	return (result);

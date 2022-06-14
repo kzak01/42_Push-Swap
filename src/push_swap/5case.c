@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 10:42:20 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/06 11:49:27 by kzak             ###   ########.fr       */
+/*   Updated: 2022/06/14 14:20:36 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,7 +104,6 @@ void	fivecase(t_push_swap *stack, int n)
 
 	max = find_max(stack->a, n);
 	min = find_min(stack->a, n);
-	// printf("min,%d  max,%d", min, max);
 	sort_min(stack, min);
 	sort_max(stack, max);
 	sort(stack);
