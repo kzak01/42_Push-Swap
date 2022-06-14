@@ -6,7 +6,7 @@
 /*   By: ldi-masc <ldi-masc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 09:12:56 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/10 14:49:19 by ldi-masc         ###   ########.fr       */
+/*   Updated: 2022/06/14 11:33:26 by ldi-masc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,18 +96,18 @@ int	main(int argc, char **argv)
 	ft_errors(argc, argv);
 	stack.la = arrayleng(argc, argv);
 	stack.lb = 0;
-	stack.a = (int *) malloc(600 * sizeof(int));
-	stack.b = (int *) malloc(stack.lb * sizeof(int));
-	stack.c = (int *) malloc(600 * sizeof(int));
+	stack.a = (int *) malloc(6000000 * sizeof(int));
+	stack.b = (int *) malloc(6000000 * sizeof(int));
+	stack.c = (int *) malloc(6000000 * sizeof(int));
 	insert_into_a(argc, argv, &stack);
 	if (stack.la == 3 || stack.la == 2)
 		threecase(&stack);
 	else if (stack.la == 5 || stack.la == 4)
 		fivecase(&stack);
-	else if (stack.la <= 100)
+	else 
 		othercase(&stack);
-	else
-		printf("AO calma\n");
+	// else
+	// 	printf("AO calma\n");
 	free(stack.a);
 	free(stack.b);	
 	free(stack.c);

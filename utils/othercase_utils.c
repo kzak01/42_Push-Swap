@@ -6,7 +6,7 @@
 /*   By: ldi-masc <ldi-masc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 09:51:37 by vbellucc          #+#    #+#             */
-/*   Updated: 2022/06/10 10:48:34 by ldi-masc         ###   ########.fr       */
+/*   Updated: 2022/06/14 11:28:21 by ldi-masc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ void pa_minb1(t_stack *stack,int medianb,int mhanz)
 {
     int s;
     s = 0;
-    //  printf("medianb e : %d\n", medianb);
-    //  printf("mhanz è: %d\n", mhanz);
     while (s <= medianb)
     {
         if(stack->b[s] == mhanz)
@@ -31,7 +29,6 @@ void pa_minb1(t_stack *stack,int medianb,int mhanz)
         }
         s++;
     }
-    //  printf("\n fine minb1 : \n");
 }
 void pa_minb2(t_stack *stack,int medianb,int mhanz)
 {
@@ -94,33 +91,23 @@ void putadjacent(t_stack *stack, int len)
     int s;
     s = 1;
     len = len / 2 - 1;
-    int c;
-    c = stack->c[0];
     while(stack->lb != 0)
     {
         if (stack->b[0] == stack->c[len])
         {
             pa(stack);
-            //printf("stack c di 0 è nel prima del pa: %d\n", porcoddue);
             len--;
-            //printf("stack c di 0 è nel primo if: %d\n", porcoddue);
-            // printf("len è nell if: %d\n", len);
         }
         else if (stack->b[0] == stack->c[s])
         {
             pa(stack);
             ra(stack);
             s++;
-            // printf("stack c di 0 è nel secondo if: %d\n", stack->c[0]);
         }
         else
         {
-            rb(stack);
-            // printf("stack c di 0 è nell'else: %d\n", stack->c[0]);
+            rb(stack);    
         }
-        // printf("stack c di 0 è fuori dai controlli: %d\n", stack->c[0]);
-        // printf("len è nell if: %d\n", len);
-        stack->c[0] = c;
     }
 }
 void sortmaxmin(t_stack *stack, int len, int median)    
@@ -149,19 +136,22 @@ void sortmaxmin2(t_stack *stack, int medianb)
 void putadjacent2(t_stack *stack, int len)
 {
     int s;
-    s = 0;
-    len = len - 1;
-    // printf("len è: %d\n", len);
+    s = len - 1;
+    len = len / 2 + 2;
     while(stack->lb != 0)
     {
-        // printf("len è: %d\n", len);
-        // printf("median è: %d\n", median);
-        if (stack->b[s] == stack->c[len])
+        if (stack->b[0] == stack->c[len])
         {
             pa(stack);
-            len--;
+            ra(stack);
+            len++;
+            // printf("aooooooo");
         }
-        
+        else if (stack->b[0] == stack->c[s])
+        {
+            pa(stack);
+            s--;
+        }
         else
         {
             rb(stack);
