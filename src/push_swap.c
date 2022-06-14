@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 10:00:52 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/14 14:14:20 by kzak             ###   ########.fr       */
+/*   Updated: 2022/06/14 14:34:55 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static t_stack	*print_stack_a(t_stack *stack_a)
 	char	*tmp;
 
 	tmp = ft_itoa(stack_a->content);
-	i = 20 - ft_strlen(tmp);
+	i = 15 - ft_strlen(tmp);
 	while (i--)
 		ft_putchar_fd(' ', 1);
 	ft_putstr_fd(tmp, 1);
@@ -29,13 +29,13 @@ static t_stack	*print_stack_a(t_stack *stack_a)
 
 void	print_stacks(t_stack *stack_a, t_stack *stack_b)
 {
-	ft_putendl_fd("             STACK_A : STACK_B", 1);
+	ft_putendl_fd("        STACK_A : STACK_B", 1);
 	while (stack_a || stack_b)
 	{
 		if (stack_a)
 			stack_a = print_stack_a(stack_a);
 		else
-			ft_putstr_fd("                    ", 1);
+			ft_putstr_fd("               ", 1);
 		ft_putstr_fd(" : ", 1);
 		if (stack_b)
 		{

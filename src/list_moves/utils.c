@@ -6,45 +6,21 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 10:20:45 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/14 14:20:19 by kzak             ###   ########.fr       */
+/*   Updated: 2022/06/14 14:30:55 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	sort_2(t_push_swap *stack)
+void	fourcase(t_push_swap *stack, int n)
 {
-	if (stack->a->content < stack->a->next->content
-		&& stack->a->next->content > stack->a->next->next->content
-		&& stack->a->next->next->content > stack->a->content)
-	{
-		sa(stack);
-		ra(stack);
-	}
-	if (stack->a->content > stack->a->next->content
-		&& stack->a->next->content < stack->a->next->next->content
-		&& stack->a->next->next->content > stack->a->content)
-		sa(stack);
-}
-
-void	sort(t_push_swap *stack)
-{
-	if (stack->a->content > stack->a->next->content
-		&& stack->a->next->content < stack->a->next->next->content
-		&& stack->a->next->next->content < stack->a->content)
-		ra(stack);
-	if (stack->a->content < stack->a->next->content
-		&& stack->a->next->content > stack->a->next->next->content
-		&& stack->a->next->next->content < stack->a->content)
-		rra(stack);
-	if (stack->a->content > stack->a->next->content
-		&& stack->a->next->content > stack->a->next->next->content
-		&& stack->a->next->next->content < stack->a->content)
-	{
-		sa(stack);
-		rra(stack);
-	}
-	sort_2(stack);
+	int	max;
+	
+	max = find_max(stack->a, n);
+	sort_max(stack, max);
+	sort(stack);
+	pa(stack);
+	ra(stack);
 }
 
 long	atoilong(const char *str)

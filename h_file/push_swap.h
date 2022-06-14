@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 09:53:15 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/14 14:07:39 by kzak             ###   ########.fr       */
+/*   Updated: 2022/06/14 14:33:24 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,7 @@ void	ft_lstadd_back2(t_stack **lst, t_stack *new);
 t_stack	*ft_lstnew2(int content);
 
 /*utils*/
-void	sort(t_push_swap *stack);
+void	fourcase(t_push_swap *stack, int n);
 long	atoilong(const char *str);
 void	free_str(char **str);
 int		is_sort(t_stack *stack, int order, int n);
@@ -108,11 +108,13 @@ int		is_sort(t_stack *stack, int order, int n);
 /*push_swap*/
 
 /*5case*/
+void	sort_max(t_push_swap *stack, int max);
+int		find_max(t_stack *stack, int n);
 void	fivecase(t_push_swap *stack, int n);
 
 /*error*/
-void	ft_errors(char **av);
 void	nocopy(t_stack *result);
+void	ft_errors(char **av);
 
 /*find_pivot*/
 void	find_pivot(int *pivot, t_stack *stack, int n);
@@ -121,8 +123,8 @@ void	find_pivot(int *pivot, t_stack *stack, int n);
 void	recursive_call(t_push_swap *stack, int *temp, int order);
 
 /*sort_reverse*/
-void	sort_reverse(t_push_swap *stack, int n);
 void	do_pa(t_push_swap *stack, int n);
+void	sort_reverse(t_push_swap *stack, int n);
 
 /*sort_small*/
 void	sort_small(t_push_swap *stack, int n, int order);
@@ -132,5 +134,6 @@ void	sort_stack(t_push_swap *stack, int n);
 
 /*varius_sort*/
 void	varius_sort(t_push_swap *stack);
+void	sort(t_push_swap *stack);
 
 #endif

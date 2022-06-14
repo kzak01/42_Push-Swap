@@ -6,13 +6,13 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 10:42:20 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/14 14:20:36 by kzak             ###   ########.fr       */
+/*   Updated: 2022/06/14 14:29:38 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	sort_max(t_push_swap *stack, int max)
+void	sort_max(t_push_swap *stack, int max)
 {
 	if (max == stack->a->content)
 		pb(stack);
@@ -63,7 +63,7 @@ static void	sort_min(t_push_swap *stack, int min)
 	}
 }
 
-static int	find_max(t_stack *stack, int n)
+int	find_max(t_stack *stack, int n)
 {
 	int		iter;
 	int		cur_max;
