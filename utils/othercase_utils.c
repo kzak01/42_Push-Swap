@@ -6,12 +6,13 @@
 /*   By: ldi-masc <ldi-masc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 09:51:37 by vbellucc          #+#    #+#             */
-/*   Updated: 2022/06/14 11:28:21 by ldi-masc         ###   ########.fr       */
+/*   Updated: 2022/06/16 17:16:42 by ldi-masc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
+// Controlla la prima metà se è presente il numero più piccolo e se lo trova fa rb finchè non è alla posizione 0 e poi fa pa ed ra
 void pa_minb1(t_stack *stack,int medianb,int mhanz)
 {
     int s;
@@ -26,10 +27,13 @@ void pa_minb1(t_stack *stack,int medianb,int mhanz)
             }
             pa(stack);;
             ra(stack);
+            break;
         }
         s++;
     }
 }
+
+// Controlla la seconda metà se è presente il numero più piccolo e se lo trova fa rrb finchè non è alla posizione 0 e poi fa pa ed ra
 void pa_minb2(t_stack *stack,int medianb,int mhanz)
 {
     int s;
@@ -44,17 +48,22 @@ void pa_minb2(t_stack *stack,int medianb,int mhanz)
             }
             pa(stack);
             ra(stack);
+            break;
         }
         s--;
-    }
-    //  printf("fine minb2 : \n");
+    }   
 }
+
+// Controlla la prima metà se è presente il numero più grande e se lo trova fa rb finchè non è alla posizione 0 e poi fa pa ed ra
 void pa_maxb1(t_stack *stack,int medianb,int median)
 {
     int s;
     s = 0;
+    //sleep(2);
     while (s <= medianb)
     {
+        //printf("che succede");
+        //sleep(2);
         if(stack->b[s] == median)
         {
             while (stack->b[0] != median)
@@ -62,11 +71,13 @@ void pa_maxb1(t_stack *stack,int medianb,int median)
                 rb(stack);
             }
             pa(stack);
+            break;
         }
         s++;
     }
-    //  printf("fine maxb1 : \n");
 }
+
+// Controlla la seconda metà se è presente il numero più grande e se lo trova fa rrb finchè non è alla posizione 0 e poi fa pa ed ra
 void pa_maxb2(t_stack *stack, int medianb, int median)
 {
     int s;
@@ -80,10 +91,10 @@ void pa_maxb2(t_stack *stack, int medianb, int median)
                 rrb(stack);
             }
             pa(stack);
+            break;
         }
         s--;
     }
-    //  printf("fine maxb2 : \n");
 }
 
 void putadjacent(t_stack *stack, int len)
@@ -145,7 +156,7 @@ void putadjacent2(t_stack *stack, int len)
             pa(stack);
             ra(stack);
             len++;
-            // printf("aooooooo");
+            
         }
         else if (stack->b[0] == stack->c[s])
         {

@@ -6,7 +6,7 @@
 /*   By: ldi-masc <ldi-masc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 09:12:56 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/14 11:33:26 by ldi-masc         ###   ########.fr       */
+/*   Updated: 2022/06/16 16:53:00 by ldi-masc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,8 +104,10 @@ int	main(int argc, char **argv)
 		threecase(&stack);
 	else if (stack.la == 5 || stack.la == 4)
 		fivecase(&stack);
-	else 
+	else if (stack.la <= 100) 
 		othercase(&stack);
+	// else
+	// 	fivehundredcase(&stack);	
 	// else
 	// 	printf("AO calma\n");
 	free(stack.a);
