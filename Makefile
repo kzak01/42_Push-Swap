@@ -41,6 +41,7 @@ UTILS = 3case.c \
 			atoilong.c \
 			othercase.c \
 			othercase_utils.c \
+			fivehundredcase.c \
 
 SRC_UTILS = $(addprefix utils/, $(UTILS))
 

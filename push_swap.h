@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldi-masc <ldi-masc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vbellucc <vbellucc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 09:30:33 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/14 10:42:32 by ldi-masc         ###   ########.fr       */
+/*   Updated: 2022/06/17 12:31:24 by vbellucc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,20 @@ typedef struct s_stack
 	size_t	la;
 	size_t	lb;
 }	t_stack;
+
+typedef struct s_chunk
+{
+	int		*a;
+	int		*b;
+	int		*c;
+	int		*d;
+	int		*e;
+	int 	ca;
+	int		cb;
+	int		cc;
+	int		cd;
+	int		ce;
+}	t_chunk;
 
 typedef enum e_bool
 {
@@ -101,5 +115,8 @@ void    putadjacent(t_stack *stack,int len);
 void    sortmaxmin(t_stack *stack,int len, int median);
 void 	sortmaxmin2(t_stack *stack, int medianb);
 void	putadjacent2(t_stack *stack, int len);
+
+//fivehundredcase
+void fivehundredcase(t_stack *stack,t_chunk *chunk);
 
 #endif

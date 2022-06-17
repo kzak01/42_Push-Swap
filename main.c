@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldi-masc <ldi-masc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vbellucc <vbellucc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 09:12:56 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/16 16:53:00 by ldi-masc         ###   ########.fr       */
+/*   Updated: 2022/06/17 12:13:17 by vbellucc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,8 @@ static int	arrayleng(int ac, char **av)
 int	main(int argc, char **argv)
 {
 	t_stack	stack;
-
+	t_chunk chunk;
+	
 	if (argc < 3)
 		exit(1);
 	ft_errors(argc, argv);
@@ -106,8 +107,8 @@ int	main(int argc, char **argv)
 		fivecase(&stack);
 	else if (stack.la <= 100) 
 		othercase(&stack);
-	// else
-	// 	fivehundredcase(&stack);	
+	else
+		fivehundredcase(&stack, &chunk);	
 	// else
 	// 	printf("AO calma\n");
 	free(stack.a);
