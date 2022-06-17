@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vbellucc <vbellucc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ldi-masc <ldi-masc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 09:30:33 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/17 12:31:24 by vbellucc         ###   ########.fr       */
+/*   Updated: 2022/06/17 15:35:44 by ldi-masc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,8 @@ void othercase(t_stack *stack);
 
 //printarray
 void	printarray(t_stack *st);
+void 	printchunk(t_chunk *chunk);
+void 	printc(t_stack *stack);
 
 //main
 int		main(int argc, char **argv);
@@ -118,5 +120,8 @@ void	putadjacent2(t_stack *stack, int len);
 
 //fivehundredcase
 void fivehundredcase(t_stack *stack,t_chunk *chunk);
+
+//fivehundredcase_utils
+void chunk_division(t_stack *stack, t_chunk *chunk);
 
 #endif

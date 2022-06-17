@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fivehundredcase_utils.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vbellucc <vbellucc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ldi-masc <ldi-masc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 12:07:05 by vbellucc          #+#    #+#             */
-/*   Updated: 2022/06/17 12:30:03 by vbellucc         ###   ########.fr       */
+/*   Updated: 2022/06/17 15:33:17 by ldi-masc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ void chunk_division(t_stack *stack, t_chunk *chunk)
 {
     if(stack->la <= 200)
     {
-        chunk->a = (int *) malloc(6000000 * sizeof(int));
-        chunk->b = (int *) malloc(6000000 * sizeof(int)); 
+        chunk->a = (int *) malloc(600000000* sizeof(int));
+        chunk->b = (int *) malloc(600000000 * sizeof(int)); 
     }
     else if(stack->la <= 300)
     {

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fivehundredcase.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vbellucc <vbellucc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ldi-masc <ldi-masc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 16:22:42 by ldi-masc          #+#    #+#             */
-/*   Updated: 2022/06/17 12:35:37 by vbellucc         ###   ########.fr       */
+/*   Updated: 2022/06/17 15:47:24 by ldi-masc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,37 +66,67 @@ void fivehundredcase(t_stack *stack,t_chunk *chunk)
 
     k = 0;
     j = 0;
-
-    while(k <= stack->la)
+    m = 0;
+    chunk_division(stack,chunk);
+    chunk->ca = 0;
+    chunk->cb = 0;
+    chunk->cc = 0;
+    chunk->cd = 0;
+    chunk->ce = 0;
+    while(k < stack->la)
     {
-        if (stack->a[k] == stack->c[j])
+        if (stack->a[m] == stack->c[j])
         {
             if (j >= 0 && j <= 99)
             {
+                // printf("Entri?");
+                // printf("CA è nell if %d\n", chunk->ca);
                 chunk->a[chunk->ca] = stack->c[j];
                 chunk->ca++;
+                m++;
+                k++;
+                j = -1;
             }
             else if (j >= 100 && j <= 199)
             {
+                // printf("Entri2?");
                 chunk->b[chunk->cb] = stack->c[j];
                 chunk->cb++;
+                m++;
+                k++;
+                j = -1;
             }
             else if (j >= 200 && j <= 299)
             {
-                chunk->b[chunk->cb] = stack->c[j];
-                chunk->cb++;
+                // printf("Entri3?");
+                chunk->c[chunk->cc] = stack->c[j];
+                chunk->cc++;
+                m++;
+                k++;
+                j = -1;
             }
             else if (j >= 300 && j <= 399)
             {
-                chunk->b[chunk->cb] = stack->c[j];
-                chunk->cb++;
+                // printf("Entri4?");
+                chunk->d[chunk->cd] = stack->c[j];
+                chunk->cd++;
+                m++;
+                k++;
+                j = -1;
             }
             else
             {
-                chunk->b[chunk->cb] = stack->c[j];
-                chunk->cb++;
+                // printf("Entri5?");
+                chunk->e[chunk->ce] = stack->c[j];
+                chunk->ce++;
+                m++;
+                k++;
+                j = -1;
             }
         }
+        j++;
     }
+    printchunk(chunk);
+    printarray(stack);
+    printc(stack);    
 }
-
