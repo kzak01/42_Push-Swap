@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 09:53:15 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/18 09:17:46 by kzak             ###   ########.fr       */
+/*   Updated: 2022/06/18 12:00:23 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,9 @@ typedef enum e_stacks
 
 typedef struct s_stack
 {
+	int				content;
 	struct s_stack	*next;
 	struct s_stack	*prev;
-	int				content;
 }	t_stack;
 
 typedef struct s_push_swap
@@ -113,7 +113,7 @@ int		find_max(t_stack *stack, int n);
 void	fivecase(t_push_swap *stack, int n);
 
 /*error*/
-void	nocopy(t_stack *result);
+void	nocopy(t_stack *stack, int i);
 void	ft_errors(char **av);
 
 /*find_pivot*/

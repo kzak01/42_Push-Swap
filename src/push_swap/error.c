@@ -6,29 +6,28 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 10:06:59 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/14 14:34:00 by kzak             ###   ########.fr       */
+/*   Updated: 2022/06/18 12:04:50 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	nocopy(t_stack *result)
+void	nocopy(t_stack *stack, int i)
 {
-	t_counter	count;
+	t_counter count;
 
-	count.temp = result->content;
-	result = result->next;
-	while (result)
+	count.j = 0;
+	while(stack)
 	{
-		if (result->content == count.temp)
+		if (stack->content == i)
+			count.j++;
+		if (count.j == 2)
 		{
-			
 			ft_printf("\033[0;31m" "Error: '%d' is a duplicate number\n" \
-					"\033[0m", count.temp);
+					"\033[0m", i);
 			exit (1);
 		}
-		nocopy(result);
-		result = result->next;
+		stack = stack->next;
 	}
 }
 

@@ -6,7 +6,7 @@
 #    By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/31 09:49:00 by kzak              #+#    #+#              #
-#    Updated: 2022/06/14 11:28:27 by kzak             ###   ########.fr        #
+#    Updated: 2022/06/18 12:09:10 by kzak             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ OBJ_DIR = obj
 CFLAGS += -I $(H_DIR)
 
 LIBFT = libft.a
-LIBFT_DIR = lib/libft
+LIBFT_DIR = libft
 LIBFT_FILE = $(LIBFT_DIR)/$(LIBFT)
 LIBFT_INC_DIR = $(LIBFT_DIR)/include
 LIBFT_FLAGS = -L./$(LIBFT_DIR) -lft
