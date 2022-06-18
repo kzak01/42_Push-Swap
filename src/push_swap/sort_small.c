@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/05 19:42:44 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/08 13:03:28 by kzak             ###   ########.fr       */
+/*   Updated: 2022/06/18 09:00:27 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,15 +112,15 @@ void	sort_small(t_push_swap *stack, int n, int index)
 {
 	if (index == STACK_A)
 	{
-		if (n == 3)
-			return (sortA(stack));
-		else if (n == 2 && stack->a->content > stack->a->next->content)
+		if (n == 2 && stack->a->content > stack->a->next->content)
 			return (sa(stack));
+		else if (n == 3)
+			return (sortA(stack));
 	}
 	else if (index == STACK_B)
 	{
-		if (n == 3)
-			return (sortB(stack));
+		if (n == 1)
+			return (pa(stack));
 		if (n == 2)
 		{
 			if (stack->b->content < stack->b->next->content)
@@ -128,7 +128,7 @@ void	sort_small(t_push_swap *stack, int n, int index)
 			pa(stack);
 			return (pa(stack));
 		}
-		if (n == 1)
-			return (pa(stack));
+		if (n == 3)
+			return (sortB(stack));
 	}
 }

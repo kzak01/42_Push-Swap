@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 10:20:45 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/14 14:30:55 by kzak             ###   ########.fr       */
+/*   Updated: 2022/06/18 08:58:35 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ int	is_sort(t_stack *stack, int index, int n)
 		return (1);
 	count.temp = stack->content;
 	stack = stack->next;
-	while (--n > 0 && stack)
+	while (stack && --n > 0)
 	{
 		if (index == STACK_A)
 		{

@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 09:53:15 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/14 14:33:24 by kzak             ###   ########.fr       */
+/*   Updated: 2022/06/18 09:17:46 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,9 +59,9 @@ typedef struct s_counter
 	int		j;
 	int		temp;
 	char	**str;
-	int		first_pivot;
-	int		second_pivot;
-	int		push;
+	int		medium_pivot;
+	int		m_medium_pivot;
+	int		pa;
 	int		ra;
 	int		rb;
 }	t_counter;

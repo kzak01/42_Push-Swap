@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 10:00:52 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/14 14:34:55 by kzak             ###   ########.fr       */
+/*   Updated: 2022/06/18 09:26:29 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,30 @@ void	print_stacks(t_stack *stack_a, t_stack *stack_b)
 	}
 }
 
+
+// void	print_stacks(t_push_swap *stack)
+// {
+// 	if(stack->a)
+// 	{
+// 		printf("stack A :");
+// 		while (stack->a)
+// 		{
+// 			printf("%d, ", stack->a->content);
+// 			stack->a = stack->a->next;
+// 		}
+// 		printf("\n");
+// 	}
+// 	if(stack->b)
+// 	{
+// 		printf("stack B :");
+// 		while (stack->b)
+// 		{
+// 			printf("%d, ", stack->b->content);
+// 			stack->b = stack->b->next;
+// 		}
+// 		printf("\n");
+// 	}
+// }
 /*cancellare sopra*/
 
 void	free_stack(t_push_swap *stack)
@@ -98,10 +122,10 @@ int	main(int argc, char **argv)
 	ft_errors(argv);
 	stack.la = arrayleng(argc, argv);
 	stack.a = insert_into_a(argc, argv);
-	print_stacks(stack.a, stack.b);
+	// print_stacks(stack.a, stack.b);
 	stack.b = NULL;
 	varius_sort(&stack);
-	print_stacks(stack.a, stack.b);
+	// print_stacks(stack.a, stack.b);
 	free_stack(&stack);
 	return (0);
 }
