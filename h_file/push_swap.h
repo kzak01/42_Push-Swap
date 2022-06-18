@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 09:53:15 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/18 12:00:23 by kzak             ###   ########.fr       */
+/*   Updated: 2022/06/18 12:53:11 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,10 +117,10 @@ void	nocopy(t_stack *stack, int i);
 void	ft_errors(char **av);
 
 /*find_pivot*/
-void	find_pivot(int *pivot, t_stack *stack, int n);
+void	find_pivot(t_counter *count, t_stack *stack, int n);
 
 /*recursive_call*/
-void	recursive_call(t_push_swap *stack, int *temp, int order);
+void	recursive_call(t_push_swap *stack, t_counter *count, int index);
 
 /*sort_reverse*/
 void	do_pa(t_push_swap *stack, int n);

@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 19:21:54 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/08 13:56:10 by kzak             ###   ########.fr       */
+/*   Updated: 2022/06/18 12:51:27 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,26 +27,26 @@ static void	rmoves_check(t_push_swap *stack, int ra, int rb)
 	}
 }
 
-void	recursive_call(t_push_swap *stack, int *temp, int index)
+void	recursive_call(t_push_swap *stack, t_counter *count, int index)
 {
 	if (index == STACK_A)
 	{
-		rmoves_check(stack, temp[0], temp[2]);
-		if (!is_sort(stack->a, STACK_A, temp[0]))
-			sort_stack(stack, temp[0]);
-		sort_reverse(stack, temp[2]);
-		sort_reverse(stack, temp[1] - temp[2]);
+		rmoves_check(stack, count->ra, count->rb);
+		if (!is_sort(stack->a, STACK_A, count->ra))
+			sort_stack(stack, count->ra);
+		sort_reverse(stack, count->rb);
+		sort_reverse(stack, count->pa - count->rb);
 	}
 	else if (index == STACK_B)
 	{
-		if (!is_sort(stack->a, STACK_A, temp[1] - temp[0]))
-			sort_stack(stack, temp[1] - temp[0]);
-		rmoves_check(stack, temp[0], temp[2]);
-		if (!is_sort(stack->a, STACK_A, temp[0]))
-			sort_stack(stack, temp[0]);
-		if (!is_sort(stack->b, STACK_B, temp[2]))
-			sort_reverse(stack, temp[2]);
+		if (!is_sort(stack->a, STACK_A, count->pa - count->ra))
+			sort_stack(stack, count->pa - count->ra);
+		rmoves_check(stack, count->ra, count->rb);
+		if (!is_sort(stack->a, STACK_A, count->ra))
+			sort_stack(stack, count->ra);
+		if (!is_sort(stack->b, STACK_B, count->rb))
+			sort_reverse(stack, count->rb);
 		else
-			do_pa(stack, temp[2]);
+			do_pa(stack, count->rb);
 	}
 }

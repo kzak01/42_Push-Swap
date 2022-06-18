@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 13:02:10 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/08 12:35:17 by kzak             ###   ########.fr       */
+/*   Updated: 2022/06/18 12:37:44 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,26 +37,23 @@ static void	swap(int *a, int *b)
 	*b = c;
 }
 
-void	find_pivot(int pivot[], t_stack *stack, int n)
+void	find_pivot(t_counter *count, t_stack *stack, int n)
 {
-	int	i;
-	int	j;
 	int	*temp;
 
 	temp = insert_into_array(stack, n);
-	i = 0;
-	while (i < n - 1)
+	while (count->i < n - 1)
 	{
-		j = i + 1;
-		while (j < n)
+		count->j = count->i + 1;
+		while (count->j < n)
 		{
-			if (temp[i] < temp[j])
-				swap(&temp[i], &temp[j]);
-			j++;
+			if (temp[count->i] < temp[count->j])
+				swap(&temp[count->i], &temp[count->j]);
+			count->j++;
 		}
-		i++;
+		count->i++;
 	}
-	pivot[1] = temp[n / 3];
-	pivot[0] = temp[(n * 2) / 3];
+	count->m_medium_pivot = temp[n / 3];
+	count->medium_pivot = temp[(n * 2) / 3];
 	free(temp);
 }

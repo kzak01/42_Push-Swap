@@ -6,50 +6,49 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 12:46:26 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/18 09:13:44 by kzak             ###   ########.fr       */
+/*   Updated: 2022/06/18 12:40:19 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	moves(t_push_swap *stack, int *pivot, int *n, int *temp)
+static void	moves(t_push_swap *stack, t_counter *count, int *n)
 {
-	if (stack->a->content > pivot[1])
+	if (stack->a->content > count->m_medium_pivot)
 	{
-		++temp[0];
 		ra(stack);
+		count->ra++;
 	}
 	else
 	{
-		++temp[1];
 		pb(stack);
-		if (stack->b->content > pivot[0])
+		count->pa++;
+		if (stack->b->content > count->medium_pivot)
 		{
-			if (*n > 0 && stack->a->content > pivot[1])
+			if (*n > 0 && stack->a->content > count->m_medium_pivot)
 			{
 				--(*n);
-				++temp[0];
 				rr(stack);
+				count->ra++;
 			}
 			else
 				rb(stack);
-			++temp[2];
+			count->rb++;
 		}
 	}
 }
 
 void	sort_stack(t_push_swap *stack, int n)
 {
-	int	pivot[2];
-	int	temp[3];
-	
+	t_counter	count;
+
+	ft_memset(&count, 0, sizeof(count));
 	if (is_sort(stack->a, STACK_A, n))
 		return ;
 	if (n <= 3)
 		return (sort_small(stack, n, STACK_A));
-	ft_memset(&temp, 0, sizeof(temp));
-	find_pivot(pivot, stack->a, n);
+	find_pivot(&count, stack->a, n);
 	while (n-- > 0)
-		moves(stack, pivot, &n, temp);
-	recursive_call(stack, temp, STACK_A);
+		moves(stack, &count, &n);
+	recursive_call(stack, &count, STACK_A);
 }
