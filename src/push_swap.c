@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 10:00:52 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/18 12:54:06 by kzak             ###   ########.fr       */
+/*   Updated: 2022/06/18 13:09:26 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,30 +46,6 @@ void	print_stacks(t_stack *stack_a, t_stack *stack_b)
 	}
 }
 
-
-// void	print_stacks(t_push_swap *stack)
-// {
-// 	if(stack->a)
-// 	{
-// 		printf("stack A :");
-// 		while (stack->a)
-// 		{
-// 			printf("%d, ", stack->a->content);
-// 			stack->a = stack->a->next;
-// 		}
-// 		printf("\n");
-// 	}
-// 	if(stack->b)
-// 	{
-// 		printf("stack B :");
-// 		while (stack->b)
-// 		{
-// 			printf("%d, ", stack->b->content);
-// 			stack->b = stack->b->next;
-// 		}
-// 		printf("\n");
-// 	}
-// }
 /*cancellare sopra*/
 
 void	free_stack(t_push_swap *stack)

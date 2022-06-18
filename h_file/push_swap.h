@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 09:53:15 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/18 12:53:11 by kzak             ###   ########.fr       */
+/*   Updated: 2022/06/18 13:18:08 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,7 +103,7 @@ t_stack	*ft_lstnew2(int content);
 void	fourcase(t_push_swap *stack, int n);
 long	atoilong(const char *str);
 void	free_str(char **str);
-int		is_sort(t_stack *stack, int order, int n);
+int		is_sort(t_stack *stack, int n, int index);
 
 /*push_swap*/
 

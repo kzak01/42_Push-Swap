@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 12:46:26 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/18 12:40:19 by kzak             ###   ########.fr       */
+/*   Updated: 2022/06/18 13:20:04 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	sort_stack(t_push_swap *stack, int n)
 	t_counter	count;
 
 	ft_memset(&count, 0, sizeof(count));
-	if (is_sort(stack->a, STACK_A, n))
+	if (is_sort(stack->a, n, STACK_A))
 		return ;
 	if (n <= 3)
 		return (sort_small(stack, n, STACK_A));

@@ -6,7 +6,7 @@
 #    By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/13 11:10:21 by kzak              #+#    #+#              #
-#    Updated: 2022/06/14 12:14:52 by kzak             ###   ########.fr        #
+#    Updated: 2022/06/18 12:57:52 by kzak             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -145,23 +145,25 @@ all : $(NAME)
 
 clean :
 	@$(RM) $(RMFLAGS) $(OBJS) $(OBJS_BONUS)
-	@printf "🧹 Cleaning $(NAME)'s Object files...\n"
+	@printf "👻 Cleaning $(NAME)'s Object files...\n"
 
 fclean : clean
 	@$(RM) $(RMFLAGS) $(NAME)
-	@printf "🧹 Cleaning $(NAME)\n"
+	@printf "🎃 Cleaning $(NAME)\n"
+	@printf "👾 GG 🕹\n"
 
 re : fclean all
 
 $(OBJ_DIR)/%.o : %.c
 	@mkdir -p $(OBJ_DIR)
 	@$(CC) $(CDEBUG) $(CFLAGS) -I $(INC_DIR) -c $< -o $@
-	@printf "$(LF)🚧 Create $@ from $<"
+	@printf "$(LF)👍 Create $@ from $<"
 	
 $(NAME) : $(HEADERS) $(OBJS)
-	@printf "\n🚀 Successfully Created $(NAME)'s Object files !\n"
-	@printf "📚 Create! $@\n"
+	@printf "\n🌙 Successfully Created $(NAME)'s Object files !\n"
+	@printf "♈︎ Create! $@\n"
 	@$(AR) $(ARFLAGS) $@ $(OBJS)
-	@printf "$(LF)🎉 Successfully Created $@ !\n"
+	@printf "$(LF)😎 Successfully Created $@ !\n"
+	@printf "🍀 GLHF 👾\n"
 
 .PHONY: all clean fclean re

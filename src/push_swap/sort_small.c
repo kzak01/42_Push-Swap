@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/05 19:42:44 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/18 09:39:19 by kzak             ###   ########.fr       */
+/*   Updated: 2022/06/18 13:19:56 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ static void	sortB2(t_push_swap *stack)
 
 static void	sortB(t_push_swap *stack)
 {
-	if (is_sort(stack->b, STACK_B, 3))
+	if (is_sort(stack->b, 3, STACK_B))
 	{
 		do_pa(stack, 2);
 		return (pa(stack));
@@ -89,7 +89,7 @@ static void	sortA2(t_push_swap *stack)
 }
 static void	sortA(t_push_swap *stack)
 {
-	if (is_sort(stack->a, STACK_A, 3))
+	if (is_sort(stack->a, 3, STACK_A))
 		return ;
 	if (stack->a->content < stack->a->next->content
 		&& stack->a->next->content > stack->a->next->next->content)
