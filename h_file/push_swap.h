@@ -1,0 +1,92 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/13 09:30:33 by kzak              #+#    #+#             */
+/*   Updated: 2022/06/20 13:34:25 by kzak             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef PUSH_SWAP_H
+# define PUSH_SWAP_H
+
+# include <unistd.h>
+# include <stdlib.h>
+# include <fcntl.h>
+# include <stdio.h>
+# include <errno.h>
+# include "libft.h"
+
+typedef struct s_stack
+{
+	int		*a;
+	int		*b;
+	size_t	la;
+	size_t	lb;
+}	t_stack;
+
+typedef enum e_bool
+{
+	TRUE = 1,
+	FALSE = 0
+}	t_bool;
+
+typedef enum e_int
+{
+	MAX_INT = 2147483647,
+	MIN_INT = -2147483648
+}	t_int;
+
+/*src*/
+	/*push_swap*/
+void	printarray(t_stack *st);
+int		main(int argc, char **argv);
+
+	/*array_moves*/
+		/*push*/
+void	pa(t_stack *stack);
+void	pb(t_stack *stack);
+
+		/*reverse_rotate*/
+void	rra(t_stack *stack);
+void	rrb(t_stack *stack);
+void	rrr(t_stack *stack);
+
+		/*rotate*/
+void	ra(t_stack *stack);
+void	rb(t_stack *stack);
+void	rr(t_stack *stack);
+
+		/*swap*/
+void	sa(t_stack *stack);
+void	sb(t_stack *stack);
+void	ss(t_stack *stack);
+
+		/*utils*/
+void	free_str(char **str);
+long	atoilong(const char *str);
+void	is_sort(t_stack *stack);
+
+	/*push_swap*/
+		/*3_4case*/
+void	threecase(t_stack *stack);
+void	fourcase(t_stack *stack);
+
+		/*5case*/
+void	sort_max(t_stack *stack, int max);
+void	sort_min(t_stack *stack, int min);
+int		find_max(t_stack *stack);
+int		find_min(t_stack *stack);
+void	fivecase(t_stack *stack);
+
+		/*errors*/
+void	ft_errors(int ac, char **av);
+void	nocopy(t_stack *stack, int i);
+
+		/*varius_sort*/
+void	varius_sort(t_stack *stack);
+
+#endif

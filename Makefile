@@ -3,81 +3,101 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mvolpi <mvolpi@student.42.fr>              +#+  +:+       +#+         #
+#    By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/04/13 09:13:08 by kzak              #+#    #+#              #
-#    Updated: 2022/05/12 10:18:27 by mvolpi           ###   ########.fr        #
+#    Created: 2022/05/31 09:49:00 by kzak              #+#    #+#              #
+#    Updated: 2022/06/20 10:37:17 by kzak             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = push_swap
-
-SRC = $(SRC_MAIN) $(SRC_UTILS)
-
-SRC_MAIN = main.c \
-			printarray.c \
+PUSH_SWAP = push_swap
+NAME = $(PUSH_SWAP)
 
 CC = gcc
-FLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror
 
-HEADER = push_swap.h
+ifeq ($(DEBUG),true)
+	CFLAGS += -g
+endif
 
-LIBFT_A = libft.a
-LIBFT_DIR = libft/
-LIBFT = $(addprefix $(LIBFT_DIR), $(LIBFT_A))
+RM = rm
+RMFLAGS = -rf
 
-PRINTF_A = ft_printf.a
-PRINTF_DIR = printf/
-FT_PRINTF = $(addprefix $(PRINTF_DIR), $(PRINTF_A))
+H_DIR = h_file
+SRC_DIR = src
+OBJ_DIR = obj
+CFLAGS += -I $(H_DIR)
 
-UTILS = 3case.c \
-			5case.c \
-			atoilong.c \
-			errors.c \
-			lis.c \
-			moves.c \
-			push.c \
-			reverse_rotate.c \
-			rotate.c \
-			swap.c \
-			is_sort.c \
+LIBFT = libft.a
+LIBFT_DIR = libft
+LIBFT_FILE = $(LIBFT_DIR)/$(LIBFT)
+LIBFT_INC_DIR = $(LIBFT_DIR)/include
+LIBFT_FLAGS = -L./$(LIBFT_DIR) -lft
+CFLAGS += -I $(LIBFT_INC_DIR)
 
-SRC_UTILS = $(addprefix utils/, $(UTILS))
+PUSH_SWAP_DIR = $(SRC_DIR)/push_swap
+PUSH_SWAP_SRCS = $(wildcard $(PUSH_SWAP_DIR)/*.c)
 
-OBJ = $(SRC:.c=.o)
+MOVES_DIR = $(SRC_DIR)/array_moves
+MOVES_SRCS = $(wildcard $(MOVES_DIR)/*.c)
 
-all: $(NAME)
+HEADERS = $(wildcard $(H_DIR)/*.h)
 
-$(NAME) : $(OBJ)
-	@echo "     - Making libft..."
-	@make -C $(LIBFT_DIR)
-	@echo "     - Making ft_printf..."
-	@make -C $(PRINTF_DIR)
-	@echo "     - Compiling $(NAME)..."
-	@gcc $(FLAGS) $(OBJ) $(LIBFT) $(FT_PRINTF) -o $(NAME)
-	@echo "     - Compiled -"
+PUSH_SWAP_SRCS += $(MOVES_SRCS)
 
-%.o:	%.c Makefile $(HEADER)
-	@$(CC) $(FLAGS) -c $< -o $@
+vpath %.c \
+	$(SRC_DIR) \
+	$(PUSH_SWAP_DIR)	\
+	$(MOVES_DIR)	\
 
-exe: re
-	@make -C ./ clean
-	@echo "     - Executing $(NAME)... \n"
-	@./$(NAME) $(m)
-	@echo "\n     - Done -"
+PUSH_SWAP_OBJS = $(addprefix $(OBJ_DIR)/, $(notdir $(PUSH_SWAP_SRCS:.c=.o)))
 
-clean:
-	@echo "     - Removing object files..."
-	@rm -rf $(OBJ)
-	@make -C $(LIBFT_DIR) clean
-	@make -C $(PRINTF_DIR) clean
+LF = \e[1K\r$(NO_COLOR)
 
-fclean: clean
-	@echo "     - Removing $(NAME)..."
-	@rm -rf $(NAME)
-	@make -C $(LIBFT_DIR) fclean
-	@make -C $(PRINTF_DIR) fclean
+NO_COLOR = \e[0m
 
-re: fclean all
+all : $(NAME)
 
-.PHONY: all clean fclean re
+clean :
+	@$(RM) $(RMFLAGS) $(OBJ_DIR)
+	@printf "👻 Cleaning $(NAME)'s Object files...\n"
+
+fclean : clean
+	@$(RM) $(RMFLAGS) $(NAME)
+	@printf "🎃 Cleaning $(NAME)\n"
+	@printf "👾 GG 🕹\n"
+
+re : fclean all
+
+$(OBJ_DIR) :
+	@mkdir $(OBJ_DIR)
+
+$(OBJ_DIR)/%.o : %.c $(LIBFT_FILE) | $(OBJ_DIR)
+	@$(CC) $(CFLAGS) -c $< -o $@
+	@printf "$(LF)👍 Create $@ from $<"
+
+
+$(PUSH_SWAP) : $(LIBFT_FILE) $(HEADERS) $(PUSH_SWAP_OBJS) $(SRC_DIR)/push_swap.c
+	@printf "\n🌙 Successfully Created $@'s Object files!\n"
+	@printf "♈︎ Create $@!\n"
+	@$(CC) $(CFLAGS) $(LIBFT_FLAGS) $(PUSH_SWAP_OBJS) $(SRC_DIR)/push_swap.c -o $@
+	@printf "$(LF)😎 Successfully Created $@ !\n$(NO_COLOR)"
+	@printf "🍀 GLHF 👾\n"
+
+norm: 
+	@norminette -R CheckForbiddenSourceHeader
+
+$(LIBFT) : $(LIBFT_FILE)
+
+$(LIBFT_FILE) :
+	@make --no-print-directory -C $(LIBFT_DIR)
+
+$(LIBFT)_clean :
+	@make --no-print-directory -C $(LIBFT_DIR) clean
+
+$(LIBFT)_fclean :
+	@make --no-print-directory -C $(LIBFT_DIR) fclean
+
+
+.PHONY: all clean fclean re test \
+	$(LIBFT) $(LIBFT)_clean $(LIBFT)_fclean
