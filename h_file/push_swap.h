@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mvolpi <mvolpi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 09:30:33 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/20 13:34:25 by kzak             ###   ########.fr       */
+/*   Updated: 2022/06/20 14:06:51 by mvolpi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,9 @@ void	sort_min(t_stack *stack, int min);
 int		find_max(t_stack *stack);
 int		find_min(t_stack *stack);
 void	fivecase(t_stack *stack);
+
+		/*10case*/
+void	tencase(t_stack *stack);
 
 		/*errors*/
 void	ft_errors(int ac, char **av);
