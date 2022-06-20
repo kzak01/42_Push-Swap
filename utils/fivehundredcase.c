@@ -6,7 +6,7 @@
 /*   By: vbellucc <vbellucc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 16:22:42 by ldi-masc          #+#    #+#             */
-/*   Updated: 2022/06/20 12:28:35 by vbellucc         ###   ########.fr       */
+/*   Updated: 2022/06/20 14:37:41 by vbellucc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void    push_chunk(t_stack *stack,t_chunk *chunk)
     int i;
     size_t j;
     size_t k;
-    int l;
+    size_t l;
     int m;
     
     i = 0;
@@ -37,35 +37,65 @@ void    push_chunk(t_stack *stack,t_chunk *chunk)
     m = 0;
     
     printf("chunk e %d\n", chunk->ca);
-    while(k <= stack->la / 2)
+    while(k < stack->la / 2 && m == 0)
     {
         while(i != chunk->ca)
         {
             if(stack->a[k] == chunk->a[i])
             {
                 printf("entra");
+                m = 1;
                 break;
             }
             i++;
         }
+        i = 0;
         k++;
-     }
-    while (j > stack->la / 2)
+    }
+    k = k - 1;
+    m = 0;
+    while (j > stack->la / 2 && m == 0)
     {
-        while(l != chunk->ca)
+        while(i != chunk->ca)
         {
-            if(stack->a[j] == chunk->a[l])
+            if(stack->a[j] == chunk->a[i])
             {
                 printf("entra2");
+                m = 1;
                 break;
             }
-            l++;
+            i++;
         }
+        i = 0;
         j--;
-        m++;
+        l++;
     }
+    l = l - 2;
     printf ("k e %zu\n", k);
-    printf("m e %d\n", m);
+    printf("l e %zu\n", l);
+    if(k <= l)
+    {
+        while(k != 0)
+        {
+            ra(stack);
+            k--;
+        }
+        ra(stack);
+        printf("pb1");
+        pb(stack);
+    }
+    else
+    {
+        while(l != 0)
+        {
+            rra(stack);
+            l--;
+        }
+        rra(stack);
+        printf("pb2");
+        pb(stack);
+    }
+    printarray(stack);
 }
 
 
