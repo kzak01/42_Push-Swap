@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ldi-masc <ldi-masc@student.42.fr>          +#+  +:+       +#+         #
+#    By: vbellucc <vbellucc@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/13 09:13:08 by kzak              #+#    #+#              #
-#    Updated: 2022/06/17 14:28:05 by ldi-masc         ###   ########.fr        #
+#    Updated: 2022/06/20 10:54:11 by vbellucc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,6 +43,7 @@ UTILS = 3case.c \
 			othercase_utils.c \
 			fivehundredcase.c \
 			fivehundredcase_utils.c \
+			chunk_order.c \
 
 SRC_UTILS = $(addprefix utils/, $(UTILS))
 

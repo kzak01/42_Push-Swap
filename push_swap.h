@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldi-masc <ldi-masc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vbellucc <vbellucc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 09:30:33 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/17 15:35:44 by ldi-masc         ###   ########.fr       */
+/*   Updated: 2022/06/20 12:04:58 by vbellucc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,5 +123,9 @@ void fivehundredcase(t_stack *stack,t_chunk *chunk);
 
 //fivehundredcase_utils
 void chunk_division(t_stack *stack, t_chunk *chunk);
+
+//chunk_order
+void chunk_order(int *chunk, int count);
+void push_chunk(t_stack *stack, t_chunk *chunk); 
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fivehundredcase.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldi-masc <ldi-masc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vbellucc <vbellucc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 16:22:42 by ldi-masc          #+#    #+#             */
-/*   Updated: 2022/06/17 15:47:24 by ldi-masc         ###   ########.fr       */
+/*   Updated: 2022/06/20 12:28:35 by vbellucc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,53 @@
     c = *a;
     *a = *b;
     *b = c;
+}
+
+
+void    push_chunk(t_stack *stack,t_chunk *chunk)
+{
+    int i;
+    size_t j;
+    size_t k;
+    int l;
+    int m;
+    
+    i = 0;
+    j = stack->la;
+    k = 0;
+    l = 0;
+    m = 0;
+    
+    printf("chunk e %d\n", chunk->ca);
+    while(k <= stack->la / 2)
+    {
+        while(i != chunk->ca)
+        {
+            if(stack->a[k] == chunk->a[i])
+            {
+                printf("entra");
+                break;
+            }
+            i++;
+        }
+        k++;
+     }
+    while (j > stack->la / 2)
+    {
+        while(l != chunk->ca)
+        {
+            if(stack->a[j] == chunk->a[l])
+            {
+                printf("entra2");
+                break;
+            }
+            l++;
+        }
+        j--;
+        m++;
+    }
+    printf ("k e %zu\n", k);
+    printf("m e %d\n", m);
 }
 
 
@@ -56,14 +103,6 @@ void fivehundredcase(t_stack *stack,t_chunk *chunk)
     {
         exit(0);
     }
-     
-    // m = 0;
-    // while(m < (int)stack->la)
-	// {
-    //     printf("  %d", stack->c[m]);
-    //     m++;
-    // }
-
     k = 0;
     j = 0;
     m = 0;
@@ -79,8 +118,6 @@ void fivehundredcase(t_stack *stack,t_chunk *chunk)
         {
             if (j >= 0 && j <= 99)
             {
-                // printf("Entri?");
-                // printf("CA è nell if %d\n", chunk->ca);
                 chunk->a[chunk->ca] = stack->c[j];
                 chunk->ca++;
                 m++;
@@ -89,7 +126,6 @@ void fivehundredcase(t_stack *stack,t_chunk *chunk)
             }
             else if (j >= 100 && j <= 199)
             {
-                // printf("Entri2?");
                 chunk->b[chunk->cb] = stack->c[j];
                 chunk->cb++;
                 m++;
@@ -98,7 +134,6 @@ void fivehundredcase(t_stack *stack,t_chunk *chunk)
             }
             else if (j >= 200 && j <= 299)
             {
-                // printf("Entri3?");
                 chunk->c[chunk->cc] = stack->c[j];
                 chunk->cc++;
                 m++;
@@ -107,7 +142,6 @@ void fivehundredcase(t_stack *stack,t_chunk *chunk)
             }
             else if (j >= 300 && j <= 399)
             {
-                // printf("Entri4?");
                 chunk->d[chunk->cd] = stack->c[j];
                 chunk->cd++;
                 m++;
@@ -116,7 +150,6 @@ void fivehundredcase(t_stack *stack,t_chunk *chunk)
             }
             else
             {
-                // printf("Entri5?");
                 chunk->e[chunk->ce] = stack->c[j];
                 chunk->ce++;
                 m++;
@@ -126,7 +159,29 @@ void fivehundredcase(t_stack *stack,t_chunk *chunk)
         }
         j++;
     }
+    chunk_order(chunk->a, chunk->ca);
+    chunk_order(chunk->b, chunk->cb);
+    
+    if(chunk->ce > 0)
+    {
+        chunk_order(chunk->c, chunk->cc);
+        chunk_order(chunk->d, chunk->cd);
+        chunk_order(chunk->e, chunk->ce);
+    }
+
+    else if(chunk->cd > 0)
+    {
+        
+        chunk_order(chunk->d, chunk->cd);
+        chunk_order(chunk->c, chunk->cc);
+    }
+    else if (chunk->cc > 0)
+    {
+        chunk_order(chunk->c, chunk->cc);
+    }
+    
     printchunk(chunk);
-    printarray(stack);
-    printc(stack);    
+    // printarray(stack);
+    // printc(stack); 
+    push_chunk(stack, chunk);    
 }
