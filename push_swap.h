@@ -6,7 +6,7 @@
 /*   By: vbellucc <vbellucc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 09:30:33 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/20 12:04:58 by vbellucc         ###   ########.fr       */
+/*   Updated: 2022/06/21 12:12:44 by vbellucc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ typedef struct s_chunk
 	int		cc;
 	int		cd;
 	int		ce;
+	int		m;
 }	t_chunk;
 
 typedef enum e_bool
@@ -87,6 +88,7 @@ void	sort_min(t_stack *stack, int min);
 
 //ft_errors
 void	ft_errors(int ac, char **av);
+void	nocopy(t_stack *stack, int i);
 
 //swap
 void	sa(t_stack *stack);
@@ -123,9 +125,16 @@ void fivehundredcase(t_stack *stack,t_chunk *chunk);
 
 //fivehundredcase_utils
 void chunk_division(t_stack *stack, t_chunk *chunk);
+size_t save_positionstart(t_stack *stack, t_chunk *chunk, int ca);
+size_t save_positionend(t_stack *stack, t_chunk *chunk, int ca);
+
 
 //chunk_order
 void chunk_order(int *chunk, int count);
-void push_chunk(t_stack *stack, t_chunk *chunk); 
+void push_chunk(t_stack *stack, t_chunk *chunk);
+void push_less_move(t_stack *stack, int k, int l); 
+
+//utils_functions
+void	free_str(char **str);
 
 #endif

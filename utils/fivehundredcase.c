@@ -6,7 +6,7 @@
 /*   By: vbellucc <vbellucc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 16:22:42 by ldi-masc          #+#    #+#             */
-/*   Updated: 2022/06/20 14:37:41 by vbellucc         ###   ########.fr       */
+/*   Updated: 2022/06/21 12:25:42 by vbellucc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ void    push_chunk(t_stack *stack,t_chunk *chunk)
     size_t k;
     size_t l;
     int m;
+    // int n;
     
     i = 0;
     j = stack->la;
@@ -36,69 +37,15 @@ void    push_chunk(t_stack *stack,t_chunk *chunk)
     l = 0;
     m = 0;
     
-    printf("chunk e %d\n", chunk->ca);
-    while(k < stack->la / 2 && m == 0)
+    while(chunk->ca != 0)
     {
-        while(i != chunk->ca)
-        {
-            if(stack->a[k] == chunk->a[i])
-            {
-                printf("entra");
-                m = 1;
-                break;
-            }
-            i++;
-        }
-        i = 0;
-        k++;
-    }
-    k = k - 1;
-    m = 0;
-    while (j > stack->la / 2 && m == 0)
-    {
-        while(i != chunk->ca)
-        {
-            if(stack->a[j] == chunk->a[i])
-            {
-                printf("entra2");
-                m = 1;
-                break;
-            }
-            i++;
-        }
-        i = 0;
-        j--;
-        l++;
-    }
-    l = l - 2;
-    printf ("k e %zu\n", k);
-    printf("l e %zu\n", l);
-    if(k <= l)
-    {
-        while(k != 0)
-        {
-            ra(stack);
-            k--;
-        }
-        ra(stack);
-        printf("pb1");
-        pb(stack);
-    }
-    else
-    {
-        while(l != 0)
-        {
-            rra(stack);
-            l--;
-        }
-        rra(stack);
-        printf("pb2");
-        pb(stack);
+    k = save_positionstart(stack, chunk, chunk->ca);
+    l = save_positionend(stack, chunk, chunk->ca);
+    push_less_move(stack, k, l);
+    chunk->ca--;
     }
     printarray(stack);
 }
-
-
 void fivehundredcase(t_stack *stack,t_chunk *chunk)
 { 
     int la;
@@ -211,7 +158,6 @@ void fivehundredcase(t_stack *stack,t_chunk *chunk)
     }
     
     printchunk(chunk);
-    // printarray(stack);
     // printc(stack); 
     push_chunk(stack, chunk);    
 }

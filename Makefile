@@ -6,7 +6,7 @@
 #    By: vbellucc <vbellucc@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/13 09:13:08 by kzak              #+#    #+#              #
-#    Updated: 2022/06/20 10:54:11 by vbellucc         ###   ########.fr        #
+#    Updated: 2022/06/21 10:12:29 by vbellucc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,6 +44,7 @@ UTILS = 3case.c \
 			fivehundredcase.c \
 			fivehundredcase_utils.c \
 			chunk_order.c \
+			utils_functions.c \
 
 SRC_UTILS = $(addprefix utils/, $(UTILS))
 
