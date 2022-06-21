@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   10case.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvolpi <mvolpi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 13:37:37 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/20 14:25:09 by mvolpi           ###   ########.fr       */
+/*   Updated: 2022/06/21 13:34:57 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,21 +39,23 @@ void	find_position(t_stack *stack, int min)
 void	tencase(t_stack *stack)
 {
 	int		min;
+	int		c;
 	size_t	i;
 
+	c = 0;
 	i = stack->la;
 	while (i != 3)
 	{
 		min = find_min(stack);
 		find_position(stack, min);
 		pb(stack);
+		c++;
 		i--;
 	}
 	threecase(stack);
-	i = stack->lb;
-	while (i != 0)
+	while (c != 0)
 	{
 		pa(stack);
-		i--;
+		c--;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 09:12:56 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/21 13:01:32 by kzak             ###   ########.fr       */
+/*   Updated: 2022/06/21 13:31:31 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -166,6 +166,7 @@ int	main(int argc, char **argv)
 	is_sort(&stack);
 	varius_sort(&stack);
 	// printarray(&stack);
+	// is_sort(&stack);
 	free(stack.a);
 	free(stack.b);
 	free(stack.k);

@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 09:49:02 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/21 12:58:03 by kzak             ###   ########.fr       */
+/*   Updated: 2022/06/21 13:22:56 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,6 @@ void	sort_b(t_stack *stack)
 		{
 			max = find_maxb(stack);
 			find_pos(stack, max);
-			// pa(stack);
 			i--;
 		}
 	}
