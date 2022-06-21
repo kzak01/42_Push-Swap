@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 10:49:50 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/20 12:09:03 by kzak             ###   ########.fr       */
+/*   Updated: 2022/06/21 12:28:12 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,22 +57,22 @@ void	is_sort(t_stack *stack)
 	size_t	j;
 	size_t	k;
 	
-	j = 0;
+	i = 0;
 	k = 0;
-	while (j != stack->la)
+	while (i != stack->la)
 	{
-		i = j + 1;
-		while (i <= stack->la)
+		j = i + 1;
+		while (j != stack->la)
 		{
-			if (stack->a[j] > stack->a[i])
+			if (stack->a[i] > stack->a[j])
 				k = 1;
-			i++;
+			j++;
 		}
-		j++;
+		i++;
 	}
 	if (k == 0)
 	{
-		ft_printf("the stack is already sorted!\n");
+		// ft_printf("the stack is already sorted!\n");
 		exit (0);
 	}
 }

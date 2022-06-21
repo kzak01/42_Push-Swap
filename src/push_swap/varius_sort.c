@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   varius_sort.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvolpi <mvolpi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 12:09:03 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/20 14:29:00 by mvolpi           ###   ########.fr       */
+/*   Updated: 2022/06/21 12:43:17 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ void	varius_sort(t_stack *stack)
 		return (fourcase(stack));
 	else if (stack->la == 5)
 		return (fivecase(stack));
-	else if (stack->la == 10)
+	else if (stack->la <= 10)
 		return (tencase(stack));
-	// else if (stack->la == 100)
-	// 	return (hundred_case(stack));
+	else if (stack->la <= 100)
+		return (hundred_case(stack));
 	// else 
 	// 	return (five_hundred_case(stack));
 }

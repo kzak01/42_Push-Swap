@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvolpi <mvolpi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 09:30:33 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/20 14:06:51 by mvolpi           ###   ########.fr       */
+/*   Updated: 2022/06/21 12:42:11 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,10 @@ typedef struct s_stack
 {
 	int		*a;
 	int		*b;
+	int		*k;
 	size_t	la;
 	size_t	lb;
+	size_t	lk;
 }	t_stack;
 
 typedef enum e_bool
@@ -42,7 +44,6 @@ typedef enum e_int
 
 /*src*/
 	/*push_swap*/
-void	printarray(t_stack *st);
 int		main(int argc, char **argv);
 
 	/*array_moves*/
@@ -88,6 +89,15 @@ void	tencase(t_stack *stack);
 		/*errors*/
 void	ft_errors(int ac, char **av);
 void	nocopy(t_stack *stack, int i);
+
+		/*find_pivot*/
+void	find_pivot100(t_stack *stack, int *pivot);
+
+		/*sort_a*/
+void	hundred_case(t_stack *stack);
+
+		/*sort_b*/
+void	sort_b(t_stack *stack);
 
 		/*varius_sort*/
 void	varius_sort(t_stack *stack);
