@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 11:04:31 by mvolpi            #+#    #+#             */
-/*   Updated: 2022/06/21 12:27:39 by kzak             ###   ########.fr       */
+/*   Updated: 2022/06/22 09:36:58 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ void	rrb(t_stack *stack)
 	size_t	i;
 	int		first;
 
+	ft_printf("rrb\n");
 	i = stack->lb - 1;
 	if (stack->lb > 0)
 	{
@@ -47,18 +48,19 @@ void	rrb(t_stack *stack)
 			i--;
 		}
 		stack->b[i] = first;
-		ft_printf("rrb\n");
+		// ft_printf("rrb\n");
 		// printarray(stack);
 	}
 }
 
 void	rrr(t_stack *stack)
 {
+	ft_printf("rrr\n");
 	if (stack->la > 0 || stack->lb > 0)
 	{
 		rra(stack);
 		rrb(stack);
-		ft_printf("rrr\n");
+		// ft_printf("rrr\n");
 		// printarray(stack);
 	}
 }

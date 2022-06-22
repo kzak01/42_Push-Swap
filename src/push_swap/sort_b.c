@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 09:49:02 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/21 13:22:56 by kzak             ###   ########.fr       */
+/*   Updated: 2022/06/22 08:57:06 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,30 @@ int	find_maxb(t_stack *stack)
 	return (t);
 }
 
+void	find_positionb(t_stack *stack, int max)
+{
+	size_t	i;
+
+	i = 0;
+	while (i <= stack->lb)
+	{
+		if (stack->b[i] == max)
+		{
+			if (i > (stack->lb / 2))
+			{
+				while (stack->b[0] != max)
+					rrb(stack);
+			}
+			else
+			{
+				while (stack->b[0] != max)
+					rb(stack);
+			}
+		}
+		i++;
+	}
+}
+
 void	find_pos(t_stack *stack, int max)
 {
 	size_t	i;
@@ -42,23 +66,16 @@ void	find_pos(t_stack *stack, int max)
 			if (i == 1)
 			{
 				sb(stack);
+				pa(stack);
 			}
 			else
 			{
 				while (stack->b[0] != max)
-				{
-					rb(stack);
-					c++;
-				}
+					find_positionb(stack, max);
+				pa(stack);
 			}
 		}
 		i++;
-	}
-	pa(stack);
-	while (c != 0)
-	{
-		rrb(stack);
-		c--;
 	}
 }
 
