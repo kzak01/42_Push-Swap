@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 13:37:37 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/21 13:34:57 by kzak             ###   ########.fr       */
+/*   Updated: 2022/06/23 11:01:18 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,10 +44,12 @@ void	tencase(t_stack *stack)
 
 	c = 0;
 	i = stack->la;
-	while (i != 3)
+	while (i != 3 || !is_sort(stack))
 	{
 		min = find_min(stack);
 		find_position(stack, min);
+		if (!is_sort(stack))
+			break;
 		pb(stack);
 		c++;
 		i--;

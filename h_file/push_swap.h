@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 09:30:33 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/22 11:20:19 by kzak             ###   ########.fr       */
+/*   Updated: 2022/06/22 15:44:40 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ typedef enum e_int
 /*src*/
 	/*push_swap*/
 int		main(int argc, char **argv);
+void	printarray(t_stack *st);
 
 	/*array_moves*/
 		/*push*/
@@ -69,7 +70,7 @@ void	ss(t_stack *stack);
 		/*utils*/
 void	free_str(char **str);
 long	atoilong(const char *str);
-void	is_sort(t_stack *stack);
+int		is_sort(t_stack *stack);
 
 	/*push_swap*/
 		/*3_4case*/
