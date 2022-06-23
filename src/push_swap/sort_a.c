@@ -6,35 +6,11 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 09:49:13 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/23 11:02:49 by kzak             ###   ########.fr       */
+/*   Updated: 2022/06/23 14:30:36 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	find_position_2(t_stack *stack, int min)
-{
-	size_t	i;
-
-	i = 0;
-	while (i <= stack->la)
-	{
-		if (stack->a[i] == min)
-		{
-			if (i > (stack->la / 2))
-			{
-				while (stack->a[0] != min)
-					rra(stack);
-			}
-			else
-			{
-				while (stack->a[0] != min)
-					ra(stack);
-			}
-		}
-		i++;
-	}
-}
 
 void	special_case(t_stack *stack)
 {
@@ -47,7 +23,7 @@ void	special_case(t_stack *stack)
 	while (i != 5)
 	{
 		min = find_min(stack);
-		find_position_2(stack, min);
+		find_position(stack, min);
 		pb(stack);
 		c++;
 		i--;
@@ -60,14 +36,70 @@ void	special_case(t_stack *stack)
 	}
 }
 
-int	how_many(t_stack *stack)
+int	how_many(t_stack *stack, int n)
 {
 	int	i;
 
 	i = 0;
-	while (stack->k[i] != stack->k[stack->lk / 4])
-		i++;
+	if (n == 1)
+	{
+		while (stack->k[i] != stack->k[(stack->lk / 2)])
+			i++;
+	}
+	else if (n != 1)
+	{
+		while (stack->k[i] != stack->k[stack->lk / 4])
+			i++;
+	}
 	return (i);
+}
+
+void	half_stack(t_stack *stack, int *pivot, int i, int m)
+{
+	if (stack->a[0] >= pivot[1])
+	{
+		ra(stack);
+		i--;
+	}
+	else
+	{
+		pb(stack);
+		m++;
+		if(stack->b[0] < pivot[0])
+		{
+			if (stack->a[0] > pivot[1])
+			{
+				rr(stack);
+				i--;
+			}
+			else
+				rb(stack);
+		}
+	}
+}
+
+void	find_less(t_stack *stack,int pivot)
+{
+	size_t	i;
+	size_t	j;
+
+	i = 0;
+	j = stack->la;
+	while (i <= stack->la / 2)
+	{
+		if (stack->a[i] < pivot)
+		{
+			ra(stack);
+			break;
+		}
+		else if (stack->a[j] < pivot)
+		{
+			rra(stack);
+			break;
+		}
+		i++;
+		j--;
+	}
 }
 
 void	push_to_b(t_stack *stack, int *pivot)
@@ -76,23 +108,55 @@ void	push_to_b(t_stack *stack, int *pivot)
 	int		n;
 	int		m;
 
-	n = 0;
+	n = 1;
 	while (n != 3)
 	{
 		i = stack->la;
-		m = how_many(stack);
+		m = 0;
 		// printf("PIVOT NUMERO : %d\n\n", pivot[n]);
-		while (i != 0 && m >= 0)
+		while (i != 0 && m != how_many(stack, n))
 		{
-			if (stack->a[0] < pivot[n])
+			if (n == 1)
+			{
+				// half_stack(stack, pivot, i, m);
+				if (stack->a[0] >= pivot[1])
+				{
+					ra(stack);
+					i--;
+				}
+				else
+				{
+					pb(stack);
+					m++;
+					if(stack->b[0] < pivot[0])
+					{
+						if (stack->a[0] > pivot[1])
+						{
+							rr(stack);
+							i--;
+						}
+						else
+							rb(stack);
+					}
+				}
+			}
+			if (n != 1)
+			{
+				if (stack->a[0] < pivot[n])
 			{
 				pb(stack);
 				m--;
 			}
 			else if (stack->a[0] >= pivot[n])
-				ra(stack);
+				find_less(stack, pivot[n]);
+			if (stack->a[0] < pivot[n])
+			{
+				pb(stack);
+				m--;
+			}
 			i--;
-			// printf("%zu\n\n", m);
+			}
+			// printf("%d\n\n", m);
 		}
 		n++;
 	}

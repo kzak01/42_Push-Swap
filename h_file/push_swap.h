@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 09:30:33 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/22 15:44:40 by kzak             ###   ########.fr       */
+/*   Updated: 2022/06/23 11:37:30 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,7 @@ void	fivecase(t_stack *stack);
 
 		/*10case*/
 void	tencase(t_stack *stack);
+void	find_position(t_stack *stack, int min);
 
 		/*errors*/
 void	ft_errors(int ac, char **av);
