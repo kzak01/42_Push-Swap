@@ -1,31 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   varius_sort.c                                      :+:      :+:    :+:   */
+/*   infinity.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/20 12:09:03 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/24 13:34:54 by kzak             ###   ########.fr       */
+/*   Created: 2022/06/24 13:35:11 by kzak              #+#    #+#             */
+/*   Updated: 2022/06/24 13:55:37 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	varius_sort(t_stack *stack)
+void	infinity(t_stack *stack)
 {
-	if (stack->la == 2 && stack->a[0] > stack->a[1])
-		return (sa(stack));
-	else if (stack->la == 3)
-		return (threecase(stack));
-	// else if (stack->la == 4)
-	// 	return (fourcase(stack));
-	// else if (stack->la == 5)
-	// 	return (fivecase(stack));
-	else if (stack->la <= 10)
-		return (tencase(stack));
-	else if (stack->la <= 100)
-		return (hundred_case(stack));
-	else 
-		return (infinity(stack));
+	int	pivot[7];
+
+	find_pivot(stack, pivot);
+	push_to_b(stack, pivot, 7);
+	special_case(stack);
+	sort_b(stack);
 }

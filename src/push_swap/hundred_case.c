@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_a.c                                           :+:      :+:    :+:   */
+/*   hundred_case.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 09:49:13 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/24 11:25:40 by kzak             ###   ########.fr       */
+/*   Updated: 2022/06/24 14:14:55 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,14 +107,14 @@ void	find_less(t_stack *stack, int pivot)
 	}
 }
 
-void	push_to_b(t_stack *stack, int *pivot)
+void	push_to_b(t_stack *stack, int *pivot,int index)
 {
 	size_t	i;
 	int		n;
 	int		m;
 
 	n = 1;
-	while (n != 3)
+	while (n != index)
 	{
 		i = stack->la;
 		m = 0;
@@ -176,7 +176,7 @@ void	hundred_case(t_stack *stack)
 	int	pivot[3];
 
 	find_pivot100(stack, pivot);
-	push_to_b(stack, pivot);
+	push_to_b(stack, pivot, 3);
 	special_case(stack);
 	sort_b(stack);
 }

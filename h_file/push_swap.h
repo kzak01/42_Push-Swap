@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 09:30:33 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/24 10:18:23 by kzak             ###   ########.fr       */
+/*   Updated: 2022/06/24 13:49:46 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,9 +94,15 @@ void	nocopy(t_stack *stack, int i);
 
 		/*find_pivot*/
 void	find_pivot100(t_stack *stack, int *pivot);
+void	find_pivot(t_stack *stack, int *pivot);
 
-		/*sort_a*/
+		/*hundred_case*/
 void	hundred_case(t_stack *stack);
+void	special_case(t_stack *stack);
+void	push_to_b(t_stack *stack, int *pivot,int index);
+
+		/*infinity*/
+void	infinity(t_stack *stack);
 
 		/*sort_b*/
 void	sort_b(t_stack *stack);
