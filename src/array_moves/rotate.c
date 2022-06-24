@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 10:55:24 by mvolpi            #+#    #+#             */
-/*   Updated: 2022/06/23 13:14:50 by kzak             ###   ########.fr       */
+/*   Updated: 2022/06/24 16:09:50 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ void	ra(t_stack *stack)
 		stack->a[i] = end;
 	}
 	ft_printf("ra\n");
-	// printarray(stack);
 }
 
 void	rb(t_stack *stack)
@@ -49,17 +48,33 @@ void	rb(t_stack *stack)
 		stack->b[i] = end;
 	}
 	ft_printf("rb\n");
-	// printarray(stack);
+}
+
+static void	rr2(t_stack *stack, size_t i, int end)
+{
+	i = 0;
+	end = 0;
+	if (stack->lb > 0)
+	{
+		end = stack->b[0];
+		while (i < (stack->lb - 1))
+		{
+			stack->b[i] = stack->b[i + 1];
+			i++;
+		}
+		stack->b[i] = end;
+	}
 }
 
 void	rr(t_stack *stack)
 {
 	size_t	i;
 	int		end;
-	
+
 	ft_printf("rr\n");
 	if (stack->la > 0 || stack->lb > 0)
 	{
+		end = 0;
 		i = 0;
 		if (stack->la > 0)
 		{
@@ -71,16 +86,6 @@ void	rr(t_stack *stack)
 			}
 			stack->a[i] = end;
 		}
-		i = 0;
-		if (stack->lb > 0)
-		{
-			end = stack->b[0];
-			while (i < (stack->lb - 1))
-			{
-				stack->b[i] = stack->b[i + 1];
-				i++;
-			}
-			stack->b[i] = end;
-		}
+		rr2(stack, i, end);
 	}
 }

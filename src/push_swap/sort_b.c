@@ -6,13 +6,13 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 09:49:02 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/22 08:57:06 by kzak             ###   ########.fr       */
+/*   Updated: 2022/06/24 15:41:22 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	find_maxb(t_stack *stack)
+static int	find_maxb(t_stack *stack)
 {
 	size_t	i;
 	int		t;
@@ -28,7 +28,7 @@ int	find_maxb(t_stack *stack)
 	return (t);
 }
 
-void	find_positionb(t_stack *stack, int max)
+static void	find_positionb(t_stack *stack, int max)
 {
 	size_t	i;
 
@@ -52,7 +52,7 @@ void	find_positionb(t_stack *stack, int max)
 	}
 }
 
-void	find_pos(t_stack *stack, int max)
+static void	find_pos(t_stack *stack, int max)
 {
 	size_t	i;
 	int		c;

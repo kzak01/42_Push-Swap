@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   10case.c                                           :+:      :+:    :+:   */
+/*   small_case.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 13:37:37 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/23 11:01:18 by kzak             ###   ########.fr       */
+/*   Updated: 2022/06/24 16:06:07 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,31 @@ void	find_position(t_stack *stack, int min)
 	}
 }
 
+void	threecase(t_stack *stack)
+{
+	if (stack->a[0] > stack->a[1] && stack->a[1] < stack->a[2]
+		&& stack->a[2] < stack->a[0])
+		ra(stack);
+	if (stack->a[0] < stack->a[1] && stack->a[1] > stack->a[2]
+		&& stack->a[2] < stack->a[0])
+		rra(stack);
+	if (stack->a[0] > stack->a[1] && stack->a[1] > stack->a[2]
+		&& stack->a[2] < stack->a[0])
+	{
+		sa(stack);
+		rra(stack);
+	}
+	if (stack->a[0] < stack->a[1] && stack->a[1] > stack->a[2]
+		&& stack->a[2] > stack->a[0])
+	{
+		sa(stack);
+		ra(stack);
+	}
+	if (stack->a[0] > stack->a[1] && stack->a[1] < stack->a[2]
+		&& stack->a[2] > stack->a[0])
+		sa(stack);
+}
+
 void	tencase(t_stack *stack)
 {
 	int		min;
@@ -49,7 +74,7 @@ void	tencase(t_stack *stack)
 		min = find_min(stack);
 		find_position(stack, min);
 		if (!is_sort(stack))
-			break;
+			break ;
 		pb(stack);
 		c++;
 		i--;

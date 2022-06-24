@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 12:09:03 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/24 13:34:54 by kzak             ###   ########.fr       */
+/*   Updated: 2022/06/24 16:06:19 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,10 @@ void	varius_sort(t_stack *stack)
 		return (sa(stack));
 	else if (stack->la == 3)
 		return (threecase(stack));
-	// else if (stack->la == 4)
-	// 	return (fourcase(stack));
-	// else if (stack->la == 5)
-	// 	return (fivecase(stack));
 	else if (stack->la <= 10)
 		return (tencase(stack));
 	else if (stack->la <= 100)
 		return (hundred_case(stack));
-	else 
+	else
 		return (infinity(stack));
 }

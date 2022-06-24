@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 11:04:31 by mvolpi            #+#    #+#             */
-/*   Updated: 2022/06/23 13:14:01 by kzak             ###   ########.fr       */
+/*   Updated: 2022/06/24 16:09:31 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ void	rra(t_stack *stack)
 		}
 		stack->a[i] = first;
 		ft_printf("rra\n");
-		// printarray(stack);
 	}
 }
 
@@ -37,7 +36,6 @@ void	rrb(t_stack *stack)
 	size_t	i;
 	int		first;
 
-	ft_printf("rrb\n");
 	i = stack->lb - 1;
 	if (stack->lb > 0)
 	{
@@ -48,8 +46,23 @@ void	rrb(t_stack *stack)
 			i--;
 		}
 		stack->b[i] = first;
-		// ft_printf("rrb\n");
-		// printarray(stack);
+		ft_printf("rrb\n");
+	}
+}
+
+static void	rr2(t_stack *stack, size_t i, int first)
+{
+	first = 0;
+	i = stack->lb - 1;
+	if (stack->lb > 0)
+	{
+		first = stack->b[stack->lb - 1];
+		while (i > 0)
+		{
+			stack->b[i] = stack->b[i - 1];
+			i--;
+		}
+		stack->b[i] = first;
 	}
 }
 
@@ -57,10 +70,11 @@ void	rrr(t_stack *stack)
 {
 	size_t	i;
 	int		first;
-	
+
 	ft_printf("rrr\n");
 	if (stack->la > 0 || stack->lb > 0)
 	{
+		first = 0;
 		i = stack->la - 1;
 		if (stack->la > 0)
 		{
@@ -72,16 +86,6 @@ void	rrr(t_stack *stack)
 			}
 			stack->a[i] = first;
 		}
-		i = stack->lb - 1;
-		if (stack->lb > 0)
-		{
-			first = stack->b[stack->lb - 1];
-			while (i > 0)
-			{
-				stack->b[i] = stack->b[i - 1];
-				i--;
-			}
-			stack->b[i] = first;
-	}
+		rr2(stack, i, first);
 	}
 }

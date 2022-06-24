@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 09:30:33 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/24 15:07:25 by kzak             ###   ########.fr       */
+/*   Updated: 2022/06/24 15:59:19 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,10 @@ int		main(int argc, char **argv);
 void	printarray(t_stack *st);
 
 	/*array_moves*/
+
+		/*k_stack*/
+void	insert_into_k(int ac, char **av, t_stack *stack);
+
 		/*push*/
 void	pa(t_stack *stack);
 void	pb(t_stack *stack);
@@ -71,22 +75,9 @@ void	ss(t_stack *stack);
 void	free_str(char **str);
 long	atoilong(const char *str);
 int		is_sort(t_stack *stack);
+int		find_min(t_stack *stack);
 
 	/*push_swap*/
-		/*3_4case*/
-void	threecase(t_stack *stack);
-void	fourcase(t_stack *stack);
-
-		/*5case*/
-void	sort_max(t_stack *stack, int max);
-void	sort_min(t_stack *stack, int min);
-int		find_max(t_stack *stack);
-int		find_min(t_stack *stack);
-void	fivecase(t_stack *stack);
-
-		/*10case*/
-void	tencase(t_stack *stack);
-void	find_position(t_stack *stack, int min);
 
 		/*errors*/
 void	ft_errors(int ac, char **av);
@@ -95,19 +86,20 @@ void	nocopy(t_stack *stack, int i);
 		/*find_pivot*/
 void	find_pivot(t_stack *stack, int *pivot, int index);
 
-		/*hundred_case*/
-void	hundred_case(t_stack *stack);
-void	special_case(t_stack *stack);
-void	push_to_b(t_stack *stack, int *pivot,int index);
-
 		/*infinity*/
+void	hundred_case(t_stack *stack);
 void	infinity(t_stack *stack);
+
+		/*push_to_b*/
+void	push_to_b(t_stack *stack, int *pivot, int index);
+
+		/*small_case*/
+void	find_position(t_stack *stack, int min);
+void	threecase(t_stack *stack);
+void	tencase(t_stack *stack);
 
 		/*sort_b*/
 void	sort_b(t_stack *stack);
-
-		/*utils2*/
-void	s_moves(t_stack *stack);
 
 		/*varius_sort*/
 void	varius_sort(t_stack *stack);

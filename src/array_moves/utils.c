@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 10:49:50 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/22 15:44:01 by kzak             ###   ########.fr       */
+/*   Updated: 2022/06/24 15:56:16 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,10 +55,8 @@ int	is_sort(t_stack *stack)
 {
 	size_t	i;
 	size_t	j;
-	// size_t	k;
-	
+
 	i = 0;
-	// k = 0;
 	while (i != stack->la)
 	{
 		j = i + 1;
@@ -71,4 +69,20 @@ int	is_sort(t_stack *stack)
 		i++;
 	}
 	return (0);
+}
+
+int	find_min(t_stack *stack)
+{
+	size_t	i;
+	int		t;
+
+	i = 1;
+	t = stack->a[0];
+	while (i < stack->la)
+	{
+		if (stack->a[i] < t)
+			t = stack->a[i];
+		i++;
+	}
+	return (t);
 }
