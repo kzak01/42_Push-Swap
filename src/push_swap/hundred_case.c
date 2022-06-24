@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 09:49:13 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/24 14:14:55 by kzak             ###   ########.fr       */
+/*   Updated: 2022/06/24 15:05:49 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,7 +127,6 @@ void	push_to_b(t_stack *stack, int *pivot,int index)
 				if (stack->a[0] >= pivot[1])
 				{
 					ra(stack);
-					// find_less(stack, pivot[n]);
 					i--;
 				}
 				else
@@ -175,7 +174,7 @@ void	hundred_case(t_stack *stack)
 {
 	int	pivot[3];
 
-	find_pivot100(stack, pivot);
+	find_pivot(stack, pivot, 1);
 	push_to_b(stack, pivot, 3);
 	special_case(stack);
 	sort_b(stack);
