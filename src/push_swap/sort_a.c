@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 09:49:13 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/23 14:30:36 by kzak             ###   ########.fr       */
+/*   Updated: 2022/06/24 11:25:40 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ void	half_stack(t_stack *stack, int *pivot, int i, int m)
 	}
 }
 
-void	find_less(t_stack *stack,int pivot)
+void	find_less(t_stack *stack, int pivot)
 {
 	size_t	i;
 	size_t	j;
@@ -87,7 +87,12 @@ void	find_less(t_stack *stack,int pivot)
 	j = stack->la;
 	while (i <= stack->la / 2)
 	{
-		if (stack->a[i] < pivot)
+		if (stack->a[i] < pivot && stack->a[j] < pivot && stack->a[i] > stack->a[j])
+		{
+			rra(stack);
+			break;
+		}
+		else if (stack->a[i] < pivot)
 		{
 			ra(stack);
 			break;
@@ -122,6 +127,7 @@ void	push_to_b(t_stack *stack, int *pivot)
 				if (stack->a[0] >= pivot[1])
 				{
 					ra(stack);
+					// find_less(stack, pivot[n]);
 					i--;
 				}
 				else
@@ -138,23 +144,26 @@ void	push_to_b(t_stack *stack, int *pivot)
 						else
 							rb(stack);
 					}
+					// s_moves(stack);
 				}
 			}
 			if (n != 1)
 			{
 				if (stack->a[0] < pivot[n])
-			{
-				pb(stack);
-				m--;
-			}
-			else if (stack->a[0] >= pivot[n])
-				find_less(stack, pivot[n]);
-			if (stack->a[0] < pivot[n])
-			{
-				pb(stack);
-				m--;
-			}
-			i--;
+				{
+					pb(stack);
+					// s_moves(stack);
+					m--;
+				}
+				else if (stack->a[0] >= pivot[n])
+					find_less(stack, pivot[n]);
+				if (stack->a[0] < pivot[n])
+				{
+					pb(stack);
+					// s_moves(stack);
+					m--;
+				}
+				i--;
 			}
 			// printf("%d\n\n", m);
 		}

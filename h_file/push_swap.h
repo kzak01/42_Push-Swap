@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 09:30:33 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/23 11:37:30 by kzak             ###   ########.fr       */
+/*   Updated: 2022/06/24 10:18:23 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,6 +100,9 @@ void	hundred_case(t_stack *stack);
 
 		/*sort_b*/
 void	sort_b(t_stack *stack);
+
+		/*utils2*/
+void	s_moves(t_stack *stack);
 
 		/*varius_sort*/
 void	varius_sort(t_stack *stack);

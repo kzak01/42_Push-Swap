@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 09:12:56 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/23 11:34:15 by kzak             ###   ########.fr       */
+/*   Updated: 2022/06/24 10:35:26 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -163,7 +163,7 @@ int	main(int argc, char **argv)
 	insert_into_a(argc, argv, &stack);
 	insert_into_k(argc, argv, &stack);
 	// printarray(&stack);
-	is_sort(&stack);
+	// is_sort(&stack);
 	varius_sort(&stack);
 	// printarray(&stack);
 	free(stack.a);
