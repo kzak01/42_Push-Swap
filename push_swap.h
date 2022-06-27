@@ -6,7 +6,7 @@
 /*   By: vbellucc <vbellucc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 09:30:33 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/21 12:12:44 by vbellucc         ###   ########.fr       */
+/*   Updated: 2022/06/27 11:01:15 by vbellucc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,6 +127,8 @@ void fivehundredcase(t_stack *stack,t_chunk *chunk);
 void chunk_division(t_stack *stack, t_chunk *chunk);
 size_t save_positionstart(t_stack *stack, t_chunk *chunk, int ca);
 size_t save_positionend(t_stack *stack, t_chunk *chunk, int ca);
+void sort_hundred(t_stack *stack, t_chunk *chunk);
+void putadjacent_fivehundred(t_stack *stack, t_chunk *chunk, int len);
 
 
 //chunk_order

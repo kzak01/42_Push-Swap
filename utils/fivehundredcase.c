@@ -6,7 +6,7 @@
 /*   By: vbellucc <vbellucc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 16:22:42 by ldi-masc          #+#    #+#             */
-/*   Updated: 2022/06/21 12:25:42 by vbellucc         ###   ########.fr       */
+/*   Updated: 2022/06/27 11:00:59 by vbellucc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,13 @@
 
 void    push_chunk(t_stack *stack,t_chunk *chunk)
 {
+    printf("inizia push_chunk");
     int i;
     size_t j;
     size_t k;
     size_t l;
     int m;
+    int n;
     // int n;
     
     i = 0;
@@ -36,13 +38,16 @@ void    push_chunk(t_stack *stack,t_chunk *chunk)
     k = 0;
     l = 0;
     m = 0;
+    n = chunk->ca;
     
-    while(chunk->ca != 0)
+    while(n != 0)
     {
     k = save_positionstart(stack, chunk, chunk->ca);
     l = save_positionend(stack, chunk, chunk->ca);
     push_less_move(stack, k, l);
-    chunk->ca--;
+    n--;
+    // k = 0;
+    // l = 0;
     }
     printarray(stack);
 }
@@ -136,28 +141,29 @@ void fivehundredcase(t_stack *stack,t_chunk *chunk)
         }
         j++;
     }
-    chunk_order(chunk->a, chunk->ca);
-    chunk_order(chunk->b, chunk->cb);
+    // chunk_order(chunk->a, chunk->ca);
+    // chunk_order(chunk->b, chunk->cb);
     
-    if(chunk->ce > 0)
-    {
-        chunk_order(chunk->c, chunk->cc);
-        chunk_order(chunk->d, chunk->cd);
-        chunk_order(chunk->e, chunk->ce);
-    }
+    // if(chunk->ce > 0)
+    // {
+    //     chunk_order(chunk->c, chunk->cc);
+    //     chunk_order(chunk->d, chunk->cd);
+    //     chunk_order(chunk->e, chunk->ce);
+    // }
 
-    else if(chunk->cd > 0)
-    {
+    // else if(chunk->cd > 0)
+    // {
         
-        chunk_order(chunk->d, chunk->cd);
-        chunk_order(chunk->c, chunk->cc);
-    }
-    else if (chunk->cc > 0)
-    {
-        chunk_order(chunk->c, chunk->cc);
-    }
+    //     chunk_order(chunk->d, chunk->cd);
+    //     chunk_order(chunk->c, chunk->cc);
+    // }
+    // else if (chunk->cc > 0)
+    // {
+    //     chunk_order(chunk->c, chunk->cc);
+    // }
     
     printchunk(chunk);
     // printc(stack); 
     push_chunk(stack, chunk);    
+    sort_hundred(stack, chunk);
 }

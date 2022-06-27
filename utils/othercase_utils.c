@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   othercase_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldi-masc <ldi-masc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vbellucc <vbellucc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 09:51:37 by vbellucc          #+#    #+#             */
-/*   Updated: 2022/06/16 17:16:42 by ldi-masc         ###   ########.fr       */
+/*   Updated: 2022/06/27 10:51:17 by vbellucc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,9 +68,12 @@ void pa_maxb1(t_stack *stack,int medianb,int median)
         {
             while (stack->b[0] != median)
             {
+                //sleep(1);
+                printf(" s %d\n", s),
                 rb(stack);
             }
             pa(stack);
+            //sleep(5);
             break;
         }
         s++;
@@ -84,11 +87,17 @@ void pa_maxb2(t_stack *stack, int medianb, int median)
     s = stack->lb;
     while (s >= medianb)
     {
+         //sleep(1);
+         printf("s %d\n", s);
+         printf("medianb %d\n", medianb);
         if(stack->b[s] == median)
         {
             while (stack->b[0] != median)
             {
+                //sleep(1);
                 rrb(stack);
+                printf("s %d\n", s);
+                printf("medianb %d\n", medianb);
             }
             pa(stack);
             break;
@@ -117,7 +126,13 @@ void putadjacent(t_stack *stack, int len)
         }
         else
         {
-            rb(stack);    
+            sleep(1);
+            printf("len %d\n", len);
+            printf("s %d\n", s);
+            printarray(stack);
+            printc(stack);
+            rb(stack);
+            
         }
     }
 }
