@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mvolpi <mvolpi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 10:49:50 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/24 15:56:16 by kzak             ###   ########.fr       */
+/*   Updated: 2022/06/27 10:00:51 by mvolpi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ long	atoilong(const char *str)
 {
 	long	res;
 	int		sign;
-	size_t	i;
+	int		i;
 
 	res = 0;
 	sign = 1;
@@ -53,8 +53,8 @@ long	atoilong(const char *str)
 
 int	is_sort(t_stack *stack)
 {
-	size_t	i;
-	size_t	j;
+	int		i;
+	int		j;
 
 	i = 0;
 	while (i != stack->la)
@@ -73,8 +73,8 @@ int	is_sort(t_stack *stack)
 
 int	find_min(t_stack *stack)
 {
-	size_t	i;
-	int		t;
+	int	i;
+	int	t;
 
 	i = 1;
 	t = stack->a[0];

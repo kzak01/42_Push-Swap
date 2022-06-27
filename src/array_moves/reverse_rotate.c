@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   reverse_rotate.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mvolpi <mvolpi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 11:04:31 by mvolpi            #+#    #+#             */
-/*   Updated: 2022/06/24 16:09:31 by kzak             ###   ########.fr       */
+/*   Updated: 2022/06/27 09:59:48 by mvolpi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	rra(t_stack *stack)
 {
-	size_t	i;
-	int		first;
+	int	i;
+	int	first;
 
 	i = stack->la - 1;
 	if (stack->la > 0)
@@ -33,8 +33,8 @@ void	rra(t_stack *stack)
 
 void	rrb(t_stack *stack)
 {
-	size_t	i;
-	int		first;
+	int	i;
+	int	first;
 
 	i = stack->lb - 1;
 	if (stack->lb > 0)
@@ -50,7 +50,7 @@ void	rrb(t_stack *stack)
 	}
 }
 
-static void	rr2(t_stack *stack, size_t i, int first)
+static void	rr2(t_stack *stack, int i, int first)
 {
 	first = 0;
 	i = stack->lb - 1;
@@ -68,8 +68,8 @@ static void	rr2(t_stack *stack, size_t i, int first)
 
 void	rrr(t_stack *stack)
 {
-	size_t	i;
-	int		first;
+	int	i;
+	int	first;
 
 	ft_printf("rrr\n");
 	if (stack->la > 0 || stack->lb > 0)

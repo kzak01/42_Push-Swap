@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   infinity.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mvolpi <mvolpi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 13:35:11 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/24 15:36:09 by kzak             ###   ########.fr       */
+/*   Updated: 2022/06/27 10:01:12 by mvolpi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	special_case(t_stack *stack)
 {
-	int		min;
-	int		c;
-	size_t	i;
+	int	min;
+	int	c;
+	int	i;
 
 	c = 0;
 	i = stack->la;

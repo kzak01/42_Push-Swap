@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_to_b.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mvolpi <mvolpi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 15:33:35 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/24 16:08:05 by kzak             ###   ########.fr       */
+/*   Updated: 2022/06/27 10:01:44 by mvolpi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static int	how_many(t_stack *stack, int n)
 
 static void	find_less(t_stack *stack, int pivot)
 {
-	size_t	cont[2];
+	int	cont[2];
 
 	cont[0] = 0;
 	cont[1] = stack->la;
@@ -59,7 +59,7 @@ static void	find_less(t_stack *stack, int pivot)
 	}
 }
 
-static void	first_pivot(t_stack *stack, int *pivot, size_t *i, int *m)
+static void	first_pivot(t_stack *stack, int *pivot, int *i, int *m)
 {
 	if (stack->a[0] >= pivot[1])
 	{
@@ -83,7 +83,7 @@ static void	first_pivot(t_stack *stack, int *pivot, size_t *i, int *m)
 	}
 }
 
-static void	other_pivot(t_stack *stack, int pivot, size_t *i, int *m)
+static void	other_pivot(t_stack *stack, int pivot, int *i, int *m)
 {
 	if (stack->a[0] < pivot)
 	{
@@ -102,9 +102,9 @@ static void	other_pivot(t_stack *stack, int pivot, size_t *i, int *m)
 
 void	push_to_b(t_stack *stack, int *pivot, int index)
 {
-	size_t	i;
-	int		n;
-	int		m;
+	int	i;
+	int	n;
+	int	m;
 
 	n = 1;
 	while (n != index)

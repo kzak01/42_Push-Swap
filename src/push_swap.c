@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mvolpi <mvolpi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 09:12:56 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/24 15:51:26 by kzak             ###   ########.fr       */
+/*   Updated: 2022/06/27 10:02:53 by mvolpi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ static void	insert_into_a(int ac, char **av, t_stack *stack)
 
 	i = 1;
 	n = 0;
-	stack->a = (int *)malloc(8000 * sizeof(int));
-	stack->b = (int *)malloc(8000 * sizeof(int));
-	stack->k = (int *)malloc(8000 * sizeof(int));
+	stack->a = (int *)malloc(stack->la * sizeof(int));
+	stack->b = (int *)malloc(stack->la * sizeof(int));
+	stack->k = (int *)malloc(stack->la * sizeof(int));
 	while (i < ac)
 	{
 		str = ft_split(av[i], ' ');

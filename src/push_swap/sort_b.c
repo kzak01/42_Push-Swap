@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_b.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mvolpi <mvolpi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 09:49:02 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/24 15:41:22 by kzak             ###   ########.fr       */
+/*   Updated: 2022/06/27 10:02:19 by mvolpi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 static int	find_maxb(t_stack *stack)
 {
-	size_t	i;
-	int		t;
+	int	i;
+	int	t;
 
 	i = 1;
 	t = stack->b[0];
@@ -30,7 +30,7 @@ static int	find_maxb(t_stack *stack)
 
 static void	find_positionb(t_stack *stack, int max)
 {
-	size_t	i;
+	int	i;
 
 	i = 0;
 	while (i <= stack->lb)
@@ -54,8 +54,8 @@ static void	find_positionb(t_stack *stack, int max)
 
 static void	find_pos(t_stack *stack, int max)
 {
-	size_t	i;
-	int		c;
+	int	i;
+	int	c;
 
 	i = 0;
 	c = 0;
@@ -81,8 +81,8 @@ static void	find_pos(t_stack *stack, int max)
 
 void	sort_b(t_stack *stack)
 {
-	int		max;
-	size_t	i;
+	int	max;
+	int	i;
 
 	while (stack->lb != 0)
 	{

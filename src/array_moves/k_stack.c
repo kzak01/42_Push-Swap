@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   k_stack.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mvolpi <mvolpi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 15:25:34 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/24 15:59:44 by kzak             ###   ########.fr       */
+/*   Updated: 2022/06/27 09:59:18 by mvolpi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ static void	ft_swap(int *a, int *b)
 
 static void	sort_k(t_stack *stack)
 {
-	size_t	i;
-	size_t	j;
+	int	i;
+	int	j;
 
 	i = 0;
 	while (i != stack->la)

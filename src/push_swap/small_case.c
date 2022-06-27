@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   small_case.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mvolpi <mvolpi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 13:37:37 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/24 16:06:07 by kzak             ###   ########.fr       */
+/*   Updated: 2022/06/27 10:01:57 by mvolpi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	find_position(t_stack *stack, int min)
 {
-	size_t	i;
+	int	i;
 
 	i = 0;
 	while (i <= stack->la)
@@ -63,9 +63,9 @@ void	threecase(t_stack *stack)
 
 void	tencase(t_stack *stack)
 {
-	int		min;
-	int		c;
-	size_t	i;
+	int	min;
+	int	c;
+	int	i;
 
 	c = 0;
 	i = stack->la;

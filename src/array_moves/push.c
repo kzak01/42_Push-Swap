@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mvolpi <mvolpi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 11:06:59 by mvolpi            #+#    #+#             */
-/*   Updated: 2022/06/24 15:54:51 by kzak             ###   ########.fr       */
+/*   Updated: 2022/06/27 09:59:28 by mvolpi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	pa(t_stack *stack)
 {
-	size_t	i;
+	int	i;
 
 	i = stack->la + 1;
 	if (stack->lb > 0)
@@ -38,7 +38,7 @@ void	pa(t_stack *stack)
 
 void	pb(t_stack *stack)
 {
-	size_t	i;
+	int	i;
 
 	i = stack->lb + 1;
 	if (stack->la > 0)

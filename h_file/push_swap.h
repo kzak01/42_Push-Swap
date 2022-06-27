@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mvolpi <mvolpi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 09:30:33 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/24 15:59:19 by kzak             ###   ########.fr       */
+/*   Updated: 2022/06/27 09:58:50 by mvolpi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,12 @@
 
 typedef struct s_stack
 {
-	int		*a;
-	int		*b;
-	int		*k;
-	size_t	la;
-	size_t	lb;
-	size_t	lk;
+	int	*a;
+	int	*b;
+	int	*k;
+	int	la;
+	int	lb;
+	int	lk;
 }	t_stack;
 
 typedef enum e_bool

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mvolpi <mvolpi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 10:55:24 by mvolpi            #+#    #+#             */
-/*   Updated: 2022/06/24 16:09:50 by kzak             ###   ########.fr       */
+/*   Updated: 2022/06/27 10:00:30 by mvolpi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	ra(t_stack *stack)
 {
-	size_t	i;
-	int		end;
+	int	i;
+	int	end;
 
 	i = 0;
 	if (stack->la > 0)
@@ -33,8 +33,8 @@ void	ra(t_stack *stack)
 
 void	rb(t_stack *stack)
 {
-	size_t	i;
-	int		end;
+	int	i;
+	int	end;
 
 	i = 0;
 	if (stack->lb > 0)
@@ -50,7 +50,7 @@ void	rb(t_stack *stack)
 	ft_printf("rb\n");
 }
 
-static void	rr2(t_stack *stack, size_t i, int end)
+static void	rr2(t_stack *stack, int i, int end)
 {
 	i = 0;
 	end = 0;
@@ -68,8 +68,8 @@ static void	rr2(t_stack *stack, size_t i, int end)
 
 void	rr(t_stack *stack)
 {
-	size_t	i;
-	int		end;
+	int	i;
+	int	end;
 
 	ft_printf("rr\n");
 	if (stack->la > 0 || stack->lb > 0)
