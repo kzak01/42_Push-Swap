@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   small_case.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvolpi <mvolpi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 13:37:37 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/27 10:01:57 by mvolpi           ###   ########.fr       */
+/*   Updated: 2022/06/27 10:50:24 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ void	threecase(t_stack *stack)
 		sa(stack);
 }
 
-void	tencase(t_stack *stack)
+void	small_case(t_stack *stack)
 {
 	int	min;
 	int	c;

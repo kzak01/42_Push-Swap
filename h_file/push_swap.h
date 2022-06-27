@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvolpi <mvolpi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 09:30:33 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/27 09:58:50 by mvolpi           ###   ########.fr       */
+/*   Updated: 2022/06/27 10:50:13 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,7 @@ void	push_to_b(t_stack *stack, int *pivot, int index);
 		/*small_case*/
 void	find_position(t_stack *stack, int min);
 void	threecase(t_stack *stack);
-void	tencase(t_stack *stack);
+void	small_case(t_stack *stack);
 
 		/*sort_b*/
 void	sort_b(t_stack *stack);
