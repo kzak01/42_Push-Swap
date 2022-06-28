@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/30 11:09:49 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/28 12:19:19 by kzak             ###   ########.fr       */
+/*   Updated: 2022/06/28 13:30:30 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	nocopy(t_stack *stack, int i, int z)
 
 	j = 0;
 	n = 0;
-	while (z != 0)
+	while (z-- != 0)
 	{
 		if (stack->a[z] == i)
 			j++;
@@ -29,7 +29,6 @@ void	nocopy(t_stack *stack, int i, int z)
 					"\033[0m", i);
 			exit (1);
 		}
-		z--;
 	}
 }
 
