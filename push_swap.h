@@ -6,7 +6,7 @@
 /*   By: vbellucc <vbellucc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 09:30:33 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/27 11:01:15 by vbellucc         ###   ########.fr       */
+/*   Updated: 2022/06/28 11:44:15 by vbellucc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,14 +126,34 @@ void fivehundredcase(t_stack *stack,t_chunk *chunk);
 //fivehundredcase_utils
 void chunk_division(t_stack *stack, t_chunk *chunk);
 size_t save_positionstart(t_stack *stack, t_chunk *chunk, int ca);
+size_t save_positionstart2(t_stack *stack, t_chunk *chunk, int ca);
+size_t save_positionstart3(t_stack *stack, t_chunk *chunk, int ca);
+size_t save_positionstart4(t_stack *stack, t_chunk *chunk, int ca);
+size_t save_positionstart5(t_stack *stack, t_chunk *chunk, int ca);
 size_t save_positionend(t_stack *stack, t_chunk *chunk, int ca);
-void sort_hundred(t_stack *stack, t_chunk *chunk);
+size_t save_positionend2(t_stack *stack, t_chunk *chunk, int ca);
+size_t save_positionend3(t_stack *stack, t_chunk *chunk, int ca);
+size_t save_positionend4(t_stack *stack, t_chunk *chunk, int ca);
+size_t save_positionend5(t_stack *stack, t_chunk *chunk, int ca);
+void sort_hundred(t_stack *stack,t_chunk *chunk);
+void sort_hundred2(t_stack *stack,t_chunk *chunk);
+void sort_hundred3(t_stack *stack,t_chunk *chunk);
+void sort_hundred4(t_stack *stack,t_chunk *chunk);
+void sort_hundred5(t_stack *stack,t_chunk *chunk);
 void putadjacent_fivehundred(t_stack *stack, t_chunk *chunk, int len);
+void putadjacent_fivehundred2(t_stack *stack, t_chunk *chunk, int len);
+void putadjacent_fivehundred3(t_stack *stack, t_chunk *chunk, int len);
+void putadjacent_fivehundred4(t_stack *stack, t_chunk *chunk, int len);
+void putadjacent_fivehundred5(t_stack *stack, t_chunk *chunk, int len);
 
 
 //chunk_order
 void chunk_order(int *chunk, int count);
 void push_chunk(t_stack *stack, t_chunk *chunk);
+void push_chunk2(t_stack *stack,t_chunk *chunk);
+void push_chunk3(t_stack *stack,t_chunk *chunk);
+void push_chunk4(t_stack *stack,t_chunk *chunk);
+void push_chunk5(t_stack *stack,t_chunk *chunk);
 void push_less_move(t_stack *stack, int k, int l); 
 
 //utils_functions

@@ -6,7 +6,7 @@
 /*   By: vbellucc <vbellucc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 16:22:42 by ldi-masc          #+#    #+#             */
-/*   Updated: 2022/06/27 11:00:59 by vbellucc         ###   ########.fr       */
+/*   Updated: 2022/06/28 11:52:02 by vbellucc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,125 @@ void    push_chunk(t_stack *stack,t_chunk *chunk)
     {
     k = save_positionstart(stack, chunk, chunk->ca);
     l = save_positionend(stack, chunk, chunk->ca);
+    push_less_move(stack, k, l);
+    n--;
+    // k = 0;
+    // l = 0;
+    }
+    printarray(stack);
+}
+
+void    push_chunk2(t_stack *stack,t_chunk *chunk)
+{
+    printf("inizia push_chunk");
+    int i;
+    size_t j;
+    size_t k;
+    size_t l;
+    int m;
+    int n;
+    // int n;
+    
+    i = 0;
+    j = stack->la;
+    k = 0;
+    l = 0;
+    m = 0;
+    n = chunk->cb;
+    
+    while(n != 0)
+    {
+    k = save_positionstart2(stack, chunk, chunk->cb);
+    l = save_positionend2(stack, chunk, chunk->cb);
+    sleep(1);
+    push_less_move(stack, k, l);
+    n--;
+    // k = 0;
+    // l = 0;
+    }
+    printarray(stack);
+}
+
+void    push_chunk3(t_stack *stack,t_chunk *chunk)
+{
+    printf("inizia push_chunk");
+    int i;
+    size_t j;
+    size_t k;
+    size_t l;
+    int m;
+    int n;
+    // int n;
+    
+    i = 0;
+    j = stack->la;
+    k = 0;
+    l = 0;
+    m = 0;
+    n = chunk->cb;
+    
+    while(n != 0)
+    {
+    k = save_positionstart3(stack, chunk, chunk->cc);
+    l = save_positionend3(stack, chunk, chunk->cc);
+    push_less_move(stack, k, l);
+    n--;
+    // k = 0;
+    // l = 0;
+    }
+    printarray(stack);
+}
+void    push_chunk4(t_stack *stack,t_chunk *chunk)
+{
+    printf("inizia push_chunk");
+    int i;
+    size_t j;
+    size_t k;
+    size_t l;
+    int m;
+    int n;
+    // int n;
+    
+    i = 0;
+    j = stack->la;
+    k = 0;
+    l = 0;
+    m = 0;
+    n = chunk->cb;
+    
+    while(n != 0)
+    {
+    k = save_positionstart4(stack, chunk, chunk->cd);
+    l = save_positionend4(stack, chunk, chunk->cd);
+    push_less_move(stack, k, l);
+    n--;
+    // k = 0;
+    // l = 0;
+    }
+    printarray(stack);
+}
+void    push_chunk5(t_stack *stack,t_chunk *chunk)
+{
+    printf("inizia push_chunk");
+    int i;
+    size_t j;
+    size_t k;
+    size_t l;
+    int m;
+    int n;
+    // int n;
+    
+    i = 0;
+    j = stack->la;
+    k = 0;
+    l = 0;
+    m = 0;
+    n = chunk->cb;
+    
+    while(n != 0)
+    {
+    k = save_positionstart5(stack, chunk, chunk->ce);
+    l = save_positionend5(stack, chunk, chunk->ce);
     push_less_move(stack, k, l);
     n--;
     // k = 0;
@@ -164,6 +283,16 @@ void fivehundredcase(t_stack *stack,t_chunk *chunk)
     
     printchunk(chunk);
     // printc(stack); 
-    push_chunk(stack, chunk);    
+    push_chunk(stack, chunk);
+    printf("inizia sort hundred");    
     sort_hundred(stack, chunk);
+    sleep(5);
+    push_chunk2(stack, chunk);
+    sort_hundred2(stack, chunk);
+    push_chunk3(stack, chunk);
+    sort_hundred3(stack, chunk);
+    push_chunk4(stack, chunk);
+    sort_hundred4(stack, chunk);
+    push_chunk5(stack, chunk);
+    sort_hundred5(stack, chunk);
 }

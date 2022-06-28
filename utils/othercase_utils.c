@@ -6,7 +6,7 @@
 /*   By: vbellucc <vbellucc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 09:51:37 by vbellucc          #+#    #+#             */
-/*   Updated: 2022/06/27 10:51:17 by vbellucc         ###   ########.fr       */
+/*   Updated: 2022/06/28 09:47:25 by vbellucc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -146,10 +146,10 @@ void sortmaxmin(t_stack *stack, int len, int median)
         ra(stack);
     }
     ra(stack);
-    while(stack->a[0] != stack->c[s])
-    {
-        pb(stack);
-    }
+    // while(stack->a[0] != stack->c[s])
+    // {
+    //     pb(stack);
+    // }
 }
 void sortmaxmin2(t_stack *stack, int medianb)    
 {
