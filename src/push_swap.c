@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvolpi <mvolpi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 09:12:56 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/27 10:02:53 by mvolpi           ###   ########.fr       */
+/*   Updated: 2022/06/28 12:16:36 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,11 @@ static void	insert_into_a(int ac, char **av, t_stack *stack)
 	int		j;
 	int		n;
 	char	**str;
+	int		z;
 
 	i = 1;
 	n = 0;
+	z = 0;
 	stack->a = (int *)malloc(stack->la * sizeof(int));
 	stack->b = (int *)malloc(stack->la * sizeof(int));
 	stack->k = (int *)malloc(stack->la * sizeof(int));
@@ -31,7 +33,8 @@ static void	insert_into_a(int ac, char **av, t_stack *stack)
 		while (str[j])
 		{
 			stack->a[n] = ft_atoi(str[j]);
-			nocopy(stack, ft_atoi(str[j]));
+			z++;
+			nocopy(stack, ft_atoi(str[j]), z);
 			j++;
 			n++;
 		}

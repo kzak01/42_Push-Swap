@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 09:30:33 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/27 10:50:13 by kzak             ###   ########.fr       */
+/*   Updated: 2022/06/28 12:17:31 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ int		find_min(t_stack *stack);
 
 		/*errors*/
 void	ft_errors(int ac, char **av);
-void	nocopy(t_stack *stack, int i);
+void	nocopy(t_stack *stack, int i, int z);
 
 		/*find_pivot*/
 void	find_pivot(t_stack *stack, int *pivot, int index);

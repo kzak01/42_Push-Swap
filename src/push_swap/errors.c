@@ -6,22 +6,22 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/30 11:09:49 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/24 15:24:15 by kzak             ###   ########.fr       */
+/*   Updated: 2022/06/28 12:19:19 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	nocopy(t_stack *stack, int i)
+void	nocopy(t_stack *stack, int i, int z)
 {
 	int	j;
 	int	n;
 
 	j = 0;
 	n = 0;
-	while (stack->a[n])
+	while (z != 0)
 	{
-		if (stack->a[n] == i)
+		if (stack->a[z] == i)
 			j++;
 		if (j == 2)
 		{
@@ -29,7 +29,7 @@ void	nocopy(t_stack *stack, int i)
 					"\033[0m", i);
 			exit (1);
 		}
-		n++;
+		z--;
 	}
 }
 
