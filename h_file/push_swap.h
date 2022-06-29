@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 09:30:33 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/28 12:17:31 by kzak             ###   ########.fr       */
+/*   Updated: 2022/06/29 13:50:39 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ typedef struct s_stack
 	int	*a;
 	int	*b;
 	int	*k;
+	int	*z;
 	int	la;
 	int	lb;
 	int	lk;
@@ -50,6 +51,7 @@ void	printarray(t_stack *st);
 	/*array_moves*/
 
 		/*k_stack*/
+void	ft_swap(int *a, int *b);
 void	insert_into_k(int ac, char **av, t_stack *stack);
 
 		/*push*/

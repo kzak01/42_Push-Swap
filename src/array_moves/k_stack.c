@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   k_stack.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvolpi <mvolpi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 15:25:34 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/27 09:59:18 by mvolpi           ###   ########.fr       */
+/*   Updated: 2022/06/29 10:54:21 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	ft_swap(int *a, int *b)
+void	ft_swap(int *a, int *b)
 {
 	int	c;
 

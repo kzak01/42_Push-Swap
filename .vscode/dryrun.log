@@ -1,0 +1,37 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory `/Users/kzak/Desktop/push-swap'
+make --no-print-directory -C libft
+mkdir obj
+gcc -Wall -Wextra -Werror -I h_file -I libft/include -c src/push_swap/errors.c -o obj/errors.o
+printf "\e[1K\r\e[0m👍 Create obj/errors.o from src/push_swap/errors.c"
+gcc -Wall -Wextra -Werror -I h_file -I libft/include -c src/push_swap/find_pivot.c -o obj/find_pivot.o
+printf "\e[1K\r\e[0m👍 Create obj/find_pivot.o from src/push_swap/find_pivot.c"
+gcc -Wall -Wextra -Werror -I h_file -I libft/include -c src/push_swap/infinity.c -o obj/infinity.o
+printf "\e[1K\r\e[0m👍 Create obj/infinity.o from src/push_swap/infinity.c"
+gcc -Wall -Wextra -Werror -I h_file -I libft/include -c src/push_swap/push_to_b.c -o obj/push_to_b.o
+printf "\e[1K\r\e[0m👍 Create obj/push_to_b.o from src/push_swap/push_to_b.c"
+gcc -Wall -Wextra -Werror -I h_file -I libft/include -c src/push_swap/small_case.c -o obj/small_case.o
+printf "\e[1K\r\e[0m👍 Create obj/small_case.o from src/push_swap/small_case.c"
+gcc -Wall -Wextra -Werror -I h_file -I libft/include -c src/push_swap/sort_b.c -o obj/sort_b.o
+printf "\e[1K\r\e[0m👍 Create obj/sort_b.o from src/push_swap/sort_b.c"
+gcc -Wall -Wextra -Werror -I h_file -I libft/include -c src/push_swap/varius_sort.c -o obj/varius_sort.o
+printf "\e[1K\r\e[0m👍 Create obj/varius_sort.o from src/push_swap/varius_sort.c"
+gcc -Wall -Wextra -Werror -I h_file -I libft/include -c src/array_moves/k_stack.c -o obj/k_stack.o
+printf "\e[1K\r\e[0m👍 Create obj/k_stack.o from src/array_moves/k_stack.c"
+gcc -Wall -Wextra -Werror -I h_file -I libft/include -c src/array_moves/push.c -o obj/push.o
+printf "\e[1K\r\e[0m👍 Create obj/push.o from src/array_moves/push.c"
+gcc -Wall -Wextra -Werror -I h_file -I libft/include -c src/array_moves/reverse_rotate.c -o obj/reverse_rotate.o
+printf "\e[1K\r\e[0m👍 Create obj/reverse_rotate.o from src/array_moves/reverse_rotate.c"
+gcc -Wall -Wextra -Werror -I h_file -I libft/include -c src/array_moves/rotate.c -o obj/rotate.o
+printf "\e[1K\r\e[0m👍 Create obj/rotate.o from src/array_moves/rotate.c"
+gcc -Wall -Wextra -Werror -I h_file -I libft/include -c src/array_moves/swap.c -o obj/swap.o
+printf "\e[1K\r\e[0m👍 Create obj/swap.o from src/array_moves/swap.c"
+gcc -Wall -Wextra -Werror -I h_file -I libft/include -c src/array_moves/utils.c -o obj/utils.o
+printf "\e[1K\r\e[0m👍 Create obj/utils.o from src/array_moves/utils.c"
+printf "\n🌙 Successfully Created push_swap's Object files!\n"
+printf "♈︎ Create push_swap!\n"
+gcc -Wall -Wextra -Werror -I h_file -I libft/include -L./libft -lft obj/errors.o obj/find_pivot.o obj/infinity.o obj/push_to_b.o obj/small_case.o obj/sort_b.o obj/varius_sort.o obj/k_stack.o obj/push.o obj/reverse_rotate.o obj/rotate.o obj/swap.o obj/utils.o src/push_swap.c -o push_swap
+printf "\e[1K\r\e[0m😎 Successfully Created push_swap !\n\e[0m"
+printf "🍀 GLHF 👾\n"
+make: Leaving directory `/Users/kzak/Desktop/push-swap'
+ 
