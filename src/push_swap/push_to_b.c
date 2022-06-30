@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_to_b.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvolpi <mvolpi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 15:33:35 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/27 10:01:44 by mvolpi           ###   ########.fr       */
+/*   Updated: 2022/07/01 00:36:49 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ static void	find_less(t_stack *stack, int pivot)
 			rra(stack);
 			break ;
 		}
-		else if (stack->a[cont[0]] < pivot)
+		if (stack->a[cont[0]] < pivot)
 		{
 			ra(stack);
 			break ;
@@ -72,7 +72,7 @@ static void	first_pivot(t_stack *stack, int *pivot, int *i, int *m)
 		++(*m);
 		if (stack->b[0] < pivot[0])
 		{
-			if (stack->a[0] > pivot[1])
+			if (stack->a[0] >= pivot[1])
 			{
 				rr(stack);
 				--(*i);

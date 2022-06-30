@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 09:49:02 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/29 16:52:33 by kzak             ###   ########.fr       */
+/*   Updated: 2022/07/01 00:15:31 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ void	insert_k(t_stack *stack)
 {
 	int	i;
 	int	j;
-	
+
 	i = 0;
-	while(i <= stack->lb)
+	while (i <= stack->lb)
 	{
 		stack->z[i] = stack->b[i];
 		i++;
@@ -144,9 +144,9 @@ static void	find_pos(t_stack *stack, int *max)
 			pa(stack);
 			if (stack->a[0] > stack->a[1])
 				sa(stack);
-			while(stack->a[stack->la] > stack->a[stack->la - 1])
+			while (stack->a[stack->la] > stack->a[stack->la - 1])
 			{
-				if(stack->b[stack->lb] > max[0])
+				if (stack->b[stack->lb] > max[0])
 					rrr(stack);
 				rra(stack);
 			}
