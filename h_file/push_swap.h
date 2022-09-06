@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 09:30:33 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/29 13:50:39 by kzak             ###   ########.fr       */
+/*   Updated: 2022/09/06 10:48:29 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,6 +102,10 @@ void	small_case(t_stack *stack);
 
 		/*sort_b*/
 void	sort_b(t_stack *stack);
+
+		/*utils_2*/
+void	find_maxb(t_stack *stack, int *max);
+int		count_n(t_stack *stack, int *max, int i, int index);
 
 		/*varius_sort*/
 void	varius_sort(t_stack *stack);

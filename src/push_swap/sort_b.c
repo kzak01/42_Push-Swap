@@ -6,74 +6,48 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 09:49:02 by kzak              #+#    #+#             */
-/*   Updated: 2022/07/01 00:15:31 by kzak             ###   ########.fr       */
+/*   Updated: 2022/09/06 10:47:31 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	insert_k(t_stack *stack)
+static void	prova(int *i, t_stack *stack, int *max, int n)
 {
-	int	i;
-	int	j;
-
-	i = 0;
-	while (i <= stack->lb)
+	while (stack->b[0] != max[0])
 	{
-		stack->z[i] = stack->b[i];
-		i++;
-	}
-	i = 0;
-	while (i != stack->lb)
-	{
-		j = i + 1;
-		while (j != stack->lb)
+		n = count_n(stack, max, *i, 0);
+		if (stack->b[0] != max[n])
+			rrb(stack);
+		else if (stack->b[0] == max[n])
 		{
-			if (stack->z[i] < stack->z[j])
-				ft_swap(&stack->z[i], &stack->z[j]);
-			j++;
+			pa(stack);
+			if (stack->b[0] == max[0])
+				;
+			else
+				ra(stack);
 		}
-		i++;
 	}
 }
 
-static void	find_maxb(t_stack *stack, int *max)
+static void	prova_2(int *i, t_stack *stack, int *max, int n)
 {
-	int	i;
-
-	i = 0;
-	insert_k(stack);
-	while (i < 19)
+	while (stack->b[0] != max[0])
 	{
-		max[i] = stack->z[i];
-		i++;
-	}
-}
-
-int	count_n(t_stack *stack, int *max, int i, int index)
-{
-	int n;
-
-	n = 0;
-	if (index == 1)
-	{
-		while (i > 0)
+		n = count_n(stack, max, *i, 1);
+		if (stack->b[0] != max[n])
+			rb(stack);
+		else if (stack->b[0] == max[n])
 		{
-			if (stack->b[i] == max[n])
-				n++;
-			i--;
+			pa(stack);
+			if (stack->b[0] == max[0])
+				;
+			else if (stack->b[0] != max[n - 1])
+				rr(stack);
+			else
+				ra(stack);
 		}
 	}
-	if (index == 0)
-	{
-		while (i < stack->lb)
-		{
-			if (stack->b[i] == max[n])
-				n++;
-			i++;
-		}
-	}
-	return (n);
 }
 
 static void	find_positionb(t_stack *stack, int *max)
@@ -82,47 +56,15 @@ static void	find_positionb(t_stack *stack, int *max)
 	int	n;
 
 	i = 0;
+	n = 0;
 	while (i <= stack->lb)
 	{
 		if (stack->b[i] == max[0])
 		{
 			if (i >= (stack->lb / 2))
-			{
-				while (stack->b[0] != max[0])
-				{
-					n = count_n(stack, max, i, 0);
-					if (stack->b[0] != max[n])
-						rrb(stack);
-					else if (stack->b[0] == max[n])
-					{
-						pa(stack);
-						if (stack->b[0] == max[0])
-							;
-						else
-							ra(stack);
-					}
-				}
-			}
+				prova(&i, stack, max, n);
 			else
-			{
-				while (stack->b[0] != max[0])
-				{
-					n = count_n(stack, max, i, 1);
-					// printf("%d, %d, %d\n", n, max[0], max[n]);
-					if (stack->b[0] != max[n])
-						rb(stack);
-					else if (stack->b[0] == max[n])
-					{
-						pa(stack);
-						if (stack->b[0] == max[0])
-							;
-						else if (stack->b[0] != max[n - 1])
-							rr(stack);
-						else
-							ra(stack);
-					}
-				}
-			}
+				prova_2(&i, stack, max, n);
 		}
 		i++;
 	}

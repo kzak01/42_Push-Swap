@@ -6,42 +6,11 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 09:12:56 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/29 16:10:16 by kzak             ###   ########.fr       */
+/*   Updated: 2022/09/06 10:21:51 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	printarray(t_stack *st)
-{
-	int	j;
-
-	j = 0;
-	printf("Stack A:");
-	while (j < st->la)
-	{
-		printf("  %d", st->a[j]);
-		j++;
-	}
-	printf("\n");
-	j = 0;
-	printf("Stack B:");
-	while (j < st->lb)
-	{
-		printf("  %d", st->b[j]);
-		j++;
-	}
-	printf("\n");
-	// j = 0;
-	// printf("Stack K:");
-	// while (j < st->lk)
-	// {
-	// 	printf("  %d", st->k[j]);
-	// 	j++;
-	// }
-	// printf("\n");
-}
-/*cancellare sopra*/
 
 static void	insert_into_a(int ac, char **av, t_stack *stack)
 {
@@ -54,9 +23,6 @@ static void	insert_into_a(int ac, char **av, t_stack *stack)
 	i = 1;
 	n = 0;
 	z = 0;
-	stack->a = (int *)malloc(8000 * sizeof(int));
-	stack->b = (int *)malloc(8000 * sizeof(int));
-	stack->k = (int *)malloc(8000 * sizeof(int));
 	while (i < ac)
 	{
 		str = ft_split(av[i], ' ');
@@ -109,11 +75,12 @@ int	main(int argc, char **argv)
 	stack.lb = 0;
 	stack.lk = arrayleng(argc, argv);
 	stack.b = NULL;
+	stack.a = (int *)malloc(8000 * sizeof(int));
+	stack.b = (int *)malloc(8000 * sizeof(int));
+	stack.k = (int *)malloc(8000 * sizeof(int));
 	insert_into_a(argc, argv, &stack);
 	insert_into_k(argc, argv, &stack);
-	// printarray(&stack);
 	varius_sort(&stack);
-	// printarray(&stack);
 	free(stack.a);
 	free(stack.b);
 	free(stack.k);
