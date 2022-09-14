@@ -1,27 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   varius_sort.c                                      :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/20 12:09:03 by kzak              #+#    #+#             */
-/*   Updated: 2022/09/14 11:47:04 by kzak             ###   ########.fr       */
+/*   Created: 2022/01/16 14:39:33 by kzak              #+#    #+#             */
+/*   Updated: 2022/09/14 14:06:46 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../h_file/push_swap.h"
+#include "../h_file/libft.h"
 
-void	varius_sort(t_stack *stack)
+void	ft_putchar_fd(char c, int fd)
 {
-	if (stack->la == 2 && stack->a[0] > stack->a[1])
-		return (sa(stack));
-	else if (stack->la == 3)
-		return (threecase(stack));
-	else if (stack->la <= 16)
-		return (small_case(stack));
-	else if (stack->la <= 100)
-		return (hundred_case(stack));
-	else
-		return (infinity(stack));
+	write (fd, &c, 1);
 }

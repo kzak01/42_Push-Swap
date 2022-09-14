@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   varius_sort.c                                      :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/20 12:09:03 by kzak              #+#    #+#             */
-/*   Updated: 2022/09/14 11:47:04 by kzak             ###   ########.fr       */
+/*   Created: 2022/01/11 13:49:28 by kzak              #+#    #+#             */
+/*   Updated: 2022/09/14 14:06:41 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../h_file/push_swap.h"
+#include "../h_file/libft.h"
 
-void	varius_sort(t_stack *stack)
+
+void	*ft_memset(void *b, int c, size_t len)
 {
-	if (stack->la == 2 && stack->a[0] > stack->a[1])
-		return (sa(stack));
-	else if (stack->la == 3)
-		return (threecase(stack));
-	else if (stack->la <= 16)
-		return (small_case(stack));
-	else if (stack->la <= 100)
-		return (hundred_case(stack));
-	else
-		return (infinity(stack));
+	char	*p;
+
+	p = (char *)b;
+	while (len > 0)
+	{
+		p[len - 1] = c;
+		len--;
+	}
+	return (b);
 }

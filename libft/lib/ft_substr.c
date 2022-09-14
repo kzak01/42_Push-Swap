@@ -1,27 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   varius_sort.c                                      :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/20 12:09:03 by kzak              #+#    #+#             */
-/*   Updated: 2022/09/14 11:47:04 by kzak             ###   ########.fr       */
+/*   Created: 2022/01/13 15:44:46 by kzak              #+#    #+#             */
+/*   Updated: 2022/09/14 14:07:45 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../h_file/push_swap.h"
+#include "../h_file/libft.h"
 
-void	varius_sort(t_stack *stack)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	if (stack->la == 2 && stack->a[0] > stack->a[1])
-		return (sa(stack));
-	else if (stack->la == 3)
-		return (threecase(stack));
-	else if (stack->la <= 16)
-		return (small_case(stack));
-	else if (stack->la <= 100)
-		return (hundred_case(stack));
-	else
-		return (infinity(stack));
+	char	*str;
+	size_t	l;
+
+	if (s == NULL)
+		return (NULL);
+	if ((unsigned int)ft_strlen(s) < start)
+		return (ft_strdup(""));
+	l = ft_strlen(s + start);
+	if (l < len)
+		len = l;
+	str = (char *)malloc(sizeof(char) * (len + 1));
+	if (!str)
+		return (NULL);
+	ft_strlcpy(str, s + start, len + 1);
+	return (str);
 }

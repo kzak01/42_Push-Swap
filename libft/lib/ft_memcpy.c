@@ -1,27 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   varius_sort.c                                      :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/20 12:09:03 by kzak              #+#    #+#             */
-/*   Updated: 2022/09/14 11:47:04 by kzak             ###   ########.fr       */
+/*   Created: 2022/01/11 14:40:41 by kzak              #+#    #+#             */
+/*   Updated: 2022/09/14 14:06:31 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../h_file/push_swap.h"
+#include "../h_file/libft.h"
 
-void	varius_sort(t_stack *stack)
+
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	if (stack->la == 2 && stack->a[0] > stack->a[1])
-		return (sa(stack));
-	else if (stack->la == 3)
-		return (threecase(stack));
-	else if (stack->la <= 16)
-		return (small_case(stack));
-	else if (stack->la <= 100)
-		return (hundred_case(stack));
-	else
-		return (infinity(stack));
+	unsigned char	*new_dst;
+	unsigned char	*new_src;
+	size_t			i;
+
+	if (dst == src || n == 0)
+		return (dst);
+	new_dst = dst;
+	new_src = (unsigned char *)src;
+	i = 0;
+	while (i < n)
+	{
+		*new_dst = *new_src;
+		i++;
+		new_dst++;
+		new_src++;
+	}
+	return (dst);
 }
