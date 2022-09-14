@@ -6,7 +6,7 @@
 #    By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/31 09:49:00 by kzak              #+#    #+#              #
-#    Updated: 2022/09/14 15:09:07 by kzak             ###   ########.fr        #
+#    Updated: 2022/09/14 15:11:35 by kzak             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -78,12 +78,5 @@ $(NAME): $(OBJ_DIR) $(OBJ)
 
 norm: 
 	@norminette -R CheckForbiddenSourceHeader
-
-exe: re
-	@make -C ./ clean
-	@echo "     - Executing $(NAME)... \n"
-	@./$(NAME) $(m)
-	@echo "\n     - Done -"
-
 
 .PHONY : all clean fclean re
