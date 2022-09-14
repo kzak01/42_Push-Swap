@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 09:30:33 by kzak              #+#    #+#             */
-/*   Updated: 2022/09/14 14:00:33 by kzak             ###   ########.fr       */
+/*   Updated: 2022/09/14 14:26:53 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,7 @@
 # include <fcntl.h>
 # include <stdio.h>
 # include <errno.h>
-# include "../libft/libft.h"
-# include "../ft_printf/ft_printf.h"
+# include "../libft/h_file/libft.h"
 
 typedef struct s_stack
 {

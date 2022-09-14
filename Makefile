@@ -6,7 +6,7 @@
 #    By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/31 09:49:00 by kzak              #+#    #+#              #
-#    Updated: 2022/09/14 14:00:55 by kzak             ###   ########.fr        #
+#    Updated: 2022/09/14 14:28:27 by kzak             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,8 +32,6 @@ SRC_MOVES = src/array_moves/k_stack.c \
 
 LIBFT  = libft/libft.a
 
-FT_PRINTF = ft_printf/libftprintf.a
-
 FLAGS = -Wall -Wextra -Werror
 
 OBJ_DIR = obj
@@ -48,13 +46,11 @@ clean:
 	@echo "     - Removing object files..."
 	@rm -rf $(OBJ_DIR)
 	@make -C libft clean
-	@make -C ft_printf clean
 
 fclean: clean
 	@echo "     - Removing $(NAME)..."
 	@rm -rf $(NAME)
 	@make -C libft fclean
-	@make -C ft_printf fclean
 
 re: fclean all
 
@@ -64,19 +60,17 @@ $(OBJ_DIR) :
 	@mkdir obj/array_moves
 
 $(OBJ_DIR)/%.o : src/%.c 
-	@$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(FLAGS) -c $< -o $@
 
 $(OBJ_DIR)/push_swap/%.o : src/push_swap/%.c 
-	@$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(FLAGS) -c $< -o $@
 
 $(OBJ_DIR)/array_moves/%.o : src/array_moves/%.c 
-	@$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(FLAGS) -c $< -o $@
 
 $(NAME): $(OBJ_DIR) $(OBJ)
 	@echo "     - Making libft..."
 	@make -s -C libft
-	@echo "     - Making ft_printf..."
-	@make -s -C ft_printf
 	@echo "     - Compiling $(NAME)..."
 	@gcc $(FLAGS) $(OBJ) $(LIBFT) $(FT_PRINTF) -o $(NAME)
 	@echo "     - Compiled -"
