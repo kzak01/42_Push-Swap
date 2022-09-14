@@ -6,7 +6,7 @@
 #    By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/31 09:49:00 by kzak              #+#    #+#              #
-#    Updated: 2022/09/14 13:40:26 by kzak             ###   ########.fr        #
+#    Updated: 2022/09/14 14:00:55 by kzak             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,11 +30,9 @@ SRC_MOVES = src/array_moves/k_stack.c \
 				src/array_moves/swap.c \
 				src/array_moves/utils.c \
 
-SRC = $(SRC_MAIN) $(SRC_PS) $(SRC_MOVES)
-
 LIBFT  = libft/libft.a
 
-FT_PRINTF = printf/libftprintf.a
+FT_PRINTF = ft_printf/libftprintf.a
 
 FLAGS = -Wall -Wextra -Werror
 
@@ -50,13 +48,13 @@ clean:
 	@echo "     - Removing object files..."
 	@rm -rf $(OBJ_DIR)
 	@make -C libft clean
-	@make -C printf clean
+	@make -C ft_printf clean
 
 fclean: clean
 	@echo "     - Removing $(NAME)..."
 	@rm -rf $(NAME)
 	@make -C libft fclean
-	@make -C printf fclean
+	@make -C ft_printf fclean
 
 re: fclean all
 
@@ -78,7 +76,7 @@ $(NAME): $(OBJ_DIR) $(OBJ)
 	@echo "     - Making libft..."
 	@make -s -C libft
 	@echo "     - Making ft_printf..."
-	@make -s -C printf
+	@make -s -C ft_printf
 	@echo "     - Compiling $(NAME)..."
 	@gcc $(FLAGS) $(OBJ) $(LIBFT) $(FT_PRINTF) -o $(NAME)
 	@echo "     - Compiled -"
