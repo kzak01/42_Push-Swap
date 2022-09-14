@@ -6,7 +6,7 @@
 #    By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/13 11:10:21 by kzak              #+#    #+#              #
-#    Updated: 2022/09/14 14:30:11 by kzak             ###   ########.fr        #
+#    Updated: 2022/09/14 15:06:22 by kzak             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -72,7 +72,7 @@ all: $(NAME)
 
 clean:
 	@rm -rf $(OBJ_DIR)
-	@echo "          OBJ deleted"
+	@echo "          libft OBJ deleted"
 
 fclean: clean
 	@rm -f $(NAME)
@@ -93,7 +93,7 @@ $(OBJ_DIR)/ft_printf/%.o : ft_printf/%.c
 
 $(NAME): $(OBJ_DIR) $(OBJ)
 	@ar rcs $(NAME) $(OBJ)
-	@echo "     $(NAME) created"
+	@echo "          $(NAME) created"
 	@ranlib $(NAME)
 
 .PHONY : all clean fclean re

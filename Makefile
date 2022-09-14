@@ -6,7 +6,7 @@
 #    By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/31 09:49:00 by kzak              #+#    #+#              #
-#    Updated: 2022/09/14 14:28:27 by kzak             ###   ########.fr        #
+#    Updated: 2022/09/14 15:09:07 by kzak             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,7 +43,7 @@ OBJ = $(SRC_MAIN:src/%.c=$(OBJ_DIR)/%.o)\
 all: $(NAME)
 
 clean:
-	@echo "     - Removing object files..."
+	@echo "     - Removing push_swap object files..."
 	@rm -rf $(OBJ_DIR)
 	@make -C libft clean
 
@@ -71,8 +71,9 @@ $(OBJ_DIR)/array_moves/%.o : src/array_moves/%.c
 $(NAME): $(OBJ_DIR) $(OBJ)
 	@echo "     - Making libft..."
 	@make -s -C libft
-	@echo "     - Compiling $(NAME)..."
+	@echo "     - Making $(NAME)..."
 	@gcc $(FLAGS) $(OBJ) $(LIBFT) $(FT_PRINTF) -o $(NAME)
+	@echo "          $(NAME) created"
 	@echo "     - Compiled -"
 
 norm: 
