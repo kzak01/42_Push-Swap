@@ -6,11 +6,11 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 15:33:35 by kzak              #+#    #+#             */
-/*   Updated: 2022/09/06 10:34:15 by kzak             ###   ########.fr       */
+/*   Updated: 2022/09/13 14:16:45 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../h_file/push_swap.h"
 
 static int	how_many(t_stack *stack, int n)
 {

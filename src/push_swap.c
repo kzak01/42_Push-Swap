@@ -6,11 +6,11 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 09:12:56 by kzak              #+#    #+#             */
-/*   Updated: 2022/09/06 10:21:51 by kzak             ###   ########.fr       */
+/*   Updated: 2022/09/14 11:58:27 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../h_file/push_swap.h"
 
 static void	insert_into_a(int ac, char **av, t_stack *stack)
 {
@@ -75,12 +75,13 @@ int	main(int argc, char **argv)
 	stack.lb = 0;
 	stack.lk = arrayleng(argc, argv);
 	stack.b = NULL;
-	stack.a = (int *)malloc(8000 * sizeof(int));
-	stack.b = (int *)malloc(8000 * sizeof(int));
-	stack.k = (int *)malloc(8000 * sizeof(int));
+	stack.a = (int *)malloc(MALLOC * sizeof(int));
+	stack.b = (int *)malloc(MALLOC * sizeof(int));
+	stack.k = (int *)malloc(MALLOC * sizeof(int));
 	insert_into_a(argc, argv, &stack);
 	insert_into_k(argc, argv, &stack);
-	varius_sort(&stack);
+	if (is_sort(&stack))
+		varius_sort(&stack);
 	free(stack.a);
 	free(stack.b);
 	free(stack.k);

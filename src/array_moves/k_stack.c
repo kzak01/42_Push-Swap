@@ -6,11 +6,11 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 15:25:34 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/29 10:54:21 by kzak             ###   ########.fr       */
+/*   Updated: 2022/09/13 14:18:12 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../h_file/push_swap.h"
 
 void	ft_swap(int *a, int *b)
 {

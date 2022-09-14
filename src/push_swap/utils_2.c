@@ -6,11 +6,11 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 10:46:02 by kzak              #+#    #+#             */
-/*   Updated: 2022/09/06 10:48:09 by kzak             ###   ########.fr       */
+/*   Updated: 2022/09/13 14:16:53 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../h_file/push_swap.h"
 
 static void	insert_k(t_stack *stack)
 {

@@ -6,11 +6,11 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 09:49:02 by kzak              #+#    #+#             */
-/*   Updated: 2022/09/06 10:47:31 by kzak             ###   ########.fr       */
+/*   Updated: 2022/09/13 14:16:50 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../h_file/push_swap.h"
 
 static void	prova(int *i, t_stack *stack, int *max, int n)
 {

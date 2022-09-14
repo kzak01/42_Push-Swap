@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 09:30:33 by kzak              #+#    #+#             */
-/*   Updated: 2022/09/06 10:48:29 by kzak             ###   ########.fr       */
+/*   Updated: 2022/09/14 11:44:30 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@
 # include <fcntl.h>
 # include <stdio.h>
 # include <errno.h>
-# include "libft.h"
+# include "../libft/libft.h"
+# include "../ft_printf/ft_printf.h"
 
 typedef struct s_stack
 {
@@ -40,7 +41,8 @@ typedef enum e_bool
 typedef enum e_int
 {
 	MAX_INT = 2147483647,
-	MIN_INT = -2147483648
+	MIN_INT = -2147483648,
+	MALLOC = 8000
 }	t_int;
 
 /*src*/

@@ -6,98 +6,91 @@
 #    By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/31 09:49:00 by kzak              #+#    #+#              #
-#    Updated: 2022/06/20 10:37:17 by kzak             ###   ########.fr        #
+#    Updated: 2022/09/14 12:03:50 by kzak             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-PUSH_SWAP = push_swap
-NAME = $(PUSH_SWAP)
+NAME = push_swap
 
-CC = gcc
-CFLAGS = -Wall -Wextra -Werror
+SRC_MAIN = src/push_swap.c
 
-ifeq ($(DEBUG),true)
-	CFLAGS += -g
-endif
+SRC_PS = src/push_swap/errors.c \
+			src/push_swap/find_pivot.c \
+			src/push_swap/infinity.c \
+			src/push_swap/push_to_b.c \
+			src/push_swap/small_case.c \
+			src/push_swap/sort_b.c \
+			src/push_swap/utils_2.c \
+			src/push_swap/varius_sort.c \
 
-RM = rm
-RMFLAGS = -rf
+SRC_MOVES = src/array_moves/k_stack.c \
+				src/array_moves/push.c \
+				src/array_moves/reverse_rotate.c \
+				src/array_moves/rotate.c \
+				src/array_moves/swap.c \
+				src/array_moves/utils.c \
 
-H_DIR = h_file
-SRC_DIR = src
+SRC = $(SRC_MAIN) $(SRC_PS) $(SRC_MOVES)
+
+LIBFT  = libft/libft.a
+
+FT_PRINTF = ft_printf/libftprintf.a
+
+FLAGS = -Wall -Wextra -Werror
+
 OBJ_DIR = obj
-CFLAGS += -I $(H_DIR)
 
-LIBFT = libft.a
-LIBFT_DIR = libft
-LIBFT_FILE = $(LIBFT_DIR)/$(LIBFT)
-LIBFT_INC_DIR = $(LIBFT_DIR)/include
-LIBFT_FLAGS = -L./$(LIBFT_DIR) -lft
-CFLAGS += -I $(LIBFT_INC_DIR)
+OBJ = $(SRC_MAIN:src/%.c=$(OBJ_DIR)/%.o)\
+		$(SRC_PS:src/push_swap/%.c=$(OBJ_DIR)/push_swap/%.o)\
+		$(SRC_MOVES:src/array_moves/%.c=$(OBJ_DIR)/array_moves/%.o)
 
-PUSH_SWAP_DIR = $(SRC_DIR)/push_swap
-PUSH_SWAP_SRCS = $(wildcard $(PUSH_SWAP_DIR)/*.c)
+all: $(NAME)
 
-MOVES_DIR = $(SRC_DIR)/array_moves
-MOVES_SRCS = $(wildcard $(MOVES_DIR)/*.c)
+clean:
+	@echo "     - Removing object files..."
+	@rm -rf $(OBJ_DIR)
+	@make -C libft clean
+	@make -C ft_printf clean
 
-HEADERS = $(wildcard $(H_DIR)/*.h)
+fclean: clean
+	@echo "     - Removing $(NAME)..."
+	@rm -rf $(NAME)
+	@make -C libft fclean
+	@make -C ft_printf fclean
 
-PUSH_SWAP_SRCS += $(MOVES_SRCS)
-
-vpath %.c \
-	$(SRC_DIR) \
-	$(PUSH_SWAP_DIR)	\
-	$(MOVES_DIR)	\
-
-PUSH_SWAP_OBJS = $(addprefix $(OBJ_DIR)/, $(notdir $(PUSH_SWAP_SRCS:.c=.o)))
-
-LF = \e[1K\r$(NO_COLOR)
-
-NO_COLOR = \e[0m
-
-all : $(NAME)
-
-clean :
-	@$(RM) $(RMFLAGS) $(OBJ_DIR)
-	@printf "👻 Cleaning $(NAME)'s Object files...\n"
-
-fclean : clean
-	@$(RM) $(RMFLAGS) $(NAME)
-	@printf "🎃 Cleaning $(NAME)\n"
-	@printf "👾 GG 🕹\n"
-
-re : fclean all
+re: fclean all
 
 $(OBJ_DIR) :
 	@mkdir $(OBJ_DIR)
+	@mkdir obj/push_swap
+	@mkdir obj/array_moves
 
-$(OBJ_DIR)/%.o : %.c $(LIBFT_FILE) | $(OBJ_DIR)
+$(OBJ_DIR)/%.o : src/%.c 
 	@$(CC) $(CFLAGS) -c $< -o $@
-	@printf "$(LF)👍 Create $@ from $<"
 
+$(OBJ_DIR)/push_swap/%.o : src/push_swap/%.c 
+	@$(CC) $(CFLAGS) -c $< -o $@
 
-$(PUSH_SWAP) : $(LIBFT_FILE) $(HEADERS) $(PUSH_SWAP_OBJS) $(SRC_DIR)/push_swap.c
-	@printf "\n🌙 Successfully Created $@'s Object files!\n"
-	@printf "♈︎ Create $@!\n"
-	@$(CC) $(CFLAGS) $(LIBFT_FLAGS) $(PUSH_SWAP_OBJS) $(SRC_DIR)/push_swap.c -o $@
-	@printf "$(LF)😎 Successfully Created $@ !\n$(NO_COLOR)"
-	@printf "🍀 GLHF 👾\n"
+$(OBJ_DIR)/array_moves/%.o : src/array_moves/%.c 
+	@$(CC) $(CFLAGS) -c $< -o $@
+
+$(NAME): $(OBJ_DIR) $(OBJ)
+	@echo "     - Making libft..."
+	@make -s -C libft
+	@echo "     - Making ft_printf..."
+	@make -s -C ft_printf
+	@echo "     - Compiling $(NAME)..."
+	@gcc $(FLAGS) $(OBJ) $(LIBFT) $(FT_PRINTF) -o $(NAME)
+	@echo "     - Compiled -"
 
 norm: 
 	@norminette -R CheckForbiddenSourceHeader
 
-$(LIBFT) : $(LIBFT_FILE)
-
-$(LIBFT_FILE) :
-	@make --no-print-directory -C $(LIBFT_DIR)
-
-$(LIBFT)_clean :
-	@make --no-print-directory -C $(LIBFT_DIR) clean
-
-$(LIBFT)_fclean :
-	@make --no-print-directory -C $(LIBFT_DIR) fclean
+exe: re
+	@make -C ./ clean
+	@echo "     - Executing $(NAME)... \n"
+	@./$(NAME) $(m)
+	@echo "\n     - Done -"
 
 
-.PHONY: all clean fclean re test \
-	$(LIBFT) $(LIBFT)_clean $(LIBFT)_fclean
+.PHONY : all clean fclean re

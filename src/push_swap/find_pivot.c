@@ -6,11 +6,11 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 10:57:04 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/24 16:04:05 by kzak             ###   ########.fr       */
+/*   Updated: 2022/09/13 14:16:42 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../h_file/push_swap.h"
 
 void	find_pivot(t_stack *stack, int *pivot, int index)
 {

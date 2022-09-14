@@ -6,11 +6,11 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/30 11:09:49 by kzak              #+#    #+#             */
-/*   Updated: 2022/06/28 13:30:30 by kzak             ###   ########.fr       */
+/*   Updated: 2022/09/14 12:04:08 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../h_file/push_swap.h"
 
 void	nocopy(t_stack *stack, int i, int z)
 {
@@ -65,12 +65,34 @@ static void	intmaxmin(char **av)
 	j = 0;
 	while (av[j])
 	{
-		if (atoilong(av[j]) < INT_MIN || atoilong(av[j]) > INT_MAX)
+		if (atoilong(av[j]) < MIN_INT || atoilong(av[j]) > MAX_INT)
 		{
 			ft_printf("\033[0;31m" "Error: Number exceed int value\n" "\033[0m");
 			exit (0);
 		}
 		j++;
+	}
+}
+
+static void	min_case(int ac, char **av)
+{
+	int	i;
+	int	j;
+
+	i = 1;
+	while (i < ac)
+	{
+		j = 0;
+		while (av[i][j])
+		{
+			if (av[i][j] == '-' && !ft_isdigit(av[i][j + 1]))
+			{
+				ft_printf("\033[0;31m" "Error\n" "\033[0m");
+				exit (0);
+			}
+			j++;
+		}
+		i++;
 	}
 }
 
@@ -80,6 +102,7 @@ void	ft_errors(int ac, char **av)
 	char	**str;
 
 	i = 0;
+	min_case(ac, av);
 	while (++i < ac)
 	{
 		str = ft_split(av[i], ' ');

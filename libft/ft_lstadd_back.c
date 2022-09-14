@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin_free.c                                  :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/30 10:08:41 by kzak              #+#    #+#             */
-/*   Updated: 2022/05/30 10:08:43 by kzak             ###   ########.fr       */
+/*   Created: 2022/01/17 16:01:03 by kzak              #+#    #+#             */
+/*   Updated: 2022/01/19 13:57:31 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin_free(char const *s1, char const *s2, int check)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	char	*result;
+	t_list	*temp;
 
-	result = ft_strjoin(s1, s2);
-	if (check & 1)
-		free((char *)s1);
-	if (check & 2)
-		free((char *)s2);
-	return (result);
+	if (new == NULL)
+		return ;
+	if (*lst == NULL)
+		*lst = new;
+	else
+	{
+		temp = ft_lstlast(*lst);
+		temp->next = new;
+	}
 }

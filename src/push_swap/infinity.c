@@ -6,11 +6,11 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 13:35:11 by kzak              #+#    #+#             */
-/*   Updated: 2022/07/01 01:24:11 by kzak             ###   ########.fr       */
+/*   Updated: 2022/09/13 14:16:43 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../h_file/push_swap.h"
 
 void	special_case(t_stack *stack)
 {
