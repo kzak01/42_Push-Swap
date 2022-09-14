@@ -6,7 +6,7 @@
 #    By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/31 09:49:00 by kzak              #+#    #+#              #
-#    Updated: 2022/09/14 15:11:35 by kzak             ###   ########.fr        #
+#    Updated: 2022/09/14 15:18:28 by kzak             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,11 +45,13 @@ all: $(NAME)
 clean:
 	@echo "     - Removing push_swap object files..."
 	@rm -rf $(OBJ_DIR)
+	@echo "          push_swap OBJ deleted"
 	@make -C libft clean
 
 fclean: clean
 	@echo "     - Removing $(NAME)..."
 	@rm -rf $(NAME)
+	@echo "          $(NAME) OBJ deleted"
 	@make -C libft fclean
 
 re: fclean all

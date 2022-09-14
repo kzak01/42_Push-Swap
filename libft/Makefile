@@ -6,7 +6,7 @@
 #    By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/13 11:10:21 by kzak              #+#    #+#              #
-#    Updated: 2022/09/14 15:06:22 by kzak             ###   ########.fr        #
+#    Updated: 2022/09/14 15:17:41 by kzak             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -71,6 +71,7 @@ OBJ = $(SRC_LIBFT:lib/%.c=$(OBJ_DIR)/lib/%.o) \
 all: $(NAME)
 
 clean:
+	@echo "     - Removing $(NAME)..."
 	@rm -rf $(OBJ_DIR)
 	@echo "          libft OBJ deleted"
 
