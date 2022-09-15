@@ -6,12 +6,11 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 14:54:08 by kzak              #+#    #+#             */
-/*   Updated: 2022/09/14 14:06:29 by kzak             ###   ########.fr       */
+/*   Updated: 2022/09/15 10:17:35 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../h_file/libft.h"
-
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {

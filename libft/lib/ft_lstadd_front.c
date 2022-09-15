@@ -6,12 +6,11 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 12:09:51 by kzak              #+#    #+#             */
-/*   Updated: 2022/09/14 14:06:04 by kzak             ###   ########.fr       */
+/*   Updated: 2022/09/15 10:17:17 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../h_file/libft.h"
-
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {

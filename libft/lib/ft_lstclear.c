@@ -6,12 +6,11 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 11:35:55 by kzak              #+#    #+#             */
-/*   Updated: 2022/09/14 14:06:06 by kzak             ###   ########.fr       */
+/*   Updated: 2022/09/15 10:17:19 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../h_file/libft.h"
-
 
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
