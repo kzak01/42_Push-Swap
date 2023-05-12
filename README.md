@@ -20,7 +20,9 @@ Visualizer Instructions:
 To use the visualizer tool for observing the sorting process, follow these steps:
 
 Navigate to the push_swap_visualizer directory by running the following command:
-<code>cd push_swap_visualizer/build</code>
+
+<pre>cd push_swap_visualizer/build</pre>
+
 Execute the visualizer by running the following command:
 ./bin/visualizer
 Once the visualizer is running, set up the visualization according to the provided screenshot or instructions.
