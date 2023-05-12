@@ -6,7 +6,7 @@
 /*   By: kzak <kzak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 09:49:02 by kzak              #+#    #+#             */
-/*   Updated: 2022/09/13 14:16:50 by kzak             ###   ########.fr       */
+/*   Updated: 2023/05/12 12:04:14 by kzak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,10 +73,8 @@ static void	find_positionb(t_stack *stack, int *max)
 static void	find_pos(t_stack *stack, int *max)
 {
 	int	i;
-	int	c;
 
 	i = 0;
-	c = 0;
 	while (i <= stack->lb)
 	{
 		if (stack->b[i] == max[0])
