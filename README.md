@@ -1,4 +1,4 @@
-# 42_Push-Swap
+# Push-Swap
 
 General Description:
 Push Swap is a project aimed at developing a sorting algorithm to arrange a stack of integers in a specific order. The project focuses on efficiently sorting a random sequence of numbers using two stacks, A and B.
@@ -20,7 +20,7 @@ Visualizer Instructions:
 To use the visualizer tool for observing the sorting process, follow these steps:
 
 Navigate to the push_swap_visualizer directory by running the following command:
-cd push_swap_visualizer/build
+<code>cd push_swap_visualizer/build</code>
 Execute the visualizer by running the following command:
 ./bin/visualizer
 Once the visualizer is running, set up the visualization according to the provided screenshot or instructions.
